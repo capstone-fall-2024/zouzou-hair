@@ -15,7 +15,6 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
-
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -48,31 +47,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Generic
 --------------------------------------------------------------*/
 
-@font-face {
-	font-family: 'Afacad';
-	src: url('./assets/fonts/Afacad-VariableFont.woff2') format('woff2');
-	font-weight: 100 900;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Cinzel';
-	src: url('./assets/fonts/Cinzel-VariableFont.woff2') format('woff2');
-	font-weight: 700;
-	font-style: normal;
-}
-
-:root {
-	--white: #ffffff;
-	--black: #000000;
-	--light-beige: #F7EFE7;
-	--beige: #BFB0A0;
-	--red: #9B1F1F;
-	--dark-red: #4D1010;
-	--dark: #150D0D;
-}
-
-
 /* Normalize
 --------------------------------------------- */
 
@@ -80,12 +54,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 /* Document
 	 ========================================================================== */
-
-ul li {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
 
 /**
  * 1. Correct the line height in all browsers.
@@ -427,6 +395,8 @@ input,
 select,
 optgroup,
 textarea {
+	color: #404040;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
 }
@@ -441,7 +411,7 @@ h6 {
 }
 
 p {
-	margin-bottom: 1rem;
+	margin-bottom: 1.5em;
 }
 
 dfn,
@@ -494,6 +464,9 @@ big {
 
 /* Elements
 --------------------------------------------- */
+body {
+	background: #fff;
+}
 
 hr {
 	background-color: #ccc;
@@ -502,23 +475,23 @@ hr {
 	margin-bottom: 1.5em;
 }
 
-/* ul,
+ul,
 ol {
-	margin: 0 0 1.5em 3em;
-} */
+	margin: 0 3em 1.5em 0;
+}
 
-/* ul {
+ul {
 	list-style: disc;
-} */
+}
 
 ol {
 	list-style: decimal;
 }
 
-li>ul,
-li>ol {
+li > ul,
+li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-right: 1.5em;
 }
 
 dt {
@@ -552,6 +525,19 @@ table {
 
 /* Links
 --------------------------------------------- */
+a {
+	color: #4169e1;
+}
+
+a:visited {
+	color: #800080;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: #191970;
+}
 
 a:focus {
 	outline: thin dotted;
@@ -565,27 +551,23 @@ a:active {
 /* Forms
 --------------------------------------------- */
 button,
-.button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	/* border: 1px solid; */
-	border-radius: 10px;
-	background: var(--red);
-	color: var(--light-beige);
+	border: 1px solid;
+	border-color: #ccc #ccc #bbb;
+	border-radius: 3px;
+	background: #e6e6e6;
+	color: rgba(0, 0, 0, 0.8);
 	line-height: 1;
-	padding: 1rem 1.5rem;
-	transition: all .3s ease;
-	cursor: pointer;
-	display: inline-block;
+	padding: 0.6em 1em 0.4em;
 }
 
 button:hover,
-.button,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	background-color: var(--dark-red);
+	border-color: #ccc #bbb #aaa;
 }
 
 button:active,
@@ -596,7 +578,7 @@ input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-	background-color: var(--dark-red);
+	border-color: #aaa #bbb #bbb;
 }
 
 input[type="text"],
@@ -658,45 +640,45 @@ textarea {
 
 /* Navigation
 --------------------------------------------- */
-/* .main-navigation {
+.main-navigation {
 	display: block;
 	width: 100%;
-} */
+}
 
 .main-navigation ul {
 	display: none;
 	list-style: none;
 	margin: 0;
-	padding-left: 0;
+	padding-right: 0;
 }
 
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
+	float: right;
 	position: absolute;
 	top: 100%;
-	left: -999em;
+	right: -999em;
 	z-index: 99999;
 }
 
 .main-navigation ul ul ul {
-	left: -999em;
+	right: -999em;
 	top: 0;
 }
 
-.main-navigation ul ul li:hover>ul,
-.main-navigation ul ul li.focus>ul {
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
 	display: block;
-	left: auto;
+	right: auto;
 }
 
 .main-navigation ul ul a {
 	width: 200px;
 }
 
-.main-navigation ul li:hover>ul,
-.main-navigation ul li.focus>ul {
-	left: auto;
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+	right: auto;
 }
 
 .main-navigation li {
@@ -726,8 +708,10 @@ textarea {
 }
 
 .site-main .comment-navigation,
-.site-main .posts-navigation,
-.site-main .post-navigation {
+.site-main
+.posts-navigation,
+.site-main
+.post-navigation {
 	margin: 0 0 1.5em;
 }
 
@@ -756,10 +740,10 @@ textarea {
 	display: block;
 }
 
-/* .post,
+.post,
 .page {
 	margin: 0 0 1.5em;
-} */
+}
 
 .updated:not(.published) {
 	display: none;
@@ -821,8 +805,8 @@ textarea {
 
 .wp-caption img[class*="wp-image-"] {
 	display: block;
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
 }
 
 .wp-caption .wp-caption-text {
@@ -933,7 +917,7 @@ textarea {
 	font-size: 0.875rem;
 	font-weight: 700;
 	height: auto;
-	left: 5px;
+	right: 5px;
 	line-height: normal;
 	padding: 15px 23px 14px;
 	text-decoration: none;
@@ -950,21 +934,13 @@ textarea {
 /* Alignments
 --------------------------------------------- */
 .alignleft {
-
-	/*rtl:ignore*/
 	float: left;
-
-	/*rtl:ignore*/
 	margin-right: 1.5em;
 	margin-bottom: 1.5em;
 }
 
 .alignright {
-
-	/*rtl:ignore*/
 	float: right;
-
-	/*rtl:ignore*/
 	margin-left: 1.5em;
 	margin-bottom: 1.5em;
 }
@@ -972,204 +948,7 @@ textarea {
 .aligncenter {
 	clear: both;
 	display: block;
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
 	margin-bottom: 1.5em;
-}
-
-/* Zouzou Hair Custom */
-
-.container {
-	max-width: 1700px;
-	margin: 0 auto;
-}
-
-.padding {
-	/* utility class for padding inside containers */
-	padding: 1.5rem;
-}
-
-.button,
-.wpforms-submit.form-submit {
-	/* this is a styling for links (anchor) to look like buttons and for wpform submit */
-	background: var(--red)!important;
-}
-
-.button:hover,
-.wpforms-submit.form-submit:hover {
-	/* this is a styling for links (anchor) to look like buttons and for wpform submit */
-	background-color: var(--dark-red)!important;
-}
-
-.error-404 span {
-	font-size: 10rem;
-	font-family: 'Cinzel';
-}
-
-/* Zouzou Hair Custom - Header */
-
-.site-title {
-	margin-bottom: 0;
-}
-
-.site-logo {
-	width: 250px;
-}
-
-.sup-header {
-	background-color: var(--dark);
-	color: var(--light-beige);
-	padding: 0.75rem;
-	display: none;
-}
-
-.sup-header-flex {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.sup-header-flex p {
-	margin-bottom: 0;
-}
-
-.main-header a {
-	color: var(--light-beige);
-	padding: 0.25rem 0.75rem;
-	border-radius: 5px;
-}
-
-.main-header a:hover {
-	background-color: var(--dark-red);
-}
-
-.main-header .custom-logo-link:hover {
-	background-color: unset;
-}
-
-.main-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.main-header .main-navigation ul {
-	display: flex;
-	gap: 1rem;
-}
-
-.default-banner {
-	background-color: var(--dark-red);
-	color: var(--light-beige);
-}
-
-.services-banner {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('./assets/images/services-banner.webp');
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	color: var(--white);
-}
-
-.contact-banner {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/contact-banner.webp');
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	color: var(--white);
-}
-
-.banner-content {
-	padding: 8rem 0;
-}
-
-/* Zouzou Hair Custom - Services Page */
-
-.services-list > div {
-	display: flex;
-}
-
-/* Zouzou Hair Custom - Contact Page */
-.contact-red {
-	background-color: var(--red);
-	color: var(--light-beige);
-}
-
-.contact-red h3 {
-	font-family: 'Afacad';
-	margin-bottom: 0.5rem;
-}
-
-/* Zouzou Hair Custom - Footer */
-footer {
-	background-color: var(--dark);
-	color: var(--light-beige);
-	padding: 5rem 0;
-}
-
-.footer-flex {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-}
-
-.connect-with-us h3 {
-	margin-top: 0;
-}
-
-footer .main-navigation ul {
-	flex-direction: column;
-	gap: 1rem;
-}
-
-footer .main-navigation ul a {
-	color: var(--light-beige);
-}
-
-.connect-with-us svg,
-.social-links svg {
-	width: 30px;
-}
-
-.connect-flex {
-	display: flex;
-	align-items: flex-start;
-	gap: 0.5rem;
-}
-
-.social-links ul {
-	display: flex;
-	gap: 1rem;
-	padding: 0;
-	margin: 0;
-}
-
-/* MEDIA QUERIES */
-
-@media screen and (min-width: 750px) {
-	.contact-flex {
-		display: flex;
-	}
-	.contact-flex > * {
-		width: 50%;
-	}
-}
-
-@media screen and (min-width: 1000px) {
-	.sup-header {
-		display: block;
-	}
-	.contact-flex {
-		display: flex;
-	}
-	.contact-flex > :nth-child(1) {
-		width: 70%;
-	}
-	.contact-flex > :nth-child(2) {
-		width: 30%;
-	}
-
-	.wpforms-field {
-		max-width: 50%;
-	}
 }

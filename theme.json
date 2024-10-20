@@ -80,9 +80,9 @@
 					"slug": "red"
 				},
 				{
-					"color": "#312C38",
-					"name": "Grey",
-					"slug": "grey"
+					"color": "#150D0D",
+					"name": "Dark",
+					"slug": "dark"
 				}
 			]
 		},
