@@ -195,6 +195,7 @@ function zouzou_hair_theme_block_parts_setup()
 // INITIALIZE ACF FIELDS
 if (function_exists('acf_add_local_field_group')):
 
+	// CUSTOM FIELDS FOR CONTACT PAGE
 	acf_add_local_field_group(array(
 		'key' => 'store_info',
 		'title' => 'Store Information',
@@ -238,6 +239,7 @@ if (function_exists('acf_add_local_field_group')):
 		),
 	));
 
+	// CUSTOM FIELDS FOR IMAGES FOR SERVICE CATEGORIES
 	acf_add_local_field_group( array(
 		'key' => 'service-gallery',
 		'title' => 'Service Gallery',
@@ -317,18 +319,9 @@ if (function_exists('acf_add_local_field_group')):
 				),
 			),
 		),
-		'menu_order' => 0,
-		'position' => 'normal',
-		'style' => 'default',
-		'label_placement' => 'top',
-		'instruction_placement' => 'label',
-		'hide_on_screen' => '',
-		'active' => true,
-		'description' => '',
-		'show_in_rest' => 0,
 	) );
 
-
+	// CUSTOM FIELDS FOR EACH SERVICE
 	acf_add_local_field_group(array(
 		'key' => 'service_info',
 		'title' => 'Service Information',
@@ -361,8 +354,69 @@ if (function_exists('acf_add_local_field_group')):
 		),
 	));
 
+	// CUSTOM FIELDS FOR ADDING NEW MEMBERS
+	acf_add_local_field_group( array(
+		'key' => 'members',
+		'title' => 'Members',
+		'fields' => array(
+			array(
+				'key' => 'name',
+				'label' => 'Name',
+				'name' => 'name',
+				'type' => 'text',
+				'instructions' => 'Enter the name of the member here.',
+				'required' => 1,
+			),
+			array(
+				'key' => 'position',
+				'label' => 'Position',
+				'name' => 'position',
+				'aria-label' => '',
+				'type' => 'text',
+				'instructions' => 'Enter the position of the member here.',
+				'required' => 1,
+			),
+			array(
+				'key' => 'introduction',
+				'label' => 'Introduction',
+				'name' => 'introduction',
+				'type' => 'textarea',
+				'instructions' => 'Enter the introduction for the member here.',
+				'required' => 1,
+			),
+			array(
+				'key' => 'image',
+				'label' => 'Image',
+				'name' => 'image',
+				'aria-label' => '',
+				'type' => 'image',
+				'instructions' => 'Enter an image for the member here.',
+				'required' => 1,
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'member',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+		'show_in_rest' => 0,
+	) );
+
 endif;
 
+// INITIALIZE SERVICE CATEGORY TAXONOMY
 add_action( 'init', function() {
 	register_taxonomy( 'service-category', array(
 	0 => '',
@@ -396,7 +450,7 @@ add_action( 'init', function() {
 ) );
 } );
 
-
+// INITIALIZE SERVICES CUSTOM POST TYPE
 add_action( 'init', function() {
 	register_post_type( 'services', array(
 	'labels' => array(
@@ -444,6 +498,55 @@ add_action( 'init', function() {
 	'delete_with_user' => false,
 ) );
 } );
+
+// INITIALIZE MEMBERS CUSTOM POST TYPE
+add_action( 'init', function() {
+	register_post_type( 'member', array(
+	'labels' => array(
+		'name' => 'Members',
+		'singular_name' => 'Member',
+		'menu_name' => 'Members',
+		'all_items' => 'All Members',
+		'edit_item' => 'Edit Member',
+		'view_item' => 'View Member',
+		'view_items' => 'View Members',
+		'add_new_item' => 'Add New Member',
+		'add_new' => 'Add New Member',
+		'new_item' => 'New Member',
+		'parent_item_colon' => 'Parent Member:',
+		'search_items' => 'Search Members',
+		'not_found' => 'No members found',
+		'not_found_in_trash' => 'No members found in Trash',
+		'archives' => 'Member Archives',
+		'attributes' => 'Member Attributes',
+		'insert_into_item' => 'Insert into member',
+		'uploaded_to_this_item' => 'Uploaded to this member',
+		'filter_items_list' => 'Filter members list',
+		'filter_by_date' => 'Filter members by date',
+		'items_list_navigation' => 'Members list navigation',
+		'items_list' => 'Members list',
+		'item_published' => 'Member published.',
+		'item_published_privately' => 'Member published privately.',
+		'item_reverted_to_draft' => 'Member reverted to draft.',
+		'item_scheduled' => 'Member scheduled.',
+		'item_updated' => 'Member updated.',
+		'item_link' => 'Member Link',
+		'item_link_description' => 'A link to a member.',
+	),
+	'public' => true,
+	'show_in_rest' => true,
+	'menu_icon' => 'dashicons-admin-post',
+	'supports' => array(
+		0 => 'title',
+		1 => 'editor',
+		2 => 'thumbnail',
+		3 => 'custom-fields',
+	),
+	'delete_with_user' => false,
+) );
+} );
+
+
 
 function get_store_info()
 {

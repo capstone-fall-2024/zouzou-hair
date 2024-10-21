@@ -1104,7 +1104,7 @@ textarea {
 footer {
 	background-color: var(--dark);
 	color: var(--light-beige);
-	padding: 5rem 0;
+	padding: 5rem 1.5rem;
 }
 
 .footer-flex {
