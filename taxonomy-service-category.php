@@ -39,7 +39,7 @@ $images = get_field('images', $service_category);
             <div class="services-list">
                 <?php while ($service_posts->have_posts()) :
                     $service_posts->the_post(); ?>
-                    <div>
+                    <div class="service-bar">
                         <div>
                             <p><?php the_title(); ?></p>
                             <p><?php echo esc_html(get_field('duration')); ?></p>
