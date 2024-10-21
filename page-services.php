@@ -47,7 +47,6 @@ $service_posts = new WP_Query($args);
             ?>
                 <div class="service">
                     <h2><a href="<?php echo esc_url($service_link); ?>"><?php echo esc_html($service->name) ?></a></h2>
-
                 <?php
                 if ($service_posts->have_posts()) : ?>
                     <div class="services-list">

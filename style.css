@@ -1073,7 +1073,7 @@ textarea {
 
 .contact-banner {
 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/contact-banner.webp');
-	background-position: center center;
+	background-position: center -9rem;
 	background-repeat: no-repeat;
 	background-size: cover;
 	color: var(--white);
@@ -1087,6 +1087,21 @@ textarea {
 
 .services-list > div {
 	display: flex;
+}
+
+.service-bar {
+	padding: 1rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.service-bar > div > p:nth-of-type(1) {
+	font-weight: 700;
+}
+
+.service-bar:nth-child(even) {
+	background-color: var(--beige);
+	padding: 1rem;
 }
 
 /* Zouzou Hair Custom - Contact Page */
