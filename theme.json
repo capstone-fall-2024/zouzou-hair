@@ -70,19 +70,19 @@
 					"slug": "beige"
 				},
 				{
-					"color": "#E73C37",
+					"color": "#4D1010",
+					"name": "dark-red",
+					"slug": "dark-red"
+				},
+				{
+					"color": "#9B1F1F",
 					"name": "Red",
 					"slug": "red"
 				},
 				{
-					"color": "#9B1F1F",
-					"name": "Dark Red",
-					"slug": "dark-red"
-				},
-				{
-					"color": "#312C38",
-					"name": "Grey",
-					"slug": "grey"
+					"color": "#150D0D",
+					"name": "Dark",
+					"slug": "dark"
 				}
 			]
 		},
@@ -433,12 +433,12 @@
 					"radius": "7px"
 				},
 				"color": {
-					"background": "var(--wp--preset--color--dark-red)",
+					"background": "var(--wp--preset--color--red)",
 					"text": "var(--wp--preset--color--light-beige)"
 				},
 				":hover": {
 					"color": {
-						"background": "var(--wp--preset--color--red)"
+						"background": "var(--wp--preset--color--dark-red)"
 					}
 				},
 				"spacing": {
@@ -502,11 +502,11 @@
 			},
 			"link": {
 				"color": {
-					"text": "var(--wp--preset--color--dark-red)"
+					"text": "var(--wp--preset--color--red)"
 				},
 				":hover": {
 					"color": {
-						"text": "var(--wp--preset--color--red)"
+						"text": "var(--wp--preset--color--dark-red)"
 					}
 				},
 				"typography": {
