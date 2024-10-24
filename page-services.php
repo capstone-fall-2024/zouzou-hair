@@ -11,15 +11,16 @@
 get_header();
 
 ?>
-<main id="primary" class="site-main">
+<main id="primary" class="site-main services-page">
 
     <div class="container padding">
 
         <div class="intro-text">
-            <p>At Zouzou Hair, we offer a variety of services to make sure you get the exact look you want.<br>Browse our services and previous works down below!</p>
+            <div>
+                <p>At Zouzou Hair, we offer a variety of services to make sure you get the exact look you want.<br>Browse our services and previous works down below!</p>
+            </div>
+            <p><span>All Students receive a 10% discount on our services</span></p>
         </div>
-
-        <p>All Students receive a 10% discount on our services</p>
 
         <?php
         $services = get_terms(array(
@@ -30,10 +31,10 @@ get_header();
         ));
 
         if (!empty($services) && !is_wp_error($services)) {
-            foreach ($services as $service) : 
-                $service_link = get_term_link($service);?>
-                <div class="service-category">
-                    <h2><a href="<?php echo esc_url($service_link); ?>"><?php echo esc_html($service->name) ?></a></h2>
+            foreach ($services as $service) :
+                $service_link = get_term_link($service); ?>
+                <div class="services">
+                    <h2><?php echo esc_html($service->name); ?></h2>
 
                     <?php
 
@@ -42,54 +43,60 @@ get_header();
                         'posts_per_page' => -1,
                         'tax_query'      => array(
                             array(
-                                'taxonomy' => 'service-category',
-                                'field' => 'slug',
-                                'terms'    => $service->slug,
+                                'taxonomy'  => 'service-category',
+                                'field'     => 'slug',
+                                'terms'     => $service->slug
                             ),
                         ),
+                        'order' => 'ASC'
                     );
                     $service_posts = new WP_Query($args);
 
                     if ($service_posts->have_posts()) : ?>
-                        <div class="services-list">
-                            <?php while ($service_posts->have_posts()) :
-                                $service_posts->the_post(); ?>
-                                <div class="service-bar">
-                                    <div>
-                                        <p><?php the_title(); ?></p>
-                                        <p><?php echo esc_html(get_field('duration')); ?></p>
+                        <div>
+                            <div class="services-list">
+                                <?php while ($service_posts->have_posts()) :
+                                    $service_posts->the_post(); ?>
+                                    <div class="service-bar">
+                                        <div>
+                                            <p><?php the_title(); ?></p>
+                                            <p><?php echo esc_html(get_field('duration')); ?></p>
+                                        </div>
+                                        <p><?php echo esc_html(get_field('price')); ?></p>
                                     </div>
-                                    <p><?php echo esc_html(get_field('price')); ?></p>
-                                </div>
-                            <?php endwhile; ?>
-                        </div> <!-- end of service-list div -->
-                    <?php endif;
+                                <?php endwhile; ?>
+                            </div> <!-- end of service-list div -->
+                        <?php endif;
 
-                    wp_reset_postdata();
+                        ?>
+                        <div>
+                            <div class="gallery">
 
-                    ?>
-                    <div class="gallery">
+                                <?php
+                                $images = get_field('images', $service);
 
-                        <?php
-                        $images = get_field('images', $service);
+                                if (!empty($images)) {
+                                    foreach ($images as $image) {
+                                        if (!empty($image)) {
+                                ?>
+                                            <img src="<?php echo $image['url']; ?>" alt="">
+                                <?php }
+                                    }
+                                } ?>
+                            </div> <!-- end of gallery div -->
 
-                        if (!empty($images)) {
-                            foreach ($images as $image) {
-                                if (!empty($image)) { 
-                                    ?>
-                                    <img src="<?php echo $image['url']; ?>" alt="">
-                        <?php }
-                            }
-                        } ?>
-                    </div> <!-- end of gallery div -->
-
-                    <a href="<?php echo esc_url($service_link); ?>" class="button">View Our Previous Work</a>
-
+                            <div class="button-end">
+                                <a href="<?php echo esc_url($service_link); ?>" class="button">View Our Previous Work</a>
+                            </div>
+                        </div> <!-- end of gallery and button wrapper -->
+                        </div> <!-- end of list and gallery wrapper -->
                 </div> <!-- end of service div -->
-        <?php endforeach;
+        <?php
+                wp_reset_postdata();
+            endforeach;
         } // end of service if condition
         ?>
-    </div>
+    </div> <!-- end of container div -->
 
 
 </main><!-- #main -->
