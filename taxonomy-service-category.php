@@ -51,10 +51,16 @@ $images = get_field('images', $service_category);
 
         <?php endif; ?>
 
-        <div>
-            <?php foreach ($images as $image) : ?>
-                <img src="<?php echo $image['url']; ?>" alt="">
-            <?php endforeach; ?>
+        <div class="gallery">
+            <?php
+            if (!empty($images)) {
+                foreach ($images as $image) {
+                    if (!empty($image)) { ?>
+                        <img src="<?php echo $image['url']; ?>" alt="">
+                <?php }
+                }
+            }
+            ?>
         </div>
     </div>
 </main>
