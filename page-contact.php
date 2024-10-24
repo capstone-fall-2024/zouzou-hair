@@ -20,12 +20,8 @@ get_header();
             </div>
             <h2>Send us a message</h2>
             <?php
-            
-            $form_post = get_page_by_title( 'Contact Form', OBJECT, 'wpforms' );
 
-            if ($form_post) {
-                wpforms_display($form_post->ID);
-            }
+            echo apply_shortcodes( '[contact-form-7 title="Contact form"]' );
 
             ?>
         </div>
