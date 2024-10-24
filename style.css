@@ -1087,6 +1087,14 @@ nav button svg {
 	color: var(--light-beige);
 }
 
+.front-banner {
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/front-banner.webp');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: var(--white);
+}
+
 .services-banner {
 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('./assets/images/services-banner.webp');
 	background-position: center center;
@@ -1110,6 +1118,130 @@ nav button svg {
 .button-end {
 	display: flex;
 	justify-content: flex-end;
+}
+
+.zouzou-intro{
+	
+}
+
+/* Services Section */
+
+h2{
+	padding: 0;
+	margin-bottom: 0;
+}
+
+.home-services-flex{
+ display: flex;
+ flex-wrap: wrap;
+ gap: 1rem;
+ padding-bottom: 2rem;
+ justify-content: space-between;
+}
+
+.home-services-flex a{
+	width: calc(50% - 0.5rem);
+	aspect-ratio: 1 / 1;
+	text-decoration: none;
+	color: inherit;
+	display: block;
+}
+
+.services-deal{
+	color: var(--red);
+	margin-top: 0.5rem;
+}
+
+.womens-cuts {
+	background: url('./assets/images/haircutwoman.webp') center center/cover no-repeat;
+	color: var(--white);
+	border: var(--red) 3px solid;
+	position: relative;
+	height: 100%;
+}
+.mens-cuts {
+	background: url('./assets/images/haircutwoman.webp') center center/cover no-repeat;
+	color: var(--white);
+	border: var(--red) 3px solid;
+	position: relative;
+	height: 100%;
+}
+.nonbinary-cuts {
+	background: url('./assets/images/haircutwoman.webp') center center/cover no-repeat;
+	color: var(--white);
+	border: var(--red) 3px solid;
+	position: relative;
+	height: 100%;
+}
+.coloring {
+	background: url('./assets/images/haircutwoman.webp') center center/cover no-repeat;
+	color: var(--white);
+	border: var(--red) 3px solid;
+	position: relative;
+	height: 100%;
+}
+.styling {
+	background: url('./assets/images/haircutwoman.webp') center center/cover no-repeat;
+	color: var(--white);
+	border: var(--red) 3px solid;
+	position: relative;
+	height: 100%;
+}
+.hair-botox {
+	background: url('./assets/images/haircutwoman.webp') center center/cover no-repeat;
+	color: var(--white);
+	border: var(--red) 3px solid;
+	position: relative;
+	height: 100%;
+}
+
+.services-titles{
+	background-color: var(--light-beige);
+	color: var(--red);
+	border-top: var(--red) 3px solid;
+	font-family: var(--wp--preset--font-family--afacad);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+  	right: 0;
+  	margin: 0;
+  	text-align: center;
+  	padding: 3px;
+}
+
+.home-services-flex a:hover .services-titles {
+    color: var(--light-beige);
+    background-color: var(--red);
+}
+
+
+/* home intro */
+.home-intro {
+	background: url('./assets/images/home-intro-banner.webp');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	color: var(--light-beige);
+	height: 80vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.home-intro-background{
+	background-color: var(--dark);
+	padding: 2rem;
+	margin: 0 1.5rem;
+}
+
+/* reviews on home */
+.reviews{
+	background-color: var(--red);
+}
+
+.reviews-title{
+	color: var(--light-beige);
 }
 
 /* Zouzou Hair Custom - Services Page */
@@ -1228,6 +1360,37 @@ footer .main-navigation ul a {
 }
 
 /* MEDIA QUERIES */
+
+@media screen and (min-width: 600px) {
+
+	.home-services-flex{
+		justify-content: unset;
+		box-sizing: border-box;
+		gap: 0.5rem;
+	   }
+
+	.home-services-flex a{
+		width: calc(33% - 0.5rem);
+		aspect-ratio: 1 / 1;
+		box-sizing: border-box;
+	}
+
+	.services-titles{
+		  padding: 5px 3px;
+	}
+
+	.home-intro {
+        justify-content: flex-start;
+        align-items: center;
+        padding-right: 3rem;
+    }
+
+	.home-intro-background {
+        max-width: 500px;
+        text-align: left;
+    }
+
+}
 
 @media screen and (min-width: 750px) {
 

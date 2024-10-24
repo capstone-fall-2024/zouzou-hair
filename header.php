@@ -97,9 +97,18 @@ if (is_front_page()) {
 			<?php if ($banner === 'front-banner') : ?>
 				<div class="banner-content">
 					<div class="container padding">
-						<div>
-							<p>Let us craft your <span>signature look.</span></p>
+					<div>
+							<p>Let us craft your </p>
+							<h2>Signature Look.</h2>
 							<p>Edmonton's Finest Salon & Barbershop</p>
+							<a href="<?php echo esc_url(home_url('/shop')); ?>" class="button">Shop</a>
+							<a href="https://www.fresha.com/a/zouzou-hair-edmonton-8718-109-street-northwest-ln6gfkqc/booking?menu=true" class="button">Book an Appointment</a>
+						</div>
+						<div class="zouzou-intro">
+							<p>At Zouzou Hair, 
+							We believe that great hair is the foundation of a more confident you.
+							</p>
+							<p>Our skilled stylists offer everything from fresh cuts to bold colors, all in a friendly and relaxed setting. Let us create a look that’s perfect for you!</p>
 						</div>
 					</div>
 				</div>
