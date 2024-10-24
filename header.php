@@ -79,15 +79,18 @@ if (is_front_page()) {
 						<?php endif; ?>
 					</div><!-- .site-branding -->
 					<nav id="site-navigation" class="main-navigation">
-						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'zouzou-hair-theme'); ?></button>
-						<?php
-						wp_nav_menu(
-							array(
-								'theme_location' => 'menu-1',
-								'menu_id'        => 'primary-menu',
-							)
-						);
-						?>
+						<button class="toggle-btn" aria-controls="primary-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+							</svg>
+						</button>
+							<?php
+							wp_nav_menu(
+								array(
+									'theme_location' => 'menu-1',
+									'menu_id'        => 'primary-menu',
+								)
+							);
+							?>
 					</nav><!-- #site-navigation -->
 				</div>
 			</header><!-- #masthead -->

@@ -192,6 +192,134 @@ function zouzou_hair_theme_block_parts_setup()
  * ACF FUNCTIONS
  */
 
+// INITIALIZE SERVICE CATEGORY TAXONOMY
+add_action( 'init', function() {
+	register_taxonomy( 'service-category', array(
+	0 => '',
+), array(
+	'labels' => array(
+		'name' => 'Categories',
+		'singular_name' => 'Category',
+		'menu_name' => 'Service Categories',
+		'all_items' => 'All Service Categories',
+		'edit_item' => 'Edit Service Category',
+		'view_item' => 'View Service Category',
+		'update_item' => 'Update Service Category',
+		'add_new_item' => 'Add New Service Category',
+		'new_item_name' => 'New Service Category Name',
+		'parent_item' => 'Parent Service Category',
+		'parent_item_colon' => 'Parent Service Category:',
+		'search_items' => 'Search Service Categories',
+		'not_found' => 'No service categories found',
+		'no_terms' => 'No service categories',
+		'filter_by_item' => 'Filter by service category',
+		'items_list_navigation' => 'Service Categories list navigation',
+		'items_list' => 'Service Categories list',
+		'back_to_items' => '← Go to service categories',
+		'item_link' => 'Service Category Link',
+		'item_link_description' => 'A link to a service category',
+	),
+	'public' => true,
+	'hierarchical' => true,
+	'show_in_menu' => true,
+	'show_in_rest' => true,
+) );
+} );
+
+// INITIALIZE SERVICES CUSTOM POST TYPE
+add_action( 'init', function() {
+	register_post_type( 'services', array(
+	'labels' => array(
+		'name' => 'Services',
+		'singular_name' => 'Service',
+		'menu_name' => 'Services',
+		'all_items' => 'All Services',
+		'edit_item' => 'Edit Service',
+		'view_item' => 'View Service',
+		'view_items' => 'View Service',
+		'add_new_item' => 'Add New Service',
+		'add_new' => 'Add New Service',
+		'new_item' => 'New Service',
+		'parent_item_colon' => 'Parent Service:',
+		'search_items' => 'Search Services',
+		'not_found' => 'No services found',
+		'not_found_in_trash' => 'No services found in Trash',
+		'archives' => 'Services Archives',
+		'attributes' => 'Services Attributes',
+		'insert_into_item' => 'Insert into service',
+		'uploaded_to_this_item' => 'Uploaded to this service',
+		'filter_items_list' => 'Filter services list',
+		'filter_by_date' => 'Filter services by date',
+		'items_list_navigation' => 'Services list navigation',
+		'items_list' => 'Services list',
+		'item_published' => 'Service published.',
+		'item_published_privately' => 'Service published privately.',
+		'item_reverted_to_draft' => 'Service reverted to draft.',
+		'item_scheduled' => 'Service scheduled.',
+		'item_updated' => 'Service updated.',
+		'item_link' => 'Service Link',
+		'item_link_description' => 'A link to a service.',
+	),
+	'public' => true,
+	'hierarchical' => true,
+	'show_in_rest' => true,
+	'menu_icon' => 'dashicons-admin-post',
+	'supports' => array(
+		0 => 'title',
+		1 => 'custom-fields',
+	),
+	'taxonomies' => array(
+		0 => 'service-category',
+	),
+	'delete_with_user' => false,
+) );
+} );
+
+// INITIALIZE MEMBERS CUSTOM POST TYPE
+add_action( 'init', function() {
+	register_post_type( 'members', array(
+	'labels' => array(
+		'name' => 'Members',
+		'singular_name' => 'Member',
+		'menu_name' => 'Members',
+		'all_items' => 'All Members',
+		'edit_item' => 'Edit Member',
+		'view_item' => 'View Member',
+		'view_items' => 'View Members',
+		'add_new_item' => 'Add New Member',
+		'add_new' => 'Add New Member',
+		'new_item' => 'New Member',
+		'parent_item_colon' => 'Parent Member:',
+		'search_items' => 'Search Members',
+		'not_found' => 'No members found',
+		'not_found_in_trash' => 'No members found in Trash',
+		'archives' => 'Member Archives',
+		'attributes' => 'Member Attributes',
+		'insert_into_item' => 'Insert into member',
+		'uploaded_to_this_item' => 'Uploaded to this member',
+		'filter_items_list' => 'Filter members list',
+		'filter_by_date' => 'Filter members by date',
+		'items_list_navigation' => 'Members list navigation',
+		'items_list' => 'Members list',
+		'item_published' => 'Member published.',
+		'item_published_privately' => 'Member published privately.',
+		'item_reverted_to_draft' => 'Member reverted to draft.',
+		'item_scheduled' => 'Member scheduled.',
+		'item_updated' => 'Member updated.',
+		'item_link' => 'Member Link',
+		'item_link_description' => 'A link to a member.',
+	),
+	'public' => true,
+	'show_in_rest' => true,
+	'menu_icon' => 'dashicons-admin-post',
+	'supports' => array(
+		0 => 'title',
+		1 => 'custom-fields',
+	),
+	'delete_with_user' => false,
+) );
+} );
+
 // INITIALIZE ACF FIELDS
 if (function_exists('acf_add_local_field_group')):
 
@@ -482,8 +610,8 @@ if (function_exists('acf_add_local_field_group')):
 
 	// CUSTOM FIELDS FOR ADDING NEW MEMBERS
 	acf_add_local_field_group( array(
-		'key' => 'members',
-		'title' => 'Members',
+		'key' => 'member',
+		'title' => 'Member',
 		'fields' => array(
 			array(
 				'key' => 'name',
@@ -525,7 +653,7 @@ if (function_exists('acf_add_local_field_group')):
 				array(
 					'param' => 'post_type',
 					'operator' => '==',
-					'value' => 'member',
+					'value' => 'members',
 				),
 			),
 		),
@@ -542,135 +670,6 @@ if (function_exists('acf_add_local_field_group')):
 
 endif;
 
-// INITIALIZE SERVICE CATEGORY TAXONOMY
-add_action( 'init', function() {
-	register_taxonomy( 'service-category', array(
-	0 => '',
-), array(
-	'labels' => array(
-		'name' => 'Categories',
-		'singular_name' => 'Category',
-		'menu_name' => 'Service Categories',
-		'all_items' => 'All Service Categories',
-		'edit_item' => 'Edit Service Category',
-		'view_item' => 'View Service Category',
-		'update_item' => 'Update Service Category',
-		'add_new_item' => 'Add New Service Category',
-		'new_item_name' => 'New Service Category Name',
-		'parent_item' => 'Parent Service Category',
-		'parent_item_colon' => 'Parent Service Category:',
-		'search_items' => 'Search Service Categories',
-		'not_found' => 'No service categories found',
-		'no_terms' => 'No service categories',
-		'filter_by_item' => 'Filter by service category',
-		'items_list_navigation' => 'Service Categories list navigation',
-		'items_list' => 'Service Categories list',
-		'back_to_items' => '← Go to service categories',
-		'item_link' => 'Service Category Link',
-		'item_link_description' => 'A link to a service category',
-	),
-	'public' => true,
-	'hierarchical' => true,
-	'show_in_menu' => true,
-	'show_in_rest' => true,
-) );
-} );
-
-// INITIALIZE SERVICES CUSTOM POST TYPE
-add_action( 'init', function() {
-	register_post_type( 'services', array(
-	'labels' => array(
-		'name' => 'Services',
-		'singular_name' => 'Service',
-		'menu_name' => 'Services',
-		'all_items' => 'All Services',
-		'edit_item' => 'Edit Service',
-		'view_item' => 'View Service',
-		'view_items' => 'View Service',
-		'add_new_item' => 'Add New Service',
-		'add_new' => 'Add New Service',
-		'new_item' => 'New Service',
-		'parent_item_colon' => 'Parent Service:',
-		'search_items' => 'Search Services',
-		'not_found' => 'No services found',
-		'not_found_in_trash' => 'No services found in Trash',
-		'archives' => 'Services Archives',
-		'attributes' => 'Services Attributes',
-		'insert_into_item' => 'Insert into service',
-		'uploaded_to_this_item' => 'Uploaded to this service',
-		'filter_items_list' => 'Filter services list',
-		'filter_by_date' => 'Filter services by date',
-		'items_list_navigation' => 'Services list navigation',
-		'items_list' => 'Services list',
-		'item_published' => 'Service published.',
-		'item_published_privately' => 'Service published privately.',
-		'item_reverted_to_draft' => 'Service reverted to draft.',
-		'item_scheduled' => 'Service scheduled.',
-		'item_updated' => 'Service updated.',
-		'item_link' => 'Service Link',
-		'item_link_description' => 'A link to a service.',
-	),
-	'public' => true,
-	'hierarchical' => true,
-	'show_in_rest' => true,
-	'menu_icon' => 'dashicons-admin-post',
-	'supports' => array(
-		0 => 'title',
-		1 => 'custom-fields',
-	),
-	'taxonomies' => array(
-		0 => 'service-category',
-	),
-	'delete_with_user' => false,
-) );
-} );
-
-// INITIALIZE MEMBERS CUSTOM POST TYPE
-add_action( 'init', function() {
-	register_post_type( 'member', array(
-	'labels' => array(
-		'name' => 'Members',
-		'singular_name' => 'Member',
-		'menu_name' => 'Members',
-		'all_items' => 'All Members',
-		'edit_item' => 'Edit Member',
-		'view_item' => 'View Member',
-		'view_items' => 'View Members',
-		'add_new_item' => 'Add New Member',
-		'add_new' => 'Add New Member',
-		'new_item' => 'New Member',
-		'parent_item_colon' => 'Parent Member:',
-		'search_items' => 'Search Members',
-		'not_found' => 'No members found',
-		'not_found_in_trash' => 'No members found in Trash',
-		'archives' => 'Member Archives',
-		'attributes' => 'Member Attributes',
-		'insert_into_item' => 'Insert into member',
-		'uploaded_to_this_item' => 'Uploaded to this member',
-		'filter_items_list' => 'Filter members list',
-		'filter_by_date' => 'Filter members by date',
-		'items_list_navigation' => 'Members list navigation',
-		'items_list' => 'Members list',
-		'item_published' => 'Member published.',
-		'item_published_privately' => 'Member published privately.',
-		'item_reverted_to_draft' => 'Member reverted to draft.',
-		'item_scheduled' => 'Member scheduled.',
-		'item_updated' => 'Member updated.',
-		'item_link' => 'Member Link',
-		'item_link_description' => 'A link to a member.',
-	),
-	'public' => true,
-	'show_in_rest' => true,
-	'menu_icon' => 'dashicons-admin-post',
-	'supports' => array(
-		0 => 'title',
-		1 => 'editor',
-		2 => 'thumbnail',
-		3 => 'custom-fields',
-	),
-	'delete_with_user' => false,
-) );
-} );
 
 
 
@@ -705,6 +704,14 @@ add_filter('use_block_editor_for_post_type', 'disable_gutenberg_for_services', 1
 function disable_gutenberg_for_services($current_status, $post_type)
 {
     if ($post_type === 'services') return false;
+    return $current_status;
+}
+
+// DISABLES BLOCK EDITOR WHEN ADDING A NEW MEMBER
+add_filter('use_block_editor_for_post_type', 'disable_gutenberg_for_members', 10, 2);
+function disable_gutenberg_for_members($current_status, $post_type)
+{
+    if ($post_type === 'members') return false;
     return $current_status;
 }
 

@@ -569,7 +569,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	/* border: 1px solid; */
+	border: 1px solid;
 	border-radius: 10px;
 	background: var(--red);
 	color: var(--light-beige);
@@ -989,16 +989,14 @@ textarea {
 	padding: 1.5rem;
 }
 
-.button,
-.wpforms-submit.form-submit {
-	/* this is a styling for links (anchor) to look like buttons and for wpform submit */
-	background: var(--red)!important;
+.button {
+	/* this is a styling for links (anchor) to look like buttons */
+	background: var(--red);
 }
 
-.button:hover,
-.wpforms-submit.form-submit:hover {
-	/* this is a styling for links (anchor) to look like buttons and for wpform submit */
-	background-color: var(--dark-red)!important;
+.button:hover {
+	/* this is a styling for links (anchor) to look like buttons */
+	background-color: var(--dark-red);
 }
 
 .error-404 span {
@@ -1007,6 +1005,42 @@ textarea {
 }
 
 /* Zouzou Hair Custom - Header */
+
+nav button {
+	background-color: unset;
+	border: unset;
+	padding: 0.5rem;
+}
+
+nav > div {
+	display: none;
+}
+
+.show {
+	display: block;
+	position: absolute;
+	left: 0;
+	background-color: var(--light-beige);
+	width: 100%;
+	top: 100%;
+	padding: 0 1.5rem;
+}
+
+.show a {
+	font-weight: 700;
+	color: var(--black);
+	padding: 1rem 2rem;
+	border-bottom: 3px solid var(--beige);
+}
+
+.show a:hover {
+	background-color: var(--beige);
+}
+
+nav button svg {
+	width: 50px;
+	stroke: var(--light-beige);
+}
 
 .site-title {
 	margin-bottom: 0;
@@ -1017,8 +1051,8 @@ textarea {
 }
 
 .sup-header {
-	background-color: var(--dark);
-	color: var(--light-beige);
+	background-color: var(--beige);
+	color: var(--black);
 	padding: 0.75rem;
 	display: none;
 }
@@ -1033,14 +1067,9 @@ textarea {
 	margin-bottom: 0;
 }
 
-.main-header a {
-	color: var(--light-beige);
-	padding: 0.25rem 0.75rem;
-	border-radius: 5px;
-}
-
-.main-header a:hover {
-	background-color: var(--dark-red);
+.main-header {
+	background-color: var(--dark);
+	position: relative;
 }
 
 .main-header .custom-logo-link:hover {
@@ -1053,13 +1082,8 @@ textarea {
 	align-items: center;
 }
 
-.main-header .main-navigation ul {
-	display: flex;
-	gap: 1rem;
-}
-
 .default-banner {
-	background-color: var(--dark-red);
+	background-color: var(--dark);
 	color: var(--light-beige);
 }
 
@@ -1073,7 +1097,7 @@ textarea {
 
 .contact-banner {
 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/contact-banner.webp');
-	background-position: center -9rem;
+	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	color: var(--white);
@@ -1083,10 +1107,29 @@ textarea {
 	padding: 8rem 0;
 }
 
+.button-end {
+	display: flex;
+	justify-content: flex-end;
+}
+
 /* Zouzou Hair Custom - Services Page */
 
-.services-list > div {
-	display: flex;
+.service-category-page .services-list {
+	max-width: 650px;
+	margin-top: 3rem;
+}
+
+.service-category-page span {
+	font-weight: 700;
+}
+
+.services-page p span {
+	color: #9B1F1F;
+	font-weight: 700;
+}
+
+.service-bar p {
+	margin-bottom: 0;
 }
 
 .service-bar {
@@ -1104,7 +1147,32 @@ textarea {
 	padding: 1rem;
 }
 
+.gallery {
+	margin: 1.5rem 0;
+	display: flex;
+	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.gallery > img {
+	aspect-ratio: 1/1;
+	object-fit: cover;
+}
+
+.services-page .gallery > img:nth-child(n+5) {
+	display: none;
+}
+
+
 /* Zouzou Hair Custom - Contact Page */
+
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 textarea {
+	width: 100%;
+}
+
 .contact-red {
 	background-color: var(--red);
 	color: var(--light-beige);
@@ -1162,6 +1230,30 @@ footer .main-navigation ul a {
 /* MEDIA QUERIES */
 
 @media screen and (min-width: 750px) {
+
+	.toggle-btn {
+		display: none;
+	}
+
+	nav > div {
+		display: block;
+	}
+
+	.main-header a {
+	color: var(--light-beige);
+	padding: 0.25rem 0.75rem;
+	border-radius: 5px;
+	}
+
+	.main-header a:hover {
+	background-color: var(--dark-red);
+	}
+
+	.main-header .main-navigation ul {
+	display: flex;
+	gap: 1rem;
+}
+
 	.contact-flex {
 		display: flex;
 	}
@@ -1170,10 +1262,44 @@ footer .main-navigation ul a {
 	}
 }
 
+@media screen and (min-width: 840px) {
+	.services-page .services > div {
+		display: flex;
+		gap: 1.5rem;
+	}
+
+	.services-page .services:nth-of-type(odd) > div {
+		flex-direction: row-reverse;
+	}
+	
+	.services-page .services > div > div {
+		width: 60%;
+	}
+
+	.service-category-page .gallery {
+		grid-template-columns: repeat(auto-fill, 24rem);
+	}
+}
+
 @media screen and (min-width: 1000px) {
+	main .padding {
+		padding: 5rem 1.5rem;
+	}
 	.sup-header {
 		display: block;
 	}
+
+	.services-page .intro-text {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.wpcf7 input[type="text"],
+	.wpcf7 input[type="email"],
+	.wpcf7 textarea {
+		width: 75%;
+	}
+
 	.contact-flex {
 		display: flex;
 	}
