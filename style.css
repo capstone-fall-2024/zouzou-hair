@@ -999,6 +999,22 @@ textarea {
 	background-color: var(--dark-red);
 }
 
+.red-bar {
+	width: 5px;
+	background-color: var(--red);
+}
+
+.intro-text > div:first-of-type {
+	display: flex;
+	gap: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.intro-text p span {
+	color: #9B1F1F;
+	font-weight: 700;
+}
+
 .error-404 span {
 	font-size: 10rem;
 	font-family: 'Cinzel';
@@ -1048,7 +1064,8 @@ nav button svg {
 }
 
 .site-logo {
-	width: 250px;
+	min-width: 250px;
+	max-width: 250px;
 }
 
 .sup-header {
@@ -1081,6 +1098,7 @@ nav button svg {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	padding: 1rem;
 }
 
 .default-banner {
@@ -1096,20 +1114,35 @@ nav button svg {
 	color: var(--white);
 }
 
-.services-banner {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('./assets/images/services-banner.webp');
+.shop-banner {
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/shop-banner.webp');
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	color: var(--white);
+	background-attachment: fixed;
+}
+
+.services-banner {
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('./assets/images/services-banner.webp');
+	background-position: center -15rem;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: var(--white);
+	background-attachment: fixed;
 }
 
 .contact-banner {
 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/contact-banner.webp');
-	background-position: center center;
+	background-position: center -10rem;
 	background-repeat: no-repeat;
 	background-size: cover;
 	color: var(--white);
+	background-attachment: fixed;
+}
+
+.image-padding {
+	padding: 1.5rem;
 }
 
 .banner-content {
@@ -1256,11 +1289,6 @@ h2 {
 }
 
 .service-category-page span {
-	font-weight: 700;
-}
-
-.services-page p span {
-	color: #9B1F1F;
 	font-weight: 700;
 }
 
@@ -1437,6 +1465,10 @@ footer .main-navigation ul a {
 	.main-header .main-navigation ul {
 		display: flex;
 		gap: 1rem;
+	}
+
+	.image-padding {
+		padding: 5rem 1.5rem;
 	}
 
 	.contact-flex {

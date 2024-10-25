@@ -614,14 +614,6 @@ if (function_exists('acf_add_local_field_group')):
 		'title' => 'Member',
 		'fields' => array(
 			array(
-				'key' => 'name',
-				'label' => 'Name',
-				'name' => 'name',
-				'type' => 'text',
-				'instructions' => 'Enter the name of the member here.',
-				'required' => 1,
-			),
-			array(
 				'key' => 'position',
 				'label' => 'Position',
 				'name' => 'position',
@@ -669,9 +661,6 @@ if (function_exists('acf_add_local_field_group')):
 	) );
 
 endif;
-
-
-
 
 function get_store_info()
 {
@@ -738,3 +727,23 @@ function disable_slug_description_css() {
     <?php
 
 }
+
+// ADDS SUPPORT FOR CUSTOM WOOCOMMERCE TEMPLATES
+function zouzou_hair_theme_add_woocommerce_support() {
+	add_theme_support('woocommerce');
+}
+
+add_action( 'after_setup_theme', 'zouzou_hair_theme_add_woocommerce_support' );
+
+// FUNCTION THAT SETS SEARCH TO ONLY SEARCH FOR PRODUCTS
+function search_only_products($query) {
+	
+	if ($query->is_search) {
+		$query->set('post_type' ,'product');
+		$query->set('wc_query', 'product_query');
+	}
+
+	return $query;
+
+}
+add_action( 'pre_get_posts', 'search_only_products' );

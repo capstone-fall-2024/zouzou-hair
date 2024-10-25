@@ -24,7 +24,7 @@ if (is_front_page()) {
 	$banner = 'about-banner';
 } elseif (is_page('services')) {
 	$banner = 'services-banner';
-} elseif (is_page('shop')) {
+} elseif (is_shop()) {
 	$banner = 'shop-banner';
 } else {
 	$banner = 'default-banner';
@@ -58,7 +58,7 @@ if (is_front_page()) {
 					</div>
 				</div>
 				<div class="main-header">
-					<div class="container padding main-header-flex">
+					<div class="container main-header-flex">
 						<div class="site-branding">
 							<?php
 							echo "<div class=\"site-logo\">";
@@ -85,14 +85,14 @@ if (is_front_page()) {
 									<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
 								</svg>
 							</button>
-								<?php
-								wp_nav_menu(
-									array(
-										'theme_location' => 'menu-1',
-										'menu_id'        => 'primary-menu',
-									)
-								);
-								?>
+							<?php
+							wp_nav_menu(
+								array(
+									'theme_location' => 'menu-1',
+									'menu_id'        => 'primary-menu',
+								)
+							);
+							?>
 						</nav><!-- #site-navigation -->
 					</div>
 				</div>
@@ -100,7 +100,7 @@ if (is_front_page()) {
 			<?php if ($banner === 'front-banner') : ?>
 				<div class="banner-content">
 					<div class="container padding">
-					<div>
+						<div>
 							<p>Let us craft your </p>
 							<h2>Signature Look.</h2>
 							<p>Edmonton's Finest Salon & Barbershop</p>
@@ -108,20 +108,29 @@ if (is_front_page()) {
 							<a href="https://www.fresha.com/a/zouzou-hair-edmonton-8718-109-street-northwest-ln6gfkqc/booking?menu=true" class="button">Book an Appointment</a>
 						</div>
 						<div class="zouzou-intro">
-							<p>At Zouzou Hair, 
-							We believe that great hair is the foundation of a more confident you.
+							<p>At Zouzou Hair,
+								We believe that great hair is the foundation of a more confident you.
 							</p>
 							<p>Our skilled stylists offer everything from fresh cuts to bold colors, all in a friendly and relaxed setting. Let us create a look that’s perfect for you!</p>
 						</div>
 					</div>
 				</div>
-			<?php else : ?>
-				<div class="container padding">
-					<?php if (is_tax() || is_category() || is_tag()) : ?>
+			<?php elseif ($banner === 'shop-banner') : ?>
+				<section class="container image-padding">
+					<h1>Shop</h1>
+					<a href="<?php echo esc_url(home_url('/shop')); ?>" class="button">Featured Items</a>
+					<a href="<?php echo esc_url(home_url('/shop')); ?>" class="button">Shop by Brand</a>
+				</section>
+				<?php else : ?>
+				<?php if (is_tax() || is_category() || is_tag()) : ?>
+					<section class="container padding">
 						<h1><?php single_term_title(); ?></h1>
-					<?php else : ?>
+					</section>
+				<?php else : ?>
+					<section class="container image-padding">
 						<h1><?php the_title(); ?></h1>
-					<?php endif; ?>
-				</div>
+					</section>
+				<?php endif; ?>
+
 			<?php endif; ?>
 		</div>
