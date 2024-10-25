@@ -16,7 +16,10 @@ get_header();
     <section>
         <div class="container padding">
             <div class="intro-text">
-                <p>Have a question before you book an appointment or about ordering a product online?<br>We'd be happy to help! Fill out the form below.</p>
+                <div>
+                    <div class="red-bar"></div>
+                    <p>Have a question before you book an appointment or about ordering a product online?<br>We'd be happy to help! Fill out the form below.</p>
+                </div>
             </div>
             <h2>Send us a message</h2>
             <?php
