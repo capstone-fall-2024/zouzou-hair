@@ -1006,11 +1006,6 @@ textarea {
 
 /* Zouzou Hair Custom - Header */
 
-.hide-title {
-	/* hides the site title in the header in the front page */
-	display: none;
-}
-
 nav button {
 	background-color: unset;
 	border: unset;
@@ -1048,6 +1043,7 @@ nav button svg {
 }
 
 .site-title {
+	display: none;
 	margin-bottom: 0;
 }
 
