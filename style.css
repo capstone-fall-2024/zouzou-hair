@@ -569,7 +569,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
+	/* border: 1px solid var(--red); */
 	border-radius: 10px;
 	background: var(--red);
 	color: var(--light-beige);
@@ -664,7 +664,7 @@ textarea {
 } */
 
 .main-navigation ul {
-	display: none;
+	/* display: none; */
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
@@ -709,7 +709,7 @@ textarea {
 }
 
 /* Small menu. */
-.menu-toggle,
+/* .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
 }
@@ -723,7 +723,7 @@ textarea {
 	.main-navigation ul {
 		display: flex;
 	}
-}
+} */
 
 .site-main .comment-navigation,
 .site-main .posts-navigation,
@@ -1006,13 +1006,18 @@ textarea {
 
 /* Zouzou Hair Custom - Header */
 
+.hide-title {
+	/* hides the site title in the header in the front page */
+	display: none;
+}
+
 nav button {
 	background-color: unset;
 	border: unset;
 	padding: 0.5rem;
 }
 
-nav > div {
+header nav>div {
 	display: none;
 }
 
@@ -1076,7 +1081,7 @@ nav button svg {
 	background-color: unset;
 }
 
-.main-header {
+.main-header-flex {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -1120,26 +1125,24 @@ nav button svg {
 	justify-content: flex-end;
 }
 
-.zouzou-intro{
-	
-}
+.zouzou-intro {}
 
 /* Services Section */
 
-h2{
+h2 {
 	padding: 0;
 	margin-bottom: 0;
 }
 
-.home-services-flex{
- display: flex;
- flex-wrap: wrap;
- gap: 1rem;
- padding-bottom: 2rem;
- justify-content: space-between;
+.home-services-flex {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	padding-bottom: 2rem;
+	justify-content: space-between;
 }
 
-.home-services-flex a{
+.home-services-flex a {
 	width: calc(50% - 0.5rem);
 	aspect-ratio: 1 / 1;
 	text-decoration: none;
@@ -1147,7 +1150,7 @@ h2{
 	display: block;
 }
 
-.services-deal{
+.services-deal {
 	color: var(--red);
 	margin-top: 0.5rem;
 }
@@ -1159,6 +1162,7 @@ h2{
 	position: relative;
 	height: 100%;
 }
+
 .mens-cuts {
 	background: url('./assets/images/haircutwoman.webp') center center/cover no-repeat;
 	color: var(--white);
@@ -1166,6 +1170,7 @@ h2{
 	position: relative;
 	height: 100%;
 }
+
 .nonbinary-cuts {
 	background: url('./assets/images/haircutwoman.webp') center center/cover no-repeat;
 	color: var(--white);
@@ -1173,6 +1178,7 @@ h2{
 	position: relative;
 	height: 100%;
 }
+
 .coloring {
 	background: url('./assets/images/haircutwoman.webp') center center/cover no-repeat;
 	color: var(--white);
@@ -1180,6 +1186,7 @@ h2{
 	position: relative;
 	height: 100%;
 }
+
 .styling {
 	background: url('./assets/images/haircutwoman.webp') center center/cover no-repeat;
 	color: var(--white);
@@ -1187,6 +1194,7 @@ h2{
 	position: relative;
 	height: 100%;
 }
+
 .hair-botox {
 	background: url('./assets/images/haircutwoman.webp') center center/cover no-repeat;
 	color: var(--white);
@@ -1195,7 +1203,7 @@ h2{
 	height: 100%;
 }
 
-.services-titles{
+.services-titles {
 	background-color: var(--light-beige);
 	color: var(--red);
 	border-top: var(--red) 3px solid;
@@ -1203,15 +1211,15 @@ h2{
 	position: absolute;
 	bottom: 0;
 	left: 0;
-  	right: 0;
-  	margin: 0;
-  	text-align: center;
-  	padding: 3px;
+	right: 0;
+	margin: 0;
+	text-align: center;
+	padding: 3px;
 }
 
 .home-services-flex a:hover .services-titles {
-    color: var(--light-beige);
-    background-color: var(--red);
+	color: var(--light-beige);
+	background-color: var(--red);
 }
 
 
@@ -1229,18 +1237,18 @@ h2{
 	justify-content: center;
 }
 
-.home-intro-background{
+.home-intro-background {
 	background-color: var(--dark);
 	padding: 2rem;
 	margin: 0 1.5rem;
 }
 
 /* reviews on home */
-.reviews{
+.reviews {
 	background-color: var(--red);
 }
 
-.reviews-title{
+.reviews-title {
 	color: var(--light-beige);
 }
 
@@ -1270,7 +1278,7 @@ h2{
 	justify-content: space-between;
 }
 
-.service-bar > div > p:nth-of-type(1) {
+.service-bar>div>p:nth-of-type(1) {
 	font-weight: 700;
 }
 
@@ -1287,12 +1295,12 @@ h2{
 	grid-template-columns: 1fr 1fr;
 }
 
-.gallery > img {
+.gallery>img {
 	aspect-ratio: 1/1;
 	object-fit: cover;
 }
 
-.services-page .gallery > img:nth-child(n+5) {
+.services-page .gallery>img:nth-child(n+5) {
 	display: none;
 }
 
@@ -1303,6 +1311,14 @@ h2{
 .wpcf7 input[type="email"],
 .wpcf7 textarea {
 	width: 100%;
+}
+
+.wpcf7-submit {
+	border: 1px solid var(--red);
+}
+
+.wpcf7-submit:hover {
+	border: 1px solid var(--dark-red);
 }
 
 .contact-red {
@@ -1322,19 +1338,17 @@ footer {
 	padding: 5rem 1.5rem;
 }
 
-.footer-flex {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-}
-
-.connect-with-us h3 {
-	margin-top: 0;
+footer h3 {
+	font-family: 'Afacad';
+	margin-bottom: 1rem;
+	margin-top: 1.5rem;
 }
 
 footer .main-navigation ul {
+	display: flex;
 	flex-direction: column;
-	gap: 1rem;
+	margin-top: 1rem;
+	gap: 1.5rem;
 }
 
 footer .main-navigation ul a {
@@ -1343,7 +1357,8 @@ footer .main-navigation ul a {
 
 .connect-with-us svg,
 .social-links svg {
-	width: 30px;
+	min-width: 30px;
+	max-width: 35px;
 }
 
 .connect-flex {
@@ -1356,39 +1371,50 @@ footer .main-navigation ul a {
 	display: flex;
 	gap: 1rem;
 	padding: 0;
-	margin: 0;
+	margin: 1rem 0 0 0;
 }
 
 /* MEDIA QUERIES */
 
 @media screen and (min-width: 600px) {
 
-	.home-services-flex{
+	.home-services-flex {
 		justify-content: unset;
 		box-sizing: border-box;
 		gap: 0.5rem;
-	   }
+	}
 
-	.home-services-flex a{
+	.home-services-flex a {
 		width: calc(33% - 0.5rem);
 		aspect-ratio: 1 / 1;
 		box-sizing: border-box;
 	}
 
-	.services-titles{
-		  padding: 5px 3px;
+	.services-titles {
+		padding: 5px 3px;
 	}
 
 	.home-intro {
-        justify-content: flex-start;
-        align-items: center;
-        padding-right: 3rem;
-    }
+		justify-content: flex-start;
+		align-items: center;
+		padding-right: 3rem;
+	}
 
 	.home-intro-background {
-        max-width: 500px;
-        text-align: left;
-    }
+		max-width: 500px;
+		text-align: left;
+	}
+
+	.footer-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 1.5rem;
+		row-gap: 1.5rem;
+	}
+
+	footer h3 {
+		margin-top: 0;
+	}
 
 }
 
@@ -1398,44 +1424,45 @@ footer .main-navigation ul a {
 		display: none;
 	}
 
-	nav > div {
+	header nav>div {
 		display: block;
 	}
 
 	.main-header a {
-	color: var(--light-beige);
-	padding: 0.25rem 0.75rem;
-	border-radius: 5px;
+		color: var(--light-beige);
+		padding: 0.25rem 0.75rem;
+		border-radius: 5px;
 	}
 
 	.main-header a:hover {
-	background-color: var(--dark-red);
+		background-color: var(--dark-red);
 	}
 
 	.main-header .main-navigation ul {
-	display: flex;
-	gap: 1rem;
-}
+		display: flex;
+		gap: 1rem;
+	}
 
 	.contact-flex {
 		display: flex;
 	}
-	.contact-flex > * {
+
+	.contact-flex>* {
 		width: 50%;
 	}
 }
 
 @media screen and (min-width: 840px) {
-	.services-page .services > div {
+	.services-page .services>div {
 		display: flex;
 		gap: 1.5rem;
 	}
 
-	.services-page .services:nth-of-type(odd) > div {
+	.services-page .services:nth-of-type(odd)>div {
 		flex-direction: row-reverse;
 	}
-	
-	.services-page .services > div > div {
+
+	.services-page .services>div>div {
 		width: 60%;
 	}
 
@@ -1448,6 +1475,7 @@ footer .main-navigation ul a {
 	main .padding {
 		padding: 5rem 1.5rem;
 	}
+
 	.sup-header {
 		display: block;
 	}
@@ -1466,14 +1494,35 @@ footer .main-navigation ul a {
 	.contact-flex {
 		display: flex;
 	}
-	.contact-flex > :nth-child(1) {
+
+	.contact-flex> :nth-child(1) {
 		width: 70%;
 	}
-	.contact-flex > :nth-child(2) {
+
+	.contact-flex> :nth-child(2) {
 		width: 30%;
 	}
 
-	.wpforms-field {
-		max-width: 50%;
+	.footer-grid {
+		grid-template-columns: none;
+		grid-template-columns: 1fr 1fr 400px;
+	}
+
+	.grid-1 {
+		grid-column: span 1;
+		grid-row: span 2;
+	}
+
+	.grid-3 {
+		grid-column: 2 / span 1;
+		grid-row: 2 / span 1
+	}
+
+	.grid-4 {
+		position: relative;
+	}
+
+	footer iframe {
+		position: absolute;
 	}
 }
