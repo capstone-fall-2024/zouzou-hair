@@ -392,6 +392,7 @@ if (function_exists('acf_add_local_field_group')):
 				'type' => 'image',
 				'instructions' => 'Enter an image for the member here.',
 				'required' => 1,
+				'return_format' => 'url',
 			),
 		),
 		'location' => array(
