@@ -1091,10 +1091,75 @@ textarea {
 	padding: 8rem 0;
 }
 
+<<<<<<< Updated upstream
 .zouzou-intro{
 	
 }
 
+=======
+.home-header p{
+	color: var(--light-beige);
+	padding: 0rem;
+	margin: 0rem;
+}
+
+.home-header a{
+	margin-top: 1rem;
+	margin-right: 0.5rem;
+	font-size: 1.4rem;
+	padding: 0.6rem;
+}
+
+.zouzou-intro-header{
+	display: none;
+}
+
+.signature-look{
+	font-family: 'Cinzel';
+	font-size: 2rem;
+	padding: 0rem;
+	margin: 0rem;
+}
+
+.zouzou-intro-home{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.zouzou-intro-home > div:nth-child(2) p{
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.zouzou-intro-home > div:first-child,
+.zouzou-intro-home > div:nth-child(2) {
+    width: 100%;
+}
+
+.zouzou-intro-home > div:nth-child(3) {
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+	margin-right: 2rem;
+}
+
+.zouzou-intro-home > div:nth-child(4){
+	width: 29%;
+}
+
+
+.red-scissors img {
+    max-width: 100%;
+}
+
+.zouzou-title{
+	font-family: 'Cinzel';
+	font-size: 2rem;
+}
+
+
+>>>>>>> Stashed changes
 /* Services Section */
 
 h2{
@@ -1171,6 +1236,7 @@ h2{
 	color: var(--red);
 	border-top: var(--red) 3px solid;
 	font-family: var(--wp--preset--font-family--afacad);
+	font-size: 1.3rem;
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -1214,6 +1280,7 @@ h2{
 .reviews-title{
 	color: var(--light-beige);
 }
+
 
 /* Zouzou Hair Custom - Services Page */
 
@@ -1315,6 +1382,7 @@ footer .main-navigation ul a {
 	.contact-flex > * {
 		width: 50%;
 	}
+<<<<<<< Updated upstream
 
 	.home-services-flex a{
 		width: calc(33% - 0.5rem);
@@ -1322,6 +1390,36 @@ footer .main-navigation ul a {
 	}
 
 }
+=======
+
+	.home-services-flex a{
+		width: calc(33% - 0.5rem);
+		aspect-ratio: 1 / 1;
+	}
+
+}
+
+@media screen and (min-width: 900px) {
+	.home-header{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	
+	.zouzou-intro-header{
+		display: unset;
+		background-color: var(--dark);
+		width: 50ch;
+		padding: 1rem;
+	}
+	
+	.zouzou-intro-home{
+		display: none;
+	}
+
+}
+
+>>>>>>> Stashed changes
 
 @media screen and (min-width: 1000px) {
 	.sup-header {
