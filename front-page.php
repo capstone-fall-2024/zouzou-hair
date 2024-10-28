@@ -15,9 +15,23 @@
 get_header();
 ?>
 
-<main id="primary" class="site-main">
+	<main id="primary" class="site-main">
 		<div class="container padding">
+		<section class="zouzou-intro-home">
 			<div>
+				<p>At <span class="zouzou-title">Zouzou Hair</span> , </p>
+			</div>
+			<div>
+				<p>We believe that great hair is the foundation of a more confident you.</p>
+			</div>
+			<div>	
+				<p>Our skilled stylists offer everything from fresh cuts to bold colors, all in a friendly and relaxed setting. Let us create a look that’s perfect for you!</p>
+			</div>
+			<div class="red-scissors">
+				<img src="https://zouzou-hair.web.dmitcapstone.ca/wordpress-sarah/wp-content/uploads/2024/10/mobile-intro-scissors.png" alt="Red Scissors">
+			</div>
+		</section>
+			<section>
 				<h2>Services</h2>
 				<p class="services-deal">All Students receive a 10% discount on all our services</p>
 				<div class="home-services-flex">
@@ -53,27 +67,27 @@ get_header();
 					</a>
 				</div>
 				<a href="https://www.fresha.com/a/zouzou-hair-edmonton-8718-109-street-northwest-ln6gfkqc/booking?menu=true" class="button">Book your Appointment!</a>
-			</div>
+			</section>
 			
 		</div>
-		<div class="home-intro">
+		<section class="home-intro">
 			<div class=" container padding home-intro-background">
 				<p>Zouzou Hair opened in 2014, bringing a remarkable Hair Salon & Barbershop experience to the historic Garneau neighborhood in Edmonton, Alberta.</p>
-				<p>With 215 reviews on Google with a 4.8 star rating, Head Stylist/Owner Joseph Hayek is proven to deliver professional results and a welcoming experience to every appointment.</p>
+				<p>With 360+ reviews on Google with a 5 star rating, Head Stylist/Owner Joseph Hayek is proven to deliver professional results and a welcoming experience to every appointment.</p>
 			</div>
-		</div>
-		<div class="container padding">
+		</section>
+		<section class="container padding">
 		<h2>Featured Product</h2>
 		<p>All orders over $50 receive free shipping!</p>
 		<!-- Featured products here -->
 		<a href="<?php echo esc_url(home_url('/shop')); ?>" class="button">Shop</a>
-		</div>
-		<div class="reviews">
+		</section>
+		<section class="reviews">
 			<div class=" container padding">
 				<h2 class="reviews-title">Reviews</h2>
-				<p>Reviews go here</p>
+				<?php echo apply_shortcodes( '[trustindex no-registration=google]' ); ?>
 			</div>
-		</div>
+		</section>
 	</main><!-- #main -->
 
 <?php
