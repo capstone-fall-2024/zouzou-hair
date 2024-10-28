@@ -10,22 +10,65 @@
 
 get_header();
 
+
+$args = array(
+    'post_type'      => 'members',
+    'posts_per_page' => -1,
+    
+    'order' => 'ASC'
+);
+$member_posts = new WP_Query($args);
+
+$image = '';
+$image = get_field('images', $image);
+
+                                if (!empty($image)) {
+                                    foreach ($image as $image) {
+                                        if (!empty($image)) {
+                                ?>
+                                            <img src="<?php echo $image['url']; ?>" alt="">
+                                <?php }
+                                    }
+                                } 
+
+
 ?>
 <main id="primary" class="site-main">
 <div class="container padding">
 
-<div class="intro-text">
-            <p>At Zouzou Hair, we offer a variety of services to make sure you get the exact look you want.<br>Browse our services and previous works down below!</p>
-        </div>
+<section class="intro-text">
 
-        <p>All Students receive a 10% discount on our services</p>
+            <p>At Zouzou Hair, we offer a variety of services to make sure you get the exact look you want.<br>Browse our services and previous works down below!</p>
+</section>
     
 
-    <div class="about-content">
+        
+    <section class="about-content">
         <ul class="team-list">
-            <li><strong><?php echo nl2br(esc_html(get_field('name'))); ?></strong> - <?php echo nl2br(esc_html(get_field('position'))); ?></li>
+            <li><?php
+            if ($member_posts->have_posts()) : ?>
+
+            <div class="members-list">
+                <?php while ($member_posts->have_posts()) :
+                    $member_posts->the_post(); ?>
+                    <div class="members-bar">
+                        <div>
+                            <p><?php the_title(); ?></p>
+                            <p><?php echo esc_html(get_field('position')); ?></p>
+                        </div>
+                        <p><?php echo esc_html(get_field('introduction')); ?></p>
+                        <img src="<?php echo $image['url']; ?>" alt="This is an image of a member of our stylist team">
+
+                        
+                    </div>
+                <?php endwhile; ?>
+            </div>
+
+                <?php endif; ?>
+
+                </li>
         </ul>
-    </div>
+    </section>
 </div>
 </main><!-- #main -->
 
