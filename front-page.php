@@ -72,8 +72,8 @@ get_header();
 		</div>
 		<section class="home-intro">
 			<div class=" container padding home-intro-background">
-				<p>Zouzou Hair opened in 2014, bringing a remarkable Hair Salon & Barbershop experience to the historic Garneau neighborhood in Edmonton, Alberta.</p>
-				<p>With 360+ reviews on Google with a 5 star rating, Head Stylist/Owner Joseph Hayek is proven to deliver professional results and a welcoming experience to every appointment.</p>
+				<p><?php echo esc_html(get_field('field_6723fae5c0936')); ?></p>
+				<p><?php echo esc_html(get_field('field_6723fede146a4')); ?></p>
 			</div>
 		</section>
 		<section class="container padding">

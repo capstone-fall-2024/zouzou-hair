@@ -80,7 +80,7 @@ get_header();
                                     foreach ($images as $image) {
                                         if (!empty($image)) {
                                 ?>
-                                            <img src="<?php echo $image['url']; ?>" alt="Previous works for <?php echo $service->name; ?>">
+                                            <img src="<?php echo $image['url']; ?>" alt="">
                                 <?php }
                                     }
                                 } ?>

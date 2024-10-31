@@ -59,7 +59,7 @@ $images = get_field('images', $service_category);
             if (!empty($images)) {
                 foreach ($images as $image) {
                     if (!empty($image)) { ?>
-                        <img src="<?php echo $image['url']; ?>" alt="Previous works for <?php echo single_term_title(); ?>">
+                        <img src="<?php echo $image['url']; ?>" alt="">
             <?php }
                 }
             }
