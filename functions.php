@@ -367,6 +367,81 @@ if (function_exists('acf_add_local_field_group')):
 		),
 	));
 
+	//CUSTOM FIELD FOR HOME PAGE INFORMATION SECTION
+	add_action( 'acf/include_fields', function() {
+		if ( ! function_exists( 'acf_add_local_field_group' ) ) {
+			return;
+		}
+	
+		acf_add_local_field_group( array(
+		'key' => 'group_6723fae4753ec',
+		'title' => 'Home Page Information Section',
+		'fields' => array(
+			array(
+				'key' => 'field_6723fae5c0936',
+				'label' => 'Paragraph 1',
+				'name' => 'paragraph_1',
+				'aria-label' => '',
+				'type' => 'text',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => 'Update the info section about Zouzou Hair on the home page',
+				'maxlength' => '',
+				'allow_in_bindings' => 0,
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+			),
+			array(
+				'key' => 'field_6723fede146a4',
+				'label' => 'Paragraph 2 (Optional)',
+				'name' => 'paragraph_2_optional',
+				'aria-label' => '',
+				'type' => 'text',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => 'This is another space for you to add more information.',
+				'maxlength' => '',
+				'allow_in_bindings' => 0,
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'page_type',
+					'operator' => '==',
+					'value' => 'front_page',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+		'show_in_rest' => 0,
+	) );
+	} );
+	
+
 	// CUSTOM FIELDS FOR IMAGES FOR SERVICE CATEGORIES
 	acf_add_local_field_group( array(
 		'key' => 'service-gallery',
