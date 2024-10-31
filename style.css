@@ -569,8 +569,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	/* border: 1px solid; */
-	border-radius: 10px;
+	border-radius: 3px;
 	background: var(--red);
 	color: var(--light-beige);
 	line-height: 1;
@@ -584,8 +583,10 @@ button:hover,
 .button,
 input[type="button"]:hover,
 input[type="reset"]:hover,
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+.add_to_cart_button:hover {
 	background-color: var(--dark-red);
+	color: var(--light-beige)!important;
 }
 
 button:active,
@@ -595,8 +596,11 @@ input[type="button"]:focus,
 input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
-input[type="submit"]:focus {
+input[type="submit"]:focus,
+.add_to_cart_button:active,
+.add_to_cart_button:focus {
 	background-color: var(--dark-red);
+	color: var(--light-beige)!important;
 }
 
 input[type="text"],
@@ -989,16 +993,30 @@ textarea {
 	padding: 1.5rem;
 }
 
-.button,
-.wpforms-submit.form-submit {
-	/* this is a styling for links (anchor) to look like buttons and for wpform submit */
-	background: var(--red)!important;
+.button {
+	/* this is a styling for links (anchor) to look like buttons */
+	background: var(--red) !important;
 }
 
-.button:hover,
-.wpforms-submit.form-submit:hover {
-	/* this is a styling for links (anchor) to look like buttons and for wpform submit */
-	background-color: var(--dark-red)!important;
+.button:hover {
+	/* this is a styling for links (anchor) to look like buttons */
+	background-color: var(--dark-red) !important;
+}
+
+.red-bar {
+	width: 5px;
+	background-color: var(--red);
+}
+
+.intro-text > div:first-of-type {
+	display: flex;
+	gap: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.intro-text p span {
+	color: #9B1F1F;
+	font-weight: 700;
 }
 
 .error-404 span {
@@ -1013,7 +1031,7 @@ textarea {
 }
 
 .site-logo {
-	width: 250px;
+	max-width: 200px;
 }
 
 .sup-header {
@@ -1059,7 +1077,7 @@ textarea {
 }
 
 .default-banner {
-	background-color: var(--dark-red);
+	background-color: var(--dark);
 	color: var(--light-beige);
 }
 
@@ -1071,20 +1089,40 @@ textarea {
 	color: var(--white);
 }
 
-.services-banner {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('./assets/images/services-banner.webp');
+.about-banner {
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/about-banner.jpg');
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	color: var(--white);
+	background-attachment: fixed;
+}
+
+.shop-banner {
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/shop-banner.webp');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: var(--white);
+	background-attachment: fixed;
+}
+
+.services-banner {
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('./assets/images/services-banner.webp');
+	background-position: center -15rem;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: var(--white);
+	background-attachment: fixed;
 }
 
 .contact-banner {
 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/contact-banner.webp');
-	background-position: center center;
+	background-position: center -10rem;
 	background-repeat: no-repeat;
 	background-size: cover;
 	color: var(--white);
+	background-attachment: fixed;
 }
 
 .banner-content {
@@ -1274,14 +1312,70 @@ h2{
 	color: var(--light-beige);
 }
 
-
 /* Zouzou Hair Custom - Services Page */
 
-.services-list > div {
+.service-category-page .services-list {
+	max-width: 650px;
+	margin-top: 3rem;
+}
+
+.service-category-page span {
+	font-weight: 700;
+}
+
+.service-bar p {
+	margin-bottom: 0;
+}
+
+.service-bar {
+	padding: 1rem;
 	display: flex;
+	justify-content: space-between;
+}
+
+.service-bar>div>p:nth-of-type(1) {
+	font-weight: 700;
+}
+
+.service-bar:nth-child(even) {
+	background-color: var(--beige);
+	padding: 1rem;
+}
+
+.gallery {
+	margin: 1.5rem 0;
+	display: flex;
+	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.gallery>img {
+	aspect-ratio: 1/1;
+	object-fit: cover;
+}
+
+.services-page .gallery>img:nth-child(n+5) {
+	display: none;
 }
 
 /* Zouzou Hair Custom - Contact Page */
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 textarea {
+	width: 100%;
+}
+
+.wpcf7-submit,
+.search-submit {
+	border: 1px solid var(--red);
+}
+
+.wpcf7-submit:hover,
+.search-submit:hover {
+	border: 1px solid var(--dark-red);
+}
+
 .contact-red {
 	background-color: var(--red);
 	color: var(--light-beige);
@@ -1290,6 +1384,25 @@ h2{
 .contact-red h3 {
 	font-family: 'Afacad';
 	margin-bottom: 0.5rem;
+}
+
+/* Zouzou Hair Custom - Shop */
+.search-submit {
+	padding: 0.5rem 1rem!important;
+}
+
+.woocommerce-loop-product__title {
+	font-family: 'Afacad';
+}
+
+.woocommerce-Price-amount.amount {
+	color: var(--black);
+	font-size: 18px;
+}
+
+.add_to_cart_button {
+	background-color: var(--beige)!important;
+	color: var(--black)!important;
 }
 
 /* Zouzou Hair Custom - Footer */
@@ -1316,6 +1429,12 @@ footer .main-navigation ul {
 
 footer .main-navigation ul a {
 	color: var(--light-beige);
+}
+
+.footer-flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
 }
 
 .connect-with-us svg,
@@ -1366,59 +1485,162 @@ footer .main-navigation ul a {
         text-align: left;
     }
 
+	.product-search {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 1.5rem;
+		align-items: flex-end;
+	}
+
+	.footer-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 1.5rem;
+		row-gap: 1.5rem;
+	}
+
+	footer h3 {
+		margin-top: 0;
+	}
+
 }
 
 @media screen and (min-width: 750px) {
+	.toggle-btn {
+		display: none;
+	}
+
+	header nav>div {
+		display: block;
+	}
+
+	.main-header a {
+		color: var(--light-beige);
+		padding: 0.25rem 0.75rem;
+		border-radius: 3px;
+	}
+
+	.main-header a:hover {
+		background-color: var(--dark-red);
+	}
+
+	.main-header .main-navigation ul {
+		display: flex;
+		gap: 1rem;
+	}
+
+	.image-padding {
+		padding: 5rem 1.5rem;
+	}
+
 	.contact-flex {
 		display: flex;
 	}
-	.contact-flex > * {
+
+	.contact-flex>* {
 		width: 50%;
 	}
 
-	.home-services-flex a{
+	.home-services-flex a {
 		width: calc(33% - 0.5rem);
 		aspect-ratio: 1 / 1;
 	}
 
 }
 
+@media screen and (min-width: 840px) {
+	.services-page .services>div {
+		display: flex;
+		gap: 1.5rem;
+	}
+
+	.services-page .services:nth-of-type(odd)>div {
+		flex-direction: row-reverse;
+	}
+
+	.services-page .services>div>div {
+		width: 60%;
+	}
+
+	.service-category-page .gallery {
+		grid-template-columns: repeat(auto-fill, 24rem);
+	}
+}
+
 @media screen and (min-width: 900px) {
-	.home-header{
+	.home-header {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
 	}
-	
-	.zouzou-intro-header{
+
+	.zouzou-intro-header {
 		display: unset;
 		background-color: var(--dark);
 		width: 50ch;
 		padding: 1rem;
 	}
-	
-	.zouzou-intro-home{
+
+	.zouzou-intro-home {
 		display: none;
 	}
-
 }
 
 
 @media screen and (min-width: 1000px) {
+
+	main .padding {
+		padding: 5rem 1.5rem;
+	}
+
 	.sup-header {
 		display: block;
 	}
+
+	.intro-text {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.wpcf7 input[type="text"],
+	.wpcf7 input[type="email"],
+	.wpcf7 textarea {
+		width: 75%;
+	}
+
+
 	.contact-flex {
 		display: flex;
 	}
-	.contact-flex > :nth-child(1) {
+
+	.contact-flex> :nth-child(1) {
 		width: 70%;
 	}
-	.contact-flex > :nth-child(2) {
+
+	.contact-flex> :nth-child(2) {
 		width: 30%;
 	}
 
-	.wpforms-field {
-		max-width: 50%;
+	.footer-grid {
+		grid-template-columns: none;
+		grid-template-columns: 1fr 1fr 400px;
+	}
+
+	.grid-1 {
+		grid-column: span 1;
+		grid-row: span 2;
+	}
+
+	.grid-3 {
+		grid-column: 2 / span 1;
+		grid-row: 2 / span 1
+	}
+
+	.grid-4 {
+		position: relative;
+	}
+
+	footer iframe {
+		position: absolute;
 	}
 }

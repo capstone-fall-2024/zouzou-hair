@@ -91,7 +91,7 @@ if (is_front_page()) {
 					</nav><!-- #site-navigation -->
 				</div>
 			</header><!-- #masthead -->
-			<?php if ($banner === 'front-banner') : ?>
+						<?php if ($banner === 'front-banner') : ?>
 				<div class="banner-content">
 					<div class="container padding">
 						<section class="home-header">
@@ -103,7 +103,7 @@ if (is_front_page()) {
 								<a href="https://www.fresha.com/a/zouzou-hair-edmonton-8718-109-street-northwest-ln6gfkqc/booking?menu=true" class="button">Book an Appointment</a>
 							</div>
 							<div class="zouzou-intro-header">
-							<p>At <span class="zouzou-title">Zouzou Hair</span> , </p>
+								<p>At <span class="zouzou-title">Zouzou Hair</span> , </p>
 								<p>We believe that great hair is the foundation of a more confident you.
 								</p>
 								<p>Our skilled stylists offer everything from fresh cuts to bold colors, all in a friendly and relaxed setting. Let us create a look that’s perfect for you!</p>
@@ -111,13 +111,29 @@ if (is_front_page()) {
 						</section>
 					</div>
 				</div>
+			<?php elseif ($banner === 'shop-banner') : ?>
+				<section class="container image-padding">
+					<h1>Shop</h1>
+					<a href="<?php echo esc_url(home_url('/featured-items')); ?>" class="button">Featured Items</a>
+					<a href="<?php echo esc_url(home_url('/shop-by-brand')); ?>" class="button">Shop by Brand</a>
+				</section>
+			<?php elseif ((is_woocommerce() && !is_shop()) || is_cart() || is_checkout()) : ?>
+				<!-- hides the header space below the nav; h1 is automatically set by the woocommerce template -->
+			<?php elseif (is_tax() || is_category() || is_tag()) : ?>
+				<section class="container padding">
+					<h1><?php single_term_title(); ?></h1>
+				</section>
+			<?php elseif (is_search()) : ?>
+				<section class="container padding">
+					<h1><?php printf(esc_html__('Search Results for: %s', 'zouzou-hair-theme'), '<span>' . get_search_query() . '</span>'); ?></h1>
+				</section>
+			<?php elseif (is_page('featured-items') || is_page('shop-by-brand')) : ?>
+				<section class="container padding">
+					<h1><?php the_title(); ?></h1>
+				</section>
 			<?php else : ?>
-				<div class="container padding">
-					<?php if (is_tax() || is_category() || is_tag()) : ?>
-						<h1><?php single_term_title(); ?></h1>
-					<?php else : ?>
-						<h1><?php the_title(); ?></h1>
-					<?php endif; ?>
-				</div>
+				<section class="container image-padding">
+					<h1><?php the_title(); ?></h1>
+				</section>
 			<?php endif; ?>
 		</div>
