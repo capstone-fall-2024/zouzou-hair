@@ -81,7 +81,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Document
 	 ========================================================================== */
 
-ul li {
+ul li,
+ul {
 	list-style: none;
 	padding: 0;
 	margin: 0;
@@ -586,7 +587,7 @@ input[type="reset"]:hover,
 input[type="submit"]:hover,
 .add_to_cart_button:hover {
 	background-color: var(--dark-red);
-	color: var(--light-beige)!important;
+	color: var(--light-beige) !important;
 }
 
 button:active,
@@ -600,7 +601,7 @@ input[type="submit"]:focus,
 .add_to_cart_button:active,
 .add_to_cart_button:focus {
 	background-color: var(--dark-red);
-	color: var(--light-beige)!important;
+	color: var(--light-beige) !important;
 }
 
 input[type="text"],
@@ -1008,7 +1009,7 @@ textarea {
 	background-color: var(--red);
 }
 
-.intro-text > div:first-of-type {
+.intro-text>div:first-of-type {
 	display: flex;
 	gap: 1.5rem;
 	margin-bottom: 1.5rem;
@@ -1024,9 +1025,62 @@ textarea {
 	font-family: 'Cinzel';
 }
 
+.back span {
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+}
+
+.back svg {
+	width: 20px;
+}
+
 /* Zouzou Hair Custom - Header */
 
+nav button {
+	background-color: unset;
+	border: unset;
+	padding: 0.5rem;
+}
+
+header nav>div {
+	display: none;
+}
+
+.show {
+	display: block;
+	position: absolute;
+	left: 0;
+	background-color: var(--light-beige);
+	width: 100%;
+	top: 100%;
+	z-index: 1;
+}
+
+.show li {
+	font-weight: 700;
+	padding: 1rem 2rem;
+	border-bottom: 3px solid var(--beige);
+}
+
+.show li:hover,
+.show a:hover {
+	background-color: var(--beige)!important;
+}
+
+.show a {
+	display: block;
+	color: var(--black);
+}
+
+
+nav button svg {
+	width: 50px;
+	stroke: var(--light-beige);
+}
+
 .site-title {
+	display: none;
 	margin-bottom: 0;
 }
 
@@ -1035,8 +1089,8 @@ textarea {
 }
 
 .sup-header {
-	background-color: var(--dark);
-	color: var(--light-beige);
+	background-color: var(--beige);
+	color: var(--black);
 	padding: 0.75rem;
 	display: none;
 }
@@ -1051,10 +1105,9 @@ textarea {
 	margin-bottom: 0;
 }
 
-.main-header a {
-	color: var(--light-beige);
-	padding: 0.25rem 0.75rem;
-	border-radius: 5px;
+.main-header {
+	background-color: var(--dark);
+	position: relative;
 }
 
 .main-header a:hover {
@@ -1065,15 +1118,11 @@ textarea {
 	background-color: unset;
 }
 
-.main-header {
+.main-header-flex {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-}
-
-.main-header .main-navigation ul {
-	display: flex;
-	gap: 1rem;
+	padding: 1rem;
 }
 
 .default-banner {
@@ -1125,67 +1174,71 @@ textarea {
 	background-attachment: fixed;
 }
 
+.image-padding {
+	padding: 1.5rem;
+}
+
 .banner-content {
 	padding: 8rem 0;
 }
 
-.home-header p{
+.home-header p {
 	color: var(--light-beige);
 	padding: 0rem;
 	margin: 0rem;
 }
 
-.home-header a{
+.home-header a {
 	margin-top: 1rem;
 	margin-right: 0.5rem;
 	font-size: 1.4rem;
 	padding: 0.6rem;
 }
 
-.zouzou-intro-header{
+.zouzou-intro-header {
 	display: none;
 }
 
-.signature-look{
+.signature-look {
 	font-family: 'Cinzel';
 	font-size: 2rem;
 	padding: 0rem;
 	margin: 0rem;
 }
 
-.zouzou-intro-home{
+.zouzou-intro-home {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 }
 
-.zouzou-intro-home > div:nth-child(2) p{
+.zouzou-intro-home>div:nth-child(2) p {
 	font-weight: bold;
 	font-size: 18px;
 }
 
-.zouzou-intro-home > div:first-child,
-.zouzou-intro-home > div:nth-child(2) {
-    width: 100%;
+.zouzou-intro-home>div:first-child,
+.zouzou-intro-home>div:nth-child(2) {
+	width: 100%;
 }
 
-.zouzou-intro-home > div:nth-child(3) {
-    display: flex;
-    width: 60%;
-    flex-direction: column;
+.zouzou-intro-home>div:nth-child(3) {
+	display: flex;
+	width: 60%;
+	flex-direction: column;
 	margin-right: 2rem;
 }
 
-.zouzou-intro-home > div:nth-child(4){
+.zouzou-intro-home>div:nth-child(4) {
 	width: 29%;
 }
 
 
 .red-scissors img {
-    max-width: 100%;
+	max-width: 100%;
 }
 
-.zouzou-title{
+.zouzou-title {
 	font-family: 'Cinzel';
 	font-size: 2rem;
 }
@@ -1193,20 +1246,20 @@ textarea {
 
 /* Services Section */
 
-h2{
+h2 {
 	padding: 0;
 	margin-bottom: 0;
 }
 
-.home-services-flex{
- display: flex;
- flex-wrap: wrap;
- gap: 1rem;
- padding-bottom: 2rem;
- justify-content: space-between;
+.home-services-flex {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	padding-bottom: 2rem;
+	justify-content: space-between;
 }
 
-.home-services-flex a{
+.home-services-flex a {
 	width: calc(50% - 0.5rem);
 	aspect-ratio: 1 / 1;
 	text-decoration: none;
@@ -1214,7 +1267,7 @@ h2{
 	display: block;
 }
 
-.services-deal{
+.services-deal {
 	color: var(--red);
 	margin-top: 0.5rem;
 }
@@ -1226,6 +1279,7 @@ h2{
 	position: relative;
 	height: 100%;
 }
+
 .mens-cuts {
 	background: url('./assets/images/haircutwoman.webp') center center/cover no-repeat;
 	color: var(--white);
@@ -1233,6 +1287,7 @@ h2{
 	position: relative;
 	height: 100%;
 }
+
 .nonbinary-cuts {
 	background: url('./assets/images/haircutwoman.webp') center center/cover no-repeat;
 	color: var(--white);
@@ -1240,6 +1295,7 @@ h2{
 	position: relative;
 	height: 100%;
 }
+
 .coloring {
 	background: url('./assets/images/haircutwoman.webp') center center/cover no-repeat;
 	color: var(--white);
@@ -1247,6 +1303,7 @@ h2{
 	position: relative;
 	height: 100%;
 }
+
 .styling {
 	background: url('./assets/images/haircutwoman.webp') center center/cover no-repeat;
 	color: var(--white);
@@ -1254,6 +1311,7 @@ h2{
 	position: relative;
 	height: 100%;
 }
+
 .hair-botox {
 	background: url('./assets/images/haircutwoman.webp') center center/cover no-repeat;
 	color: var(--white);
@@ -1262,7 +1320,7 @@ h2{
 	height: 100%;
 }
 
-.services-titles{
+.services-titles {
 	background-color: var(--light-beige);
 	color: var(--red);
 	border-top: var(--red) 3px solid;
@@ -1271,15 +1329,15 @@ h2{
 	position: absolute;
 	bottom: 0;
 	left: 0;
-  	right: 0;
-  	margin: 0;
-  	text-align: center;
-  	padding: 3px;
+	right: 0;
+	margin: 0;
+	text-align: center;
+	padding: 3px;
 }
 
 .home-services-flex a:hover .services-titles {
-    color: var(--light-beige);
-    background-color: var(--red);
+	color: var(--light-beige);
+	background-color: var(--red);
 }
 
 
@@ -1297,18 +1355,18 @@ h2{
 	justify-content: center;
 }
 
-.home-intro-background{
+.home-intro-background {
 	background-color: var(--dark);
 	padding: 2rem;
 	margin: 0 1.5rem;
 }
 
 /* reviews on home */
-.reviews{
+.reviews {
 	background-color: var(--red);
 }
 
-.reviews-title{
+.reviews-title {
 	color: var(--light-beige);
 }
 
@@ -1317,10 +1375,6 @@ h2{
 .service-category-page .services-list {
 	max-width: 650px;
 	margin-top: 3rem;
-}
-
-.service-category-page span {
-	font-weight: 700;
 }
 
 .service-bar p {
@@ -1388,7 +1442,7 @@ h2{
 
 /* Zouzou Hair Custom - Shop */
 .search-submit {
-	padding: 0.5rem 1rem!important;
+	padding: 0.5rem 1rem !important;
 }
 
 .woocommerce-loop-product__title {
@@ -1398,11 +1452,48 @@ h2{
 .woocommerce-Price-amount.amount {
 	color: var(--black);
 	font-size: 18px;
+	display: block;
 }
 
 .add_to_cart_button {
-	background-color: var(--beige)!important;
-	color: var(--black)!important;
+	background-color: var(--beige) !important;
+	color: var(--black) !important;
+}
+
+.search-form {
+	margin: 1.5rem 0;
+}
+
+.woocommerce-loop-product__title {
+	font-size: 1.25rem;
+}
+
+.product-loop,
+.category-loop {
+	display: grid;
+	padding: 1.5rem 0;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 1.5rem;
+	row-gap: 1.5rem;
+}
+
+.category {
+	position: relative;
+}
+
+.category-loop img {
+	width: 100%;
+}
+
+.category-loop h2 {
+	background-color: var(--beige);
+	width: 100%;
+	padding: 0.5rem 1rem;
+	margin-top: 0;
+	font-family: 'Afacad';
+	position: absolute;
+	bottom: 0;
+	font-size: 1.5rem;
 }
 
 /* Zouzou Hair Custom - Footer */
@@ -1458,38 +1549,38 @@ footer .main-navigation ul a {
 /* MEDIA QUERIES */
 @media screen and (min-width: 600px) {
 
-	.home-services-flex{
+	.home-services-flex {
 		justify-content: unset;
 		box-sizing: border-box;
 		gap: 0.5rem;
-	   }
+	}
 
-	.home-services-flex a{
+	.home-services-flex a {
 		width: calc(33% - 0.5rem);
 		aspect-ratio: 1 / 1;
 		box-sizing: border-box;
 	}
 
-	.services-titles{
-		  padding: 5px 3px;
+	.services-titles {
+		padding: 5px 3px;
 	}
 
 	.home-intro {
-        justify-content: flex-start;
-        align-items: center;
-        padding-right: 3rem;
-    }
+		justify-content: flex-start;
+		align-items: center;
+		padding-right: 3rem;
+	}
 
 	.home-intro-background {
-        max-width: 500px;
-        text-align: left;
-    }
+		max-width: 500px;
+		text-align: left;
+	}
 
 	.product-search {
 		display: flex;
 		justify-content: space-between;
 		margin-bottom: 1.5rem;
-		align-items: flex-end;
+		align-items: center;
 	}
 
 	.footer-grid {
@@ -1503,6 +1594,13 @@ footer .main-navigation ul a {
 		margin-top: 0;
 	}
 
+	.back {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+
 }
 
 @media screen and (min-width: 750px) {
@@ -1512,6 +1610,10 @@ footer .main-navigation ul a {
 
 	header nav>div {
 		display: block;
+	}
+
+	.show {
+		all: unset;
 	}
 
 	.main-header a {
@@ -1546,6 +1648,13 @@ footer .main-navigation ul a {
 		aspect-ratio: 1 / 1;
 	}
 
+}
+
+@media screen and (min-width: 770px) {
+	.product-loop,
+	.category-loop {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
 }
 
 @media screen and (min-width: 840px) {
@@ -1602,6 +1711,10 @@ footer .main-navigation ul a {
 		justify-content: space-between;
 	}
 
+	.intro-text>div>p {
+		max-width: 500px;
+	}
+
 	.wpcf7 input[type="text"],
 	.wpcf7 input[type="email"],
 	.wpcf7 textarea {
@@ -1642,5 +1755,11 @@ footer .main-navigation ul a {
 
 	footer iframe {
 		position: absolute;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.intro-text>div>p {
+		max-width: 700px;
 	}
 }
