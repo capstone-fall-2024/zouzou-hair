@@ -569,12 +569,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-<<<<<<< Updated upstream
-	/* border: 1px solid var(--red); */
-	border-radius: 10px;
-=======
 	border-radius: 3px;
->>>>>>> Stashed changes
 	background: var(--red);
 	color: var(--light-beige);
 	line-height: 1;
@@ -673,7 +668,7 @@ textarea {
 } */
 
 .main-navigation ul {
-	/* display: none; */
+	display: none;
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
@@ -718,7 +713,7 @@ textarea {
 }
 
 /* Small menu. */
-/* .menu-toggle,
+.menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
 }
@@ -732,7 +727,7 @@ textarea {
 	.main-navigation ul {
 		display: flex;
 	}
-} */
+}
 
 .site-main .comment-navigation,
 .site-main .posts-navigation,
@@ -1000,36 +995,12 @@ textarea {
 
 .button {
 	/* this is a styling for links (anchor) to look like buttons */
-<<<<<<< Updated upstream
-	background: var(--red);
-=======
-	background: var(--red)!important;
->>>>>>> Stashed changes
+	background: var(--red) !important;
 }
 
 .button:hover {
 	/* this is a styling for links (anchor) to look like buttons */
-<<<<<<< Updated upstream
-	background-color: var(--dark-red);
-}
-
-.red-bar {
-	width: 5px;
-	background-color: var(--red);
-}
-
-.intro-text > div:first-of-type {
-	display: flex;
-	gap: 1.5rem;
-	margin-bottom: 1.5rem;
-}
-
-.intro-text p span {
-	color: #9B1F1F;
-	font-weight: 700;
-=======
-	background-color: var(--dark-red)!important;
->>>>>>> Stashed changes
+	background-color: var(--dark-red) !important;
 }
 
 .red-bar {
@@ -1047,7 +1018,6 @@ textarea {
 	color: #9B1F1F;
 	font-weight: 700;
 }
-
 
 .error-404 span {
 	font-size: 10rem;
@@ -1056,59 +1026,17 @@ textarea {
 
 /* Zouzou Hair Custom - Header */
 
-nav button {
-	background-color: unset;
-	border: unset;
-	padding: 0.5rem;
-}
-
-header nav>div {
-	display: none;
-}
-
-.show {
-	display: block;
-	position: absolute;
-	left: 0;
-	background-color: var(--light-beige);
-	width: 100%;
-	top: 100%;
-	padding: 0 1.5rem;
-}
-
-.show a {
-	font-weight: 700;
-	color: var(--black);
-	padding: 1rem 2rem;
-	border-bottom: 3px solid var(--beige);
-}
-
-.show a:hover {
-	background-color: var(--beige);
-}
-
-nav button svg {
-	width: 50px;
-	stroke: var(--light-beige);
-}
-
 .site-title {
-	display: none;
 	margin-bottom: 0;
 }
 
 .site-logo {
-<<<<<<< Updated upstream
-	min-width: 250px;
-	max-width: 250px;
-=======
 	max-width: 200px;
->>>>>>> Stashed changes
 }
 
 .sup-header {
-	background-color: var(--beige);
-	color: var(--black);
+	background-color: var(--dark);
+	color: var(--light-beige);
 	padding: 0.75rem;
 	display: none;
 }
@@ -1123,20 +1051,29 @@ nav button svg {
 	margin-bottom: 0;
 }
 
-.main-header {
-	background-color: var(--dark);
-	position: relative;
+.main-header a {
+	color: var(--light-beige);
+	padding: 0.25rem 0.75rem;
+	border-radius: 5px;
+}
+
+.main-header a:hover {
+	background-color: var(--dark-red);
 }
 
 .main-header .custom-logo-link:hover {
 	background-color: unset;
 }
 
-.main-header-flex {
+.main-header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 1rem;
+}
+
+.main-header .main-navigation ul {
+	display: flex;
+	gap: 1rem;
 }
 
 .default-banner {
@@ -1152,13 +1089,8 @@ nav button svg {
 	color: var(--white);
 }
 
-<<<<<<< Updated upstream
-.shop-banner {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/shop-banner.webp');
-=======
 .about-banner {
 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/about-banner.jpg');
->>>>>>> Stashed changes
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -1166,8 +1098,6 @@ nav button svg {
 	background-attachment: fixed;
 }
 
-<<<<<<< Updated upstream
-=======
 .shop-banner {
 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/shop-banner.webp');
 	background-position: center center;
@@ -1177,7 +1107,6 @@ nav button svg {
 	background-attachment: fixed;
 }
 
->>>>>>> Stashed changes
 .services-banner {
 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('./assets/images/services-banner.webp');
 	background-position: center -15rem;
@@ -1196,37 +1125,88 @@ nav button svg {
 	background-attachment: fixed;
 }
 
-.image-padding {
-	padding: 1.5rem;
-}
-
 .banner-content {
 	padding: 8rem 0;
 }
 
-.button-end {
-	display: flex;
-	justify-content: flex-end;
+.home-header p{
+	color: var(--light-beige);
+	padding: 0rem;
+	margin: 0rem;
 }
 
-.zouzou-intro {}
+.home-header a{
+	margin-top: 1rem;
+	margin-right: 0.5rem;
+	font-size: 1.4rem;
+	padding: 0.6rem;
+}
+
+.zouzou-intro-header{
+	display: none;
+}
+
+.signature-look{
+	font-family: 'Cinzel';
+	font-size: 2rem;
+	padding: 0rem;
+	margin: 0rem;
+}
+
+.zouzou-intro-home{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.zouzou-intro-home > div:nth-child(2) p{
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.zouzou-intro-home > div:first-child,
+.zouzou-intro-home > div:nth-child(2) {
+    width: 100%;
+}
+
+.zouzou-intro-home > div:nth-child(3) {
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+	margin-right: 2rem;
+}
+
+.zouzou-intro-home > div:nth-child(4){
+	width: 29%;
+}
+
+
+.red-scissors img {
+    max-width: 100%;
+}
+
+.zouzou-title{
+	font-family: 'Cinzel';
+	font-size: 2rem;
+}
+
 
 /* Services Section */
 
-h2 {
+h2{
 	padding: 0;
 	margin-bottom: 0;
 }
 
-.home-services-flex {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 1rem;
-	padding-bottom: 2rem;
-	justify-content: space-between;
+.home-services-flex{
+ display: flex;
+ flex-wrap: wrap;
+ gap: 1rem;
+ padding-bottom: 2rem;
+ justify-content: space-between;
 }
 
-.home-services-flex a {
+.home-services-flex a{
 	width: calc(50% - 0.5rem);
 	aspect-ratio: 1 / 1;
 	text-decoration: none;
@@ -1234,7 +1214,7 @@ h2 {
 	display: block;
 }
 
-.services-deal {
+.services-deal{
 	color: var(--red);
 	margin-top: 0.5rem;
 }
@@ -1246,7 +1226,6 @@ h2 {
 	position: relative;
 	height: 100%;
 }
-
 .mens-cuts {
 	background: url('./assets/images/haircutwoman.webp') center center/cover no-repeat;
 	color: var(--white);
@@ -1254,7 +1233,6 @@ h2 {
 	position: relative;
 	height: 100%;
 }
-
 .nonbinary-cuts {
 	background: url('./assets/images/haircutwoman.webp') center center/cover no-repeat;
 	color: var(--white);
@@ -1262,7 +1240,6 @@ h2 {
 	position: relative;
 	height: 100%;
 }
-
 .coloring {
 	background: url('./assets/images/haircutwoman.webp') center center/cover no-repeat;
 	color: var(--white);
@@ -1270,7 +1247,6 @@ h2 {
 	position: relative;
 	height: 100%;
 }
-
 .styling {
 	background: url('./assets/images/haircutwoman.webp') center center/cover no-repeat;
 	color: var(--white);
@@ -1278,7 +1254,6 @@ h2 {
 	position: relative;
 	height: 100%;
 }
-
 .hair-botox {
 	background: url('./assets/images/haircutwoman.webp') center center/cover no-repeat;
 	color: var(--white);
@@ -1287,23 +1262,24 @@ h2 {
 	height: 100%;
 }
 
-.services-titles {
+.services-titles{
 	background-color: var(--light-beige);
 	color: var(--red);
 	border-top: var(--red) 3px solid;
 	font-family: var(--wp--preset--font-family--afacad);
+	font-size: 1.3rem;
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	right: 0;
-	margin: 0;
-	text-align: center;
-	padding: 3px;
+  	right: 0;
+  	margin: 0;
+  	text-align: center;
+  	padding: 3px;
 }
 
 .home-services-flex a:hover .services-titles {
-	color: var(--light-beige);
-	background-color: var(--red);
+    color: var(--light-beige);
+    background-color: var(--red);
 }
 
 
@@ -1321,18 +1297,18 @@ h2 {
 	justify-content: center;
 }
 
-.home-intro-background {
+.home-intro-background{
 	background-color: var(--dark);
 	padding: 2rem;
 	margin: 0 1.5rem;
 }
 
 /* reviews on home */
-.reviews {
+.reviews{
 	background-color: var(--red);
 }
 
-.reviews-title {
+.reviews-title{
 	color: var(--light-beige);
 }
 
@@ -1341,49 +1317,6 @@ h2 {
 .service-category-page .services-list {
 	max-width: 650px;
 	margin-top: 3rem;
-<<<<<<< Updated upstream
-=======
-}
-
-.service-category-page span {
-	font-weight: 700;
-}
-
-.service-bar p {
-	margin-bottom: 0;
-}
-
-.service-bar {
-	padding: 1rem;
-	display: flex;
-	justify-content: space-between;
-}
-
-.service-bar>div>p:nth-of-type(1) {
-	font-weight: 700;
-}
-
-.service-bar:nth-child(even) {
-	background-color: var(--beige);
-	padding: 1rem;
-}
-
-.gallery {
-	margin: 1.5rem 0;
-	display: flex;
-	flex-wrap: wrap;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-}
-
-.gallery>img {
-	aspect-ratio: 1/1;
-	object-fit: cover;
-}
-
-.services-page .gallery>img:nth-child(n+5) {
-	display: none;
->>>>>>> Stashed changes
 }
 
 .service-category-page span {
@@ -1425,23 +1358,14 @@ h2 {
 .services-page .gallery>img:nth-child(n+5) {
 	display: none;
 }
-
 
 /* Zouzou Hair Custom - Contact Page */
-
 .wpcf7 input[type="text"],
 .wpcf7 input[type="email"],
 .wpcf7 textarea {
 	width: 100%;
 }
 
-<<<<<<< Updated upstream
-.wpcf7-submit {
-	border: 1px solid var(--red);
-}
-
-.wpcf7-submit:hover {
-=======
 .wpcf7-submit,
 .search-submit {
 	border: 1px solid var(--red);
@@ -1449,7 +1373,6 @@ h2 {
 
 .wpcf7-submit:hover,
 .search-submit:hover {
->>>>>>> Stashed changes
 	border: 1px solid var(--dark-red);
 }
 
@@ -1489,17 +1412,19 @@ footer {
 	padding: 5rem 1.5rem;
 }
 
-footer h3 {
-	font-family: 'Afacad';
-	margin-bottom: 1rem;
-	margin-top: 1.5rem;
+.footer-flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.connect-with-us h3 {
+	margin-top: 0;
 }
 
 footer .main-navigation ul {
-	display: flex;
 	flex-direction: column;
-	margin-top: 1rem;
-	gap: 1.5rem;
+	gap: 1rem;
 }
 
 footer .main-navigation ul a {
@@ -1514,8 +1439,7 @@ footer .main-navigation ul a {
 
 .connect-with-us svg,
 .social-links svg {
-	min-width: 30px;
-	max-width: 35px;
+	width: 30px;
 }
 
 .connect-flex {
@@ -1528,50 +1452,38 @@ footer .main-navigation ul a {
 	display: flex;
 	gap: 1rem;
 	padding: 0;
-	margin: 1rem 0 0 0;
+	margin: 0;
 }
 
 /* MEDIA QUERIES */
-
 @media screen and (min-width: 600px) {
 
-	.home-services-flex {
+	.home-services-flex{
 		justify-content: unset;
 		box-sizing: border-box;
 		gap: 0.5rem;
-	}
+	   }
 
-	.home-services-flex a {
+	.home-services-flex a{
 		width: calc(33% - 0.5rem);
 		aspect-ratio: 1 / 1;
 		box-sizing: border-box;
 	}
 
-	.services-titles {
-		padding: 5px 3px;
+	.services-titles{
+		  padding: 5px 3px;
 	}
 
 	.home-intro {
-		justify-content: flex-start;
-		align-items: center;
-		padding-right: 3rem;
-	}
+        justify-content: flex-start;
+        align-items: center;
+        padding-right: 3rem;
+    }
 
 	.home-intro-background {
-		max-width: 500px;
-		text-align: left;
-	}
-
-	.footer-grid {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		column-gap: 1.5rem;
-		row-gap: 1.5rem;
-	}
-
-	footer h3 {
-		margin-top: 0;
-	}
+        max-width: 500px;
+        text-align: left;
+    }
 
 	.product-search {
 		display: flex;
@@ -1594,37 +1506,6 @@ footer .main-navigation ul a {
 }
 
 @media screen and (min-width: 750px) {
-<<<<<<< Updated upstream
-
-	.toggle-btn {
-		display: none;
-	}
-
-	header nav>div {
-		display: block;
-	}
-
-	.main-header a {
-		color: var(--light-beige);
-		padding: 0.25rem 0.75rem;
-		border-radius: 5px;
-	}
-
-	.main-header a:hover {
-		background-color: var(--dark-red);
-	}
-
-	.main-header .main-navigation ul {
-		display: flex;
-		gap: 1rem;
-	}
-
-	.image-padding {
-		padding: 5rem 1.5rem;
-	}
-
-=======
-
 	.toggle-btn {
 		display: none;
 	}
@@ -1651,15 +1532,16 @@ footer .main-navigation ul a {
 	.image-padding {
 		padding: 5rem 1.5rem;
 	}
-	
+
 	.contact-flex {
 		display: flex;
 	}
-	.contact-flex > * {
+
+	.contact-flex>* {
 		width: 50%;
 	}
 
-	.home-services-flex a{
+	.home-services-flex a {
 		width: calc(33% - 0.5rem);
 		aspect-ratio: 1 / 1;
 	}
@@ -1686,23 +1568,22 @@ footer .main-navigation ul a {
 }
 
 @media screen and (min-width: 900px) {
-	.home-header{
+	.home-header {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
 	}
-	
-	.zouzou-intro-header{
+
+	.zouzou-intro-header {
 		display: unset;
 		background-color: var(--dark);
 		width: 50ch;
 		padding: 1rem;
 	}
-	
-	.zouzou-intro-home{
+
+	.zouzou-intro-home {
 		display: none;
 	}
-
 }
 
 
@@ -1727,55 +1608,6 @@ footer .main-navigation ul a {
 		width: 75%;
 	}
 
-
->>>>>>> Stashed changes
-	.contact-flex {
-		display: flex;
-	}
-
-	.contact-flex>* {
-		width: 50%;
-	}
-}
-
-@media screen and (min-width: 840px) {
-	.services-page .services>div {
-		display: flex;
-		gap: 1.5rem;
-	}
-
-	.services-page .services:nth-of-type(odd)>div {
-		flex-direction: row-reverse;
-	}
-
-	.services-page .services>div>div {
-		width: 60%;
-	}
-
-	.service-category-page .gallery {
-		grid-template-columns: repeat(auto-fill, 24rem);
-	}
-}
-
-@media screen and (min-width: 1000px) {
-	main .padding {
-		padding: 5rem 1.5rem;
-	}
-
-	.sup-header {
-		display: block;
-	}
-
-	.services-page .intro-text {
-		display: flex;
-		justify-content: space-between;
-	}
-
-	.wpcf7 input[type="text"],
-	.wpcf7 input[type="email"],
-	.wpcf7 textarea {
-		width: 75%;
-	}
 
 	.contact-flex {
 		display: flex;

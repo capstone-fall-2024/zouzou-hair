@@ -10,7 +10,6 @@
  * @package zouzou-hair-theme
  */
 
-//  gets the store info custom fields from contact page so it can be displayed in the sup-header
 $store_info = get_store_info();
 
 $banner = '';
@@ -24,7 +23,7 @@ if (is_front_page()) {
 	$banner = 'about-banner';
 } elseif (is_page('services')) {
 	$banner = 'services-banner';
-} elseif (is_shop()) {
+} elseif (is_page('shop')) {
 	$banner = 'shop-banner';
 } else {
 	$banner = 'default-banner';
@@ -57,64 +56,44 @@ if (is_front_page()) {
 						<?php endif; ?>
 					</div>
 				</div>
-				<div class="main-header">
-					<div class="container main-header-flex">
-						<div class="site-branding">
-							<?php
-							echo "<div class=\"site-logo\">";
-							the_custom_logo();
-							echo "</div>";
-							if (is_front_page() && is_home()) :
-							?>
-								<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-							<?php
-							else :
-							?>
-								<p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
-							<?php
-							endif;
-							$zouzou_hair_theme_description = get_bloginfo('description', 'display');
-							if ($zouzou_hair_theme_description || is_customize_preview()) :
-							?>
-								<p class="site-description"><?php echo $zouzou_hair_theme_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-															?></p>
-							<?php endif; ?>
-						</div><!-- .site-branding -->
-						<nav id="site-navigation" class="main-navigation">
-							<button class="toggle-btn" aria-controls="primary-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-									<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-								</svg>
-							</button>
-							<?php
-							wp_nav_menu(
-								array(
-									'theme_location' => 'menu-1',
-									'menu_id'        => 'primary-menu',
-								)
-							);
-							?>
-						</nav><!-- #site-navigation -->
-					</div>
+				<div class="container main-header padding">
+					<div class="site-branding">
+						<?php
+						echo "<div class=\"site-logo\">";
+						the_custom_logo();
+						echo "</div>";
+						if (is_front_page() && is_home()) :
+						?>
+							<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
+						<?php
+						else :
+						?>
+							<p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
+						<?php
+						endif;
+						$zouzou_hair_theme_description = get_bloginfo('description', 'display');
+						if ($zouzou_hair_theme_description || is_customize_preview()) :
+						?>
+							<p class="site-description"><?php echo $zouzou_hair_theme_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+														?></p>
+						<?php endif; ?>
+					</div><!-- .site-branding -->
+					<nav id="site-navigation" class="main-navigation">
+						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'zouzou-hair-theme'); ?></button>
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'menu-1',
+								'menu_id'        => 'primary-menu',
+							)
+						);
+						?>
+					</nav><!-- #site-navigation -->
 				</div>
 			</header><!-- #masthead -->
-			<?php if ($banner === 'front-banner') : ?>
+						<?php if ($banner === 'front-banner') : ?>
 				<div class="banner-content">
 					<div class="container padding">
-<<<<<<< Updated upstream
-						<div>
-							<p>Let us craft your </p>
-							<h2>Signature Look.</h2>
-							<p>Edmonton's Finest Salon & Barbershop</p>
-							<a href="<?php echo esc_url(home_url('/shop')); ?>" class="button">Shop</a>
-							<a href="https://www.fresha.com/a/zouzou-hair-edmonton-8718-109-street-northwest-ln6gfkqc/booking?menu=true" class="button">Book an Appointment</a>
-						</div>
-						<div class="zouzou-intro">
-							<p>At Zouzou Hair,
-								We believe that great hair is the foundation of a more confident you.
-							</p>
-							<p>Our skilled stylists offer everything from fresh cuts to bold colors, all in a friendly and relaxed setting. Let us create a look that’s perfect for you!</p>
-						</div>
-=======
 						<section class="home-header">
 							<div>
 								<p>Let us craft your </p>
@@ -130,28 +109,11 @@ if (is_front_page()) {
 								<p>Our skilled stylists offer everything from fresh cuts to bold colors, all in a friendly and relaxed setting. Let us create a look that’s perfect for you!</p>
 							</div>
 						</section>
->>>>>>> Stashed changes
 					</div>
 				</div>
 			<?php elseif ($banner === 'shop-banner') : ?>
 				<section class="container image-padding">
 					<h1>Shop</h1>
-<<<<<<< Updated upstream
-					<a href="<?php echo esc_url(home_url('/shop')); ?>" class="button">Featured Items</a>
-					<a href="<?php echo esc_url(home_url('/shop')); ?>" class="button">Shop by Brand</a>
-				</section>
-				<?php else : ?>
-				<?php if (is_tax() || is_category() || is_tag()) : ?>
-					<section class="container padding">
-						<h1><?php single_term_title(); ?></h1>
-					</section>
-				<?php else : ?>
-					<section class="container image-padding">
-						<h1><?php the_title(); ?></h1>
-					</section>
-				<?php endif; ?>
-
-=======
 					<a href="<?php echo esc_url(home_url('/featured-items')); ?>" class="button">Featured Items</a>
 					<a href="<?php echo esc_url(home_url('/shop-by-brand')); ?>" class="button">Shop by Brand</a>
 				</section>
@@ -173,6 +135,5 @@ if (is_front_page()) {
 				<section class="container image-padding">
 					<h1><?php the_title(); ?></h1>
 				</section>
->>>>>>> Stashed changes
 			<?php endif; ?>
 		</div>
