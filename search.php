@@ -10,9 +10,18 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main container padding">
+	<main id="primary" class="site-main">
 
 		<?php if ( have_posts() ) : ?>
+
+			<header class="page-header">
+				<h1 class="page-title">
+					<?php
+					/* translators: %s: search query. */
+					printf( esc_html__( 'Search Results for: %s', 'zouzou-hair-theme' ), '<span>' . get_search_query() . '</span>' );
+					?>
+				</h1>
+			</header><!-- .page-header -->
 
 			<?php
 			/* Start the Loop */
@@ -40,4 +49,5 @@ get_header();
 	</main><!-- #main -->
 
 <?php
+get_sidebar();
 get_footer();
