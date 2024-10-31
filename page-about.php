@@ -19,17 +19,7 @@ $args = array(
 );
 $member_posts = new WP_Query($args);
 
-$image = '';
-$image = get_field('images', $image);
-
-                                if (!empty($image)) {
-                                    foreach ($image as $image) {
-                                        if (!empty($image)) {
-                                ?>
-                                            <img src="<?php echo $image['url']; ?>" alt="">
-                                <?php }
-                                    }
-                                } 
+$image = get_field('images');
 
 
 ?>
@@ -37,8 +27,14 @@ $image = get_field('images', $image);
 <div class="container padding">
 
 <section class="intro-text">
-
-            <p>At Zouzou Hair, we offer a variety of services to make sure you get the exact look you want.<br>Browse our services and previous works down below!</p>
+<div class="intro-text">
+            <div>
+                <div class="red-bar"></div>
+                <p>We believe that great hair is the foundation of confidence. Our team <br> of expert stylists delivers personalized, high-quality services ensuring you <br> leave feeling your absolute best.</p>
+            </div>
+            <p><span>All Students receive a 10% discount on our services</span></p>
+        </div>
+            
 </section>
     
 
@@ -57,8 +53,13 @@ $image = get_field('images', $image);
                             <p><?php echo esc_html(get_field('position')); ?></p>
                         </div>
                         <p><?php echo esc_html(get_field('introduction')); ?></p>
-                        <img src="<?php echo $image['url']; ?>" alt="This is an image of a member of our stylist team">
-
+                        <?php
+                            if(get_field('image')):?>
+                            
+                            <img src="<?php the_field('image'); ?>" alt="This is an image of a member of our stylist team">
+                            <?php
+                            endif;
+                            ?>
                         
                     </div>
                 <?php endwhile; ?>
