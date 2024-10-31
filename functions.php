@@ -747,3 +747,10 @@ function search_only_products($query) {
 
 }
 add_action( 'pre_get_posts', 'search_only_products' );
+
+// DISABLES WOOCOMMERCE SIDEBAR
+function disable_woocommerce_sidebar() {
+	remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+}
+
+add_action('init', 'disable_woocommerce_sidebar');
