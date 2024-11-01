@@ -367,57 +367,28 @@ if (function_exists('acf_add_local_field_group')):
 		),
 	));
 
-	//CUSTOM FIELD FOR HOME PAGE INFORMATION SECTION
-	add_action( 'acf/include_fields', function() {
-		if ( ! function_exists( 'acf_add_local_field_group' ) ) {
-			return;
-		}
-	
-		acf_add_local_field_group( array(
-		'key' => 'group_6723fae4753ec',
+	// CUSTOM FIELDS FOR HOME PAGE INFORMATION SECTION
+	acf_add_local_field_group( array(
+		'key' => 'homepage_info_section',
 		'title' => 'Home Page Information Section',
 		'fields' => array(
 			array(
-				'key' => 'field_6723fae5c0936',
+				'key' => 'paragraph_1',
 				'label' => 'Paragraph 1',
 				'name' => 'paragraph_1',
-				'aria-label' => '',
-				'type' => 'text',
-				'instructions' => '',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'default_value' => 'Update the info section about Zouzou Hair on the home page',
-				'maxlength' => '',
-				'allow_in_bindings' => 0,
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
+				'type' => 'textarea',
+				'value' => 'Zouzou Hair opened in 2014, bringing a remarkable Hair Salon & Barbershop experience to the historic Garneau neighborhood in Edmonton, Alberta.',
+				'instructions' => 'Update the info section about Zouzou Hair on the home page',
+				'required' => 1,
 			),
 			array(
-				'key' => 'field_6723fede146a4',
+				'key' => 'paragraph_2',
 				'label' => 'Paragraph 2 (Optional)',
-				'name' => 'paragraph_2_optional',
-				'aria-label' => '',
-				'type' => 'text',
-				'instructions' => '',
+				'name' => 'paragraph_2',
+				'type' => 'textarea',
+				'value' => 'With 360+ reviews on Google with a 5 star rating, Head Stylist/Owner Joseph Hayek is proven to deliver professional results and a welcoming experience to every appointment.',
+				'instructions' => 'This is another space for you to add more information.',
 				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'default_value' => 'This is another space for you to add more information.',
-				'maxlength' => '',
-				'allow_in_bindings' => 0,
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
 			),
 		),
 		'location' => array(
@@ -429,18 +400,7 @@ if (function_exists('acf_add_local_field_group')):
 				),
 			),
 		),
-		'menu_order' => 0,
-		'position' => 'normal',
-		'style' => 'default',
-		'label_placement' => 'top',
-		'instruction_placement' => 'label',
-		'hide_on_screen' => '',
-		'active' => true,
-		'description' => '',
-		'show_in_rest' => 0,
 	) );
-	} );
-	
 
 	// CUSTOM FIELDS FOR IMAGES FOR SERVICE CATEGORIES
 	acf_add_local_field_group( array(
@@ -713,6 +673,7 @@ if (function_exists('acf_add_local_field_group')):
 				'type' => 'image',
 				'instructions' => 'Enter an image for the member here.',
 				'required' => 1,
+				'return_format' => 'url',
 			),
 		),
 		'location' => array(
@@ -822,3 +783,10 @@ function search_only_products($query) {
 
 }
 add_action( 'pre_get_posts', 'search_only_products' );
+
+// DISABLES WOOCOMMERCE SIDEBAR
+function disable_woocommerce_sidebar() {
+	remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+}
+
+add_action('init', 'disable_woocommerce_sidebar');

@@ -50,8 +50,11 @@
 	document.addEventListener( 'click', function( event ) {
 		const isClickInside = siteNavigation.contains( event.target );
 
+		const nav = document.querySelector(".menu-main-menu-container");
+
 		if ( ! isClickInside ) {
 			siteNavigation.classList.remove( 'toggled' );
+			nav.classList.remove('show');
 			button.setAttribute( 'aria-expanded', 'false' );
 		}
 	} );

@@ -44,5 +44,4 @@ if (!empty($custom_template)) {
 
 <?php
 }
-get_sidebar();
 get_footer();

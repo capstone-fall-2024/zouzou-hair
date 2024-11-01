@@ -11,7 +11,7 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-		<div class="container">
+		<div class="container padding">
 			<section class="error-404 not-found">
 				<p><span>404</span></p>
 			<h2>Oh, snip!</h2>

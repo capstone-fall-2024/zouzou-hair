@@ -72,8 +72,8 @@ get_header();
 		</div>
 		<section class="home-intro">
 			<div class=" container padding home-intro-background">
-				<p><?php echo esc_html(get_field('field_6723fae5c0936')); ?></p>
-				<p><?php echo esc_html(get_field('field_6723fede146a4')); ?></p>
+				<p><?php echo nl2br(esc_html(get_field('paragraph_1'))); ?></p>
+				<p><?php echo nl2br(esc_html(get_field('paragraph_2'))); ?></p>
 			</div>
 		</section>
 		<section class="container padding">
