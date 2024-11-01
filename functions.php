@@ -198,8 +198,8 @@ add_action( 'init', function() {
 	0 => '',
 ), array(
 	'labels' => array(
-		'name' => 'Categories',
-		'singular_name' => 'Category',
+		'name' => 'Service Categories',
+		'singular_name' => 'Service Category',
 		'menu_name' => 'Service Categories',
 		'all_items' => 'All Service Categories',
 		'edit_item' => 'Edit Service Category',
@@ -788,5 +788,25 @@ add_action( 'pre_get_posts', 'search_only_products' );
 function disable_woocommerce_sidebar() {
 	remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 }
-
 add_action('init', 'disable_woocommerce_sidebar');
+
+
+// ADDS A SERVICE CATEGORY COLUMN WHEN VIEWING ALL SERVICES
+add_filter( 'manage_services_posts_columns', 'add_service_category_column' );
+function add_service_category_column( $columns ) {
+    $columns['service_category'] = __( 'Service Category', 'textdomain' );
+    return $columns;
+}
+
+add_action( 'manage_services_posts_custom_column', 'fetch_categories_for_column', 10, 2 );
+function fetch_categories_for_column( $column, $post_id ) {
+    if ( 'service_category' === $column ) {
+        $terms = get_the_terms( $post_id, 'service-category' );
+        if ( !empty( $terms ) && ! is_wp_error( $terms ) ) {
+            $term_names = wp_list_pluck( $terms, 'name' );
+            echo implode( ', ', $term_names );
+        } else {
+            echo __( 'No Categories', 'textdomain' );
+        }
+    }
+}
