@@ -20,8 +20,10 @@ $args = array(
             'taxonomy' => 'service-category',
             'field' => 'slug',
             'terms'    => $service_category->slug,
+            'order'      => 'ASC'
         ),
     ),
+    'order' => 'ASC'
 );
 
 $service_posts = new WP_Query($args);
@@ -30,8 +32,11 @@ $images = get_field('images', $service_category);
 
 ?>
 
-<main id="primary" class="site-main">
+<main id="primary" class="site-main service-category-page">
     <div class="container padding">
+        <div class="back"><a href="<?php echo esc_url(home_url('/services')); ?>"><span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+</svg>Back to Services</span></a></div>
         <?php
 
         if ($service_posts->have_posts()) : ?>
@@ -39,7 +44,7 @@ $images = get_field('images', $service_category);
             <div class="services-list">
                 <?php while ($service_posts->have_posts()) :
                     $service_posts->the_post(); ?>
-                    <div>
+                    <div class="service-bar">
                         <div>
                             <p><?php the_title(); ?></p>
                             <p><?php echo esc_html(get_field('duration')); ?></p>
@@ -51,10 +56,16 @@ $images = get_field('images', $service_category);
 
         <?php endif; ?>
 
-        <div>
-            <?php foreach ($images as $image) : ?>
-                <img src="<?php echo $image['url']; ?>" alt="">
-            <?php endforeach; ?>
+        <div class="gallery">
+            <?php
+            if (!empty($images)) {
+                foreach ($images as $image) {
+                    if (!empty($image)) { ?>
+                        <img src="<?php echo $image['url']; ?>" alt="Previous works for <?php echo single_term_title(); ?>">
+            <?php }
+                }
+            }
+            ?>
         </div>
     </div>
 </main>

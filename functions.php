@@ -192,239 +192,14 @@ function zouzou_hair_theme_block_parts_setup()
  * ACF FUNCTIONS
  */
 
-// INITIALIZE ACF FIELDS
-if (function_exists('acf_add_local_field_group')):
-
-	// CUSTOM FIELDS FOR CONTACT PAGE
-	acf_add_local_field_group(array(
-		'key' => 'store_info',
-		'title' => 'Store Information',
-		'fields' => array(
-			array(
-				'key' => 'hours',
-				'label' => 'Hours',
-				'name' => 'hours',
-				'type' => 'textarea',
-				'value' => 'Monday: 4pm to 8pm Tuesday - Saturday: 10am to 4pm',
-				'instructions' => 'Enter the store hours',
-				'required' => 1,
-			),
-			array(
-				'key' => 'location',
-				'label' => 'Location',
-				'name' => 'location',
-				'type' => 'textarea',
-				'value' => '8718 109 St NW Edmonton, AB T6G 1E9',
-				'instructions' => 'Enter the store location',
-				'required' => 1,
-			),
-			array(
-				'key' => 'phone',
-				'label' => 'Phone',
-				'name' => 'phone',
-				'type' => 'text',
-				'value' => '780-758-4242',
-				'instructions' => 'Enter the store phone number',
-				'required' => 1,
-			)
-		),
-		'location' => array(
-			array(
-				array(
-					'param' => 'page_template',
-					'operator' => '==',
-					'value' => 'page-contact.php',
-				),
-			),
-		),
-	));
-
-	// CUSTOM FIELDS FOR IMAGES FOR SERVICE CATEGORIES
-	acf_add_local_field_group( array(
-		'key' => 'service-gallery',
-		'title' => 'Service Gallery',
-		'fields' => array(
-			array(
-				'key' => 'images',
-				'label' => 'Images',
-				'name' => 'images',
-				'aria-label' => '',
-				'type' => 'group',
-				'instructions' => 'Upload images for this service category',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'layout' => 'block',
-				'sub_fields' => array(
-					array(
-						'key' => 'image_1',
-						'label' => 'Image 1',
-						'name' => 'image_1',
-						'aria-label' => '',
-						'type' => 'image',
-						'instructions' => '',
-						'required' => 0,
-						'conditional_logic' => 0,
-						'wrapper' => array(
-							'width' => '',
-							'class' => '',
-							'id' => '',
-						),
-						'return_format' => 'array',
-						'library' => 'all',
-						'min_width' => '',
-						'min_height' => '',
-						'min_size' => '',
-						'max_width' => '',
-						'max_height' => '',
-						'max_size' => '',
-						'mime_types' => '',
-						'allow_in_bindings' => 0,
-						'preview_size' => 'medium',
-					),
-					array(
-						'key' => 'image_2',
-						'label' => 'Image 2',
-						'name' => 'image_2',
-						'aria-label' => '',
-						'type' => 'image',
-						'instructions' => '',
-						'required' => 0,
-						'conditional_logic' => 0,
-						'wrapper' => array(
-							'width' => '',
-							'class' => '',
-							'id' => '',
-						),
-						'default_value' => '',
-						'maxlength' => '',
-						'allow_in_bindings' => 0,
-						'placeholder' => '',
-						'prepend' => '',
-						'append' => '',
-					),
-				),
-			),
-		),
-		'location' => array(
-			array(
-				array(
-					'param' => 'taxonomy',
-					'operator' => '==',
-					'value' => 'service-category',
-				),
-			),
-		),
-	) );
-
-	// CUSTOM FIELDS FOR EACH SERVICE
-	acf_add_local_field_group(array(
-		'key' => 'service_info',
-		'title' => 'Service Information',
-		'fields' => array(
-			array(
-				'key' => 'price',
-				'label' => 'Price',
-				'name' => 'price',
-				'type' => 'text',
-				'instructions' => 'Enter the price of the service with the dollar sign. Example: $10',
-				'required' => 1,
-			),
-			array(
-				'key' => 'duration',
-				'label' => 'Duration',
-				'name' => 'duration',
-				'type' => 'text',
-				'instructions' => 'Enter the duration of the service. Example: 1hr',
-				'required' => 1,
-			)
-		),
-		'location' => array(
-			array(
-				array(
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'services',
-				),
-			),
-		),
-	));
-
-	// CUSTOM FIELDS FOR ADDING NEW MEMBERS
-	acf_add_local_field_group( array(
-		'key' => 'members',
-		'title' => 'Members',
-		'fields' => array(
-			array(
-				'key' => 'name',
-				'label' => 'Name',
-				'name' => 'name',
-				'type' => 'text',
-				'instructions' => 'Enter the name of the member here.',
-				'required' => 1,
-			),
-			array(
-				'key' => 'position',
-				'label' => 'Position',
-				'name' => 'position',
-				'aria-label' => '',
-				'type' => 'text',
-				'instructions' => 'Enter the position of the member here.',
-				'required' => 1,
-			),
-			array(
-				'key' => 'introduction',
-				'label' => 'Introduction',
-				'name' => 'introduction',
-				'type' => 'textarea',
-				'instructions' => 'Enter the introduction for the member here.',
-				'required' => 1,
-			),
-			array(
-				'key' => 'image',
-				'label' => 'Image',
-				'name' => 'image',
-				'aria-label' => '',
-				'type' => 'image',
-				'instructions' => 'Enter an image for the member here.',
-				'required' => 1,
-				'return_format' => 'url',
-			),
-		),
-		'location' => array(
-			array(
-				array(
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'member',
-				),
-			),
-		),
-		'menu_order' => 0,
-		'position' => 'normal',
-		'style' => 'default',
-		'label_placement' => 'top',
-		'instruction_placement' => 'label',
-		'hide_on_screen' => '',
-		'active' => true,
-		'description' => '',
-		'show_in_rest' => 0,
-	) );
-
-endif;
-
 // INITIALIZE SERVICE CATEGORY TAXONOMY
 add_action( 'init', function() {
 	register_taxonomy( 'service-category', array(
 	0 => '',
 ), array(
 	'labels' => array(
-		'name' => 'Categories',
-		'singular_name' => 'Category',
+		'name' => 'Service Categories',
+		'singular_name' => 'Service Category',
 		'menu_name' => 'Service Categories',
 		'all_items' => 'All Service Categories',
 		'edit_item' => 'Edit Service Category',
@@ -502,7 +277,7 @@ add_action( 'init', function() {
 
 // INITIALIZE MEMBERS CUSTOM POST TYPE
 add_action( 'init', function() {
-	register_post_type( 'member', array(
+	register_post_type( 'members', array(
 	'labels' => array(
 		'name' => 'Members',
 		'singular_name' => 'Member',
@@ -539,15 +314,389 @@ add_action( 'init', function() {
 	'menu_icon' => 'dashicons-admin-post',
 	'supports' => array(
 		0 => 'title',
-		1 => 'editor',
-		2 => 'thumbnail',
-		3 => 'custom-fields',
+		1 => 'custom-fields',
 	),
 	'delete_with_user' => false,
 ) );
 } );
 
+// INITIALIZE ACF FIELDS
+if (function_exists('acf_add_local_field_group')):
 
+	// CUSTOM FIELDS FOR CONTACT PAGE
+	acf_add_local_field_group(array(
+		'key' => 'store_info',
+		'title' => 'Store Information',
+		'fields' => array(
+			array(
+				'key' => 'hours',
+				'label' => 'Hours',
+				'name' => 'hours',
+				'type' => 'textarea',
+				'value' => 'Monday: 4pm to 8pm Tuesday - Saturday: 10am to 4pm',
+				'instructions' => 'Enter the store hours',
+				'required' => 1,
+			),
+			array(
+				'key' => 'location',
+				'label' => 'Location',
+				'name' => 'location',
+				'type' => 'textarea',
+				'value' => '8718 109 St NW Edmonton, AB T6G 1E9',
+				'instructions' => 'Enter the store location',
+				'required' => 1,
+			),
+			array(
+				'key' => 'phone',
+				'label' => 'Phone',
+				'name' => 'phone',
+				'type' => 'text',
+				'value' => '780-758-4242',
+				'instructions' => 'Enter the store phone number',
+				'required' => 1,
+			)
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'page-contact.php',
+				),
+			),
+		),
+	));
+
+	// CUSTOM FIELDS FOR HOME PAGE INFORMATION SECTION
+	acf_add_local_field_group( array(
+		'key' => 'homepage_info_section',
+		'title' => 'Home Page Information Section',
+		'fields' => array(
+			array(
+				'key' => 'paragraph_1',
+				'label' => 'Paragraph 1',
+				'name' => 'paragraph_1',
+				'type' => 'textarea',
+				'value' => 'Zouzou Hair opened in 2014, bringing a remarkable Hair Salon & Barbershop experience to the historic Garneau neighborhood in Edmonton, Alberta.',
+				'instructions' => 'Update the info section about Zouzou Hair on the home page',
+				'required' => 1,
+			),
+			array(
+				'key' => 'paragraph_2',
+				'label' => 'Paragraph 2 (Optional)',
+				'name' => 'paragraph_2',
+				'type' => 'textarea',
+				'value' => 'With 360+ reviews on Google with a 5 star rating, Head Stylist/Owner Joseph Hayek is proven to deliver professional results and a welcoming experience to every appointment.',
+				'instructions' => 'This is another space for you to add more information.',
+				'required' => 0,
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'page_type',
+					'operator' => '==',
+					'value' => 'front_page',
+				),
+			),
+		),
+	) );
+
+	// CUSTOM FIELDS FOR IMAGES FOR SERVICE CATEGORIES
+	acf_add_local_field_group( array(
+		'key' => 'service-gallery',
+		'title' => 'Service Gallery',
+		'fields' => array(
+			array(
+				'key' => 'images',
+				'label' => 'Images',
+				'name' => 'images',
+				'aria-label' => '',
+				'type' => 'group',
+				'instructions' => 'Upload images for this service category',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'layout' => 'block',
+				'sub_fields' => array(
+					array(
+						'key' => 'image_1',
+						'label' => 'Image 1',
+						'name' => 'image_1',
+						'aria-label' => '',
+						'type' => 'image',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'return_format' => 'array',
+						'library' => 'all',
+						'min_width' => '',
+						'min_height' => '',
+						'min_size' => '',
+						'max_width' => '',
+						'max_height' => '',
+						'max_size' => '',
+						'mime_types' => '',
+						'allow_in_bindings' => 0,
+						'preview_size' => 'medium',
+					),
+					array(
+						'key' => 'image_2',
+						'label' => 'Image 2',
+						'name' => 'image_2',
+						'aria-label' => '',
+						'type' => 'image',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'maxlength' => '',
+						'allow_in_bindings' => 0,
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+					),
+					array(
+						'key' => 'image_3',
+						'label' => 'Image 3',
+						'name' => 'image_3',
+						'aria-label' => '',
+						'type' => 'image',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'maxlength' => '',
+						'allow_in_bindings' => 0,
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+					),
+					array(
+						'key' => 'image_4',
+						'label' => 'Image 4',
+						'name' => 'image_4',
+						'aria-label' => '',
+						'type' => 'image',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'maxlength' => '',
+						'allow_in_bindings' => 0,
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+					),
+					array(
+						'key' => 'image_5',
+						'label' => 'Image 5',
+						'name' => 'image_5',
+						'aria-label' => '',
+						'type' => 'image',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'maxlength' => '',
+						'allow_in_bindings' => 0,
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+					),
+					array(
+						'key' => 'image_6',
+						'label' => 'Image 6',
+						'name' => 'image_6',
+						'aria-label' => '',
+						'type' => 'image',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'maxlength' => '',
+						'allow_in_bindings' => 0,
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+					),
+					array(
+						'key' => 'image_7',
+						'label' => 'Image 7',
+						'name' => 'image_7',
+						'aria-label' => '',
+						'type' => 'image',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'maxlength' => '',
+						'allow_in_bindings' => 0,
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+					),
+					array(
+						'key' => 'image_8',
+						'label' => 'Image 8',
+						'name' => 'image_8',
+						'aria-label' => '',
+						'type' => 'image',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'maxlength' => '',
+						'allow_in_bindings' => 0,
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+					),
+				),
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'taxonomy',
+					'operator' => '==',
+					'value' => 'service-category',
+				),
+			),
+		),
+	) );
+
+	// CUSTOM FIELDS FOR EACH SERVICE
+	acf_add_local_field_group(array(
+		'key' => 'service_info',
+		'title' => 'Service Information',
+		'fields' => array(
+			array(
+				'key' => 'price',
+				'label' => 'Price',
+				'name' => 'price',
+				'type' => 'text',
+				'instructions' => 'Enter the price of the service with the dollar sign. Example: $10',
+				'required' => 1,
+			),
+			array(
+				'key' => 'duration',
+				'label' => 'Duration',
+				'name' => 'duration',
+				'type' => 'text',
+				'instructions' => 'Enter the duration of the service. Example: 1hr',
+				'required' => 1,
+			)
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'services',
+				),
+			),
+		),
+	));
+
+	// CUSTOM FIELDS FOR ADDING NEW MEMBERS
+	acf_add_local_field_group( array(
+		'key' => 'member',
+		'title' => 'Member',
+		'fields' => array(
+			array(
+				'key' => 'position',
+				'label' => 'Position',
+				'name' => 'position',
+				'aria-label' => '',
+				'type' => 'text',
+				'instructions' => 'Enter the position of the member here.',
+				'required' => 1,
+			),
+			array(
+				'key' => 'introduction',
+				'label' => 'Introduction',
+				'name' => 'introduction',
+				'type' => 'textarea',
+				'instructions' => 'Enter the introduction for the member here.',
+				'required' => 1,
+			),
+			array(
+				'key' => 'image',
+				'label' => 'Image',
+				'name' => 'image',
+				'aria-label' => '',
+				'type' => 'image',
+				'instructions' => 'Enter an image for the member here.',
+				'required' => 1,
+				'return_format' => 'url',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'members',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+		'show_in_rest' => 0,
+	) );
+
+endif;
 
 function get_store_info()
 {
@@ -583,6 +732,14 @@ function disable_gutenberg_for_services($current_status, $post_type)
     return $current_status;
 }
 
+// DISABLES BLOCK EDITOR WHEN ADDING A NEW MEMBER
+add_filter('use_block_editor_for_post_type', 'disable_gutenberg_for_members', 10, 2);
+function disable_gutenberg_for_members($current_status, $post_type)
+{
+    if ($post_type === 'members') return false;
+    return $current_status;
+}
+
 // CSS HACK TO DISABLE SLUG AND DESCRIPTION WHEN CREATING A NEW SERVICE CATEGORY
 add_action( 'admin_head', 'disable_slug_description_css' );
 function disable_slug_description_css() {
@@ -605,4 +762,51 @@ function disable_slug_description_css() {
 
     <?php
 
+}
+
+// ADDS SUPPORT FOR CUSTOM WOOCOMMERCE TEMPLATES
+function zouzou_hair_theme_add_woocommerce_support() {
+	add_theme_support('woocommerce');
+}
+
+add_action( 'after_setup_theme', 'zouzou_hair_theme_add_woocommerce_support' );
+
+// FUNCTION THAT SETS SEARCH TO ONLY SEARCH FOR PRODUCTS
+function search_only_products($query) {
+	
+	if ($query->is_search) {
+		$query->set('post_type' ,'product');
+		$query->set('wc_query', 'product_query');
+	}
+
+	return $query;
+
+}
+add_action( 'pre_get_posts', 'search_only_products' );
+
+// DISABLES WOOCOMMERCE SIDEBAR
+function disable_woocommerce_sidebar() {
+	remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+}
+add_action('init', 'disable_woocommerce_sidebar');
+
+
+// ADDS A SERVICE CATEGORY COLUMN WHEN VIEWING ALL SERVICES
+add_filter( 'manage_services_posts_columns', 'add_service_category_column' );
+function add_service_category_column( $columns ) {
+    $columns['service_category'] = __( 'Service Category', 'textdomain' );
+    return $columns;
+}
+
+add_action( 'manage_services_posts_custom_column', 'fetch_categories_for_column', 10, 2 );
+function fetch_categories_for_column( $column, $post_id ) {
+    if ( 'service_category' === $column ) {
+        $terms = get_the_terms( $post_id, 'service-category' );
+        if ( !empty( $terms ) && ! is_wp_error( $terms ) ) {
+            $term_names = wp_list_pluck( $terms, 'name' );
+            echo implode( ', ', $term_names );
+        } else {
+            echo __( 'No Categories', 'textdomain' );
+        }
+    }
 }

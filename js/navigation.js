@@ -35,10 +35,14 @@
 	button.addEventListener( 'click', function() {
 		siteNavigation.classList.toggle( 'toggled' );
 
+		const nav = document.querySelector(".menu-main-menu-container");
+
 		if ( button.getAttribute( 'aria-expanded' ) === 'true' ) {
 			button.setAttribute( 'aria-expanded', 'false' );
+			nav.classList.remove('show');
 		} else {
 			button.setAttribute( 'aria-expanded', 'true' );
+			nav.classList.add('show');
 		}
 	} );
 
@@ -46,8 +50,11 @@
 	document.addEventListener( 'click', function( event ) {
 		const isClickInside = siteNavigation.contains( event.target );
 
+		const nav = document.querySelector(".menu-main-menu-container");
+
 		if ( ! isClickInside ) {
 			siteNavigation.classList.remove( 'toggled' );
+			nav.classList.remove('show');
 			button.setAttribute( 'aria-expanded', 'false' );
 		}
 	} );
