@@ -1015,6 +1015,13 @@ textarea {
   font-weight: 700;
 }
 
+.error-404 {
+	display: flex; 
+	justify-content: center; 
+	align-items: center;
+  min-height: 50vh;
+} 
+
 .error-404 span {
   font-size: 10rem;
   font-family: "Cinzel";
@@ -1507,11 +1514,8 @@ footer {
   align-items: flex-start;
 }
 
-.connect-with-us h3 {
-  margin-top: 0;
-}
-
 footer .main-navigation ul {
+  display: flex;
   flex-direction: column;
   gap: 1rem;
 }
