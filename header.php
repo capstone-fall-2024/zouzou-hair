@@ -63,7 +63,7 @@ if (is_front_page()) {
 							echo "<div class=\"site-logo\">";
 							the_custom_logo();
 							echo "</div>";
-							if (is_front_page() && is_home()) :
+							if (is_front_page()) :
 							?>
 								<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
 							<?php
