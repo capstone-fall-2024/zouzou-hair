@@ -9,6 +9,7 @@
  */
 
 get_header();
+$store_info = get_store_info();
 
 ?>
 
@@ -48,7 +49,7 @@ get_header();
                 <section>
                     <h3>Hours</h3>
                     <!-- Hours ACF -->
-                    <p><?php echo nl2br(esc_html(get_field('hours'))); ?>
+                    <p><?php echo nl2br(esc_html($store_info['hours'])); ?>
                 </section>
                 <h3>Connect With Us on Social Media</h3>
                 <div class="social-links">
