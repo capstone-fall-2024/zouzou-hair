@@ -19,6 +19,8 @@ if (is_front_page()) {
 	$banner_text = 'front-content';
 } elseif (is_page('contact')) {
 	$banner = 'contact-banner';
+} elseif (is_page('careers')) {
+	$banner = 'career-banner';
 } elseif (is_page('about')) {
 	$banner = 'about-banner';
 } elseif (is_page('services')) {
