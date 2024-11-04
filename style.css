@@ -15,63 +15,84 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
-
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Generic
-	- Normalize
-	- Box sizing
-# Base
-	- Typography
-	- Elements
-	- Links
-	- Forms
-## Layouts
-# Components
-	- Navigation
-	- Posts and pages
-	- Comments
-	- Widgets
-	- Media
-	- Captions
-	- Galleries
-# plugins
-	- Jetpack infinite scroll
-# Utilities
-	- Accessibility
-	- Alignments
-
---------------------------------------------------------------*/
-
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
 
 @font-face {
-	font-family: 'Afacad';
-	src: url('./assets/fonts/Afacad-VariableFont.woff2') format('woff2');
-	font-weight: 100 900;
-	font-style: normal;
+  font-family: "Afacad";
+  src: url("./assets/fonts/Afacad-VariableFont.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
 }
 
 @font-face {
-	font-family: 'Cinzel';
-	src: url('./assets/fonts/Cinzel-VariableFont.woff2') format('woff2');
-	font-weight: 700;
-	font-style: normal;
+  font-family: "Cinzel";
+  src: url("./assets/fonts/Cinzel-VariableFont.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
 }
 
 :root {
-	--white: #ffffff;
-	--black: #000000;
-	--light-beige: #F7EFE7;
-	--beige: #BFB0A0;
-	--red: #9B1F1F;
-	--dark-red: #4D1010;
-	--dark: #150D0D;
+  --white: #ffffff;
+  --black: #000000;
+  --light-beige: #f7efe7;
+  --beige: #bfb0a0;
+  --red: #9b1f1f;
+  --dark-red: #4d1010;
+  --dark: #150d0d;
+  --xx-large: clamp(2.027rem, 1.8328rem + 0.9711vw, 2.986rem);
+  --x-large: clamp(1.802rem, 1.6631rem + 0.6947vw, 2.488rem);
+  --large: clamp(1.602rem, 1.5064rem + 0.478vw, 2.074rem);
+  --medium: clamp(1.424rem, 1.3624rem + 0.3078vw, 1.728rem);
+  --base: 1.125rem
 }
 
+body {
+  background-color: var(--light-beige);
+}
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+  font-family: "Afacad";
+  font-size: var(--base);
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: var(--xx-large);
+  font-family: "Cinzel";
+}
+
+h2 {
+  font-size: var(--x-large);
+  font-family: "Cinzel";
+}
+
+h3 {
+  font-size: var(--large);
+  font-family: "Cinzel";
+}
+
+h4 {
+  font-size: var(--medium);
+  font-family: "Cinzel";
+}
+
+p {
+  margin: 0;
+  margin-bottom: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  font-size: var(--base);
+  font-family: "Afacad";
+}
 
 /* Normalize
 --------------------------------------------- */
@@ -83,9 +104,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 ul li,
 ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 /**
@@ -93,8 +114,8 @@ ul {
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 html {
-	line-height: 1.15;
-	-webkit-text-size-adjust: 100%;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
 }
 
 /* Sections
@@ -104,14 +125,14 @@ html {
  * Remove the margin in all browsers.
  */
 body {
-	margin: 0;
+  margin: 0;
 }
 
 /**
  * Render the `main` element consistently in IE.
  */
 main {
-	display: block;
+  display: block;
 }
 
 /**
@@ -119,8 +140,8 @@ main {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
+  font-size: 2em;
+  margin: 0.67em 0;
 }
 
 /* Grouping content
@@ -131,9 +152,9 @@ h1 {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-	box-sizing: content-box;
-	height: 0;
-	overflow: visible;
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
 }
 
 /**
@@ -141,8 +162,8 @@ hr {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 pre {
-	font-family: monospace, monospace;
-	font-size: 1em;
+  font-family: monospace, monospace;
+  font-size: 1em;
 }
 
 /* Text-level semantics
@@ -152,7 +173,7 @@ pre {
  * Remove the gray background on active links in IE 10.
  */
 a {
-	background-color: transparent;
+  background-color: transparent;
 }
 
 /**
@@ -160,9 +181,9 @@ a {
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] {
-	border-bottom: none;
-	text-decoration: underline;
-	text-decoration: underline dotted;
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
 }
 
 /**
@@ -170,7 +191,7 @@ abbr[title] {
  */
 b,
 strong {
-	font-weight: bolder;
+  font-weight: bolder;
 }
 
 /**
@@ -180,15 +201,15 @@ strong {
 code,
 kbd,
 samp {
-	font-family: monospace, monospace;
-	font-size: 1em;
+  font-family: monospace, monospace;
+  font-size: 1em;
 }
 
 /**
  * Add the correct font size in all browsers.
  */
 small {
-	font-size: 80%;
+  font-size: 80%;
 }
 
 /**
@@ -197,18 +218,18 @@ small {
  */
 sub,
 sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
 }
 
 sub {
-	bottom: -0.25em;
+  bottom: -0.25em;
 }
 
 sup {
-	top: -0.5em;
+  top: -0.5em;
 }
 
 /* Embedded content
@@ -218,7 +239,7 @@ sup {
  * Remove the border on images inside links in IE 10.
  */
 img {
-	border-style: none;
+  border-style: none;
 }
 
 /* Forms
@@ -233,10 +254,10 @@ input,
 optgroup,
 select,
 textarea {
-	font-family: inherit;
-	font-size: 100%;
-	line-height: 1.15;
-	margin: 0;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
 }
 
 /**
@@ -245,7 +266,7 @@ textarea {
  */
 button,
 input {
-	overflow: visible;
+  overflow: visible;
 }
 
 /**
@@ -254,7 +275,7 @@ input {
  */
 button,
 select {
-	text-transform: none;
+  text-transform: none;
 }
 
 /**
@@ -264,7 +285,7 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-	-webkit-appearance: button;
+  -webkit-appearance: button;
 }
 
 /**
@@ -274,8 +295,8 @@ button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
 [type="submit"]::-moz-focus-inner {
-	border-style: none;
-	padding: 0;
+  border-style: none;
+  padding: 0;
 }
 
 /**
@@ -285,14 +306,14 @@ button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
-	outline: 1px dotted ButtonText;
+  outline: 1px dotted ButtonText;
 }
 
 /**
  * Correct the padding in Firefox.
  */
 fieldset {
-	padding: 0.35em 0.75em 0.625em;
+  padding: 0.35em 0.75em 0.625em;
 }
 
 /**
@@ -302,26 +323,26 @@ fieldset {
  *		`fieldset` elements in all browsers.
  */
 legend {
-	box-sizing: border-box;
-	color: inherit;
-	display: table;
-	max-width: 100%;
-	padding: 0;
-	white-space: normal;
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
 }
 
 /**
  * Add the correct vertical alignment in Chrome, Firefox, and Opera.
  */
 progress {
-	vertical-align: baseline;
+  vertical-align: baseline;
 }
 
 /**
  * Remove the default vertical scrollbar in IE 10+.
  */
 textarea {
-	overflow: auto;
+  overflow: auto;
 }
 
 /**
@@ -330,8 +351,8 @@ textarea {
  */
 [type="checkbox"],
 [type="radio"] {
-	box-sizing: border-box;
-	padding: 0;
+  box-sizing: border-box;
+  padding: 0;
 }
 
 /**
@@ -339,7 +360,7 @@ textarea {
  */
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
-	height: auto;
+  height: auto;
 }
 
 /**
@@ -347,15 +368,15 @@ textarea {
  * 2. Correct the outline style in Safari.
  */
 [type="search"] {
-	-webkit-appearance: textfield;
-	outline-offset: -2px;
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
 }
 
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
  */
 [type="search"]::-webkit-search-decoration {
-	-webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
 /**
@@ -363,8 +384,8 @@ textarea {
  * 2. Change font properties to `inherit` in Safari.
  */
 ::-webkit-file-upload-button {
-	-webkit-appearance: button;
-	font: inherit;
+  -webkit-appearance: button;
+  font: inherit;
 }
 
 /* Interactive
@@ -374,14 +395,14 @@ textarea {
  * Add the correct display in Edge, IE 10+, and Firefox.
  */
 details {
-	display: block;
+  display: block;
 }
 
 /*
  * Add the correct display in all browsers.
  */
 summary {
-	display: list-item;
+  display: list-item;
 }
 
 /* Misc
@@ -391,14 +412,14 @@ summary {
  * Add the correct display in IE 10+.
  */
 template {
-	display: none;
+  display: none;
 }
 
 /**
  * Add the correct display in IE 10.
  */
 [hidden] {
-	display: none;
+  display: none;
 }
 
 /* Box sizing
@@ -409,11 +430,11 @@ template {
 *,
 *::before,
 *::after {
-	box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 html {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /*--------------------------------------------------------------
@@ -422,145 +443,122 @@ html {
 
 /* Typography
 --------------------------------------------- */
-body,
-button,
-input,
-select,
-optgroup,
-textarea {
-	font-size: 1rem;
-	line-height: 1.5;
-}
-
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-	clear: both;
-}
-
-p {
-	margin-bottom: 1rem;
+  clear: both;
 }
 
 dfn,
 cite,
 em,
 i {
-	font-style: italic;
+  font-style: italic;
 }
 
 blockquote {
-	margin: 0 1.5em;
+  margin: 0 1.5em;
 }
 
 address {
-	margin: 0 0 1.5em;
+  margin: 0 0 1.5em;
 }
 
 pre {
-	background: #eee;
-	font-family: "Courier 10 Pitch", courier, monospace;
-	line-height: 1.6;
-	margin-bottom: 1.6em;
-	max-width: 100%;
-	overflow: auto;
-	padding: 1.6em;
+  background: #eee;
+  font-family: "Courier 10 Pitch", courier, monospace;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em;
 }
 
 code,
 kbd,
 tt,
 var {
-	font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 
 abbr,
 acronym {
-	border-bottom: 1px dotted #666;
-	cursor: help;
+  border-bottom: 1px dotted #666;
+  cursor: help;
 }
 
 mark,
 ins {
-	background: #fff9c0;
-	text-decoration: none;
+  background: #fff9c0;
+  text-decoration: none;
 }
 
 big {
-	font-size: 125%;
+  font-size: 125%;
 }
 
 /* Elements
 --------------------------------------------- */
 
 hr {
-	background-color: #ccc;
-	border: 0;
-	height: 1px;
-	margin-bottom: 1.5em;
+  background-color: #ccc;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em;
 }
 
-/* ul,
 ol {
-	margin: 0 0 1.5em 3em;
-} */
-
-/* ul {
-	list-style: disc;
-} */
-
-ol {
-	list-style: decimal;
+  list-style: decimal;
 }
 
 li>ul,
 li>ol {
-	margin-bottom: 0;
-	margin-left: 1.5em;
+  margin-bottom: 0;
+  margin-left: 1.5em;
 }
 
 dt {
-	font-weight: 700;
+  font-weight: 700;
 }
 
 dd {
-	margin: 0 1.5em 1.5em;
+  margin: 0 1.5em 1.5em;
 }
 
 /* Make sure embeds and iframes fit their containers. */
 embed,
 iframe,
 object {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 img {
-	height: auto;
-	max-width: 100%;
+  height: auto;
+  max-width: 100%;
 }
 
 figure {
-	margin: 1em 0;
+  margin: 1em 0;
 }
 
 table {
-	margin: 0 0 1.5em;
-	width: 100%;
+  margin: 0 0 1.5em;
+  width: 100%;
 }
 
 /* Links
 --------------------------------------------- */
 
 a:focus {
-	outline: thin dotted;
+  outline: thin dotted;
 }
 
 a:hover,
 a:active {
-	outline: 0;
+  outline: 0;
 }
 
 /* Forms
@@ -570,14 +568,14 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border-radius: 3px;
-	background: var(--red);
-	color: var(--light-beige);
-	line-height: 1;
-	padding: 1rem 1.5rem;
-	transition: all .3s ease;
-	cursor: pointer;
-	display: inline-block;
+  border-radius: 3px;
+  background: var(--red);
+  color: var(--light-beige);
+  line-height: 1;
+  padding: 1rem 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
 }
 
 button:hover,
@@ -586,8 +584,8 @@ input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover,
 .add_to_cart_button:hover {
-	background-color: var(--dark-red);
-	color: var(--light-beige) !important;
+  background-color: var(--dark-red);
+  color: var(--light-beige) !important;
 }
 
 button:active,
@@ -600,8 +598,8 @@ input[type="submit"]:active,
 input[type="submit"]:focus,
 .add_to_cart_button:active,
 .add_to_cart_button:focus {
-	background-color: var(--dark-red);
-	color: var(--light-beige) !important;
+  background-color: var(--dark-red);
+  color: var(--light-beige) !important;
 }
 
 input[type="text"],
@@ -620,10 +618,10 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	padding: 3px;
+  color: var(--black);
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 3px;
 }
 
 input[type="text"]:focus,
@@ -642,15 +640,15 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-	color: #111;
+  color: #111;
 }
 
 select {
-	border: 1px solid #ccc;
+  border: 1px solid #ccc;
 }
 
 textarea {
-	width: 100%;
+  width: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -663,142 +661,131 @@ textarea {
 
 /* Navigation
 --------------------------------------------- */
-/* .main-navigation {
-	display: block;
-	width: 100%;
-} */
-
 .main-navigation ul {
-	display: none;
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
 }
 
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 100%;
-	left: -999em;
-	z-index: 99999;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  float: left;
+  position: absolute;
+  top: 100%;
+  left: -999em;
+  z-index: 99999;
 }
 
 .main-navigation ul ul ul {
-	left: -999em;
-	top: 0;
+  left: -999em;
+  top: 0;
 }
 
 .main-navigation ul ul li:hover>ul,
 .main-navigation ul ul li.focus>ul {
-	display: block;
-	left: auto;
+  display: block;
+  left: auto;
 }
 
 .main-navigation ul ul a {
-	width: 200px;
+  width: 200px;
 }
 
 .main-navigation ul li:hover>ul,
 .main-navigation ul li.focus>ul {
-	left: auto;
+  left: auto;
 }
 
 .main-navigation li {
-	position: relative;
+  position: relative;
 }
 
 .main-navigation a {
-	display: block;
-	text-decoration: none;
+  display: block;
+  text-decoration: none;
 }
 
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
-	display: block;
+  display: block;
 }
 
 @media screen and (min-width: 37.5em) {
+  .menu-toggle {
+    display: none;
+  }
 
-	.menu-toggle {
-		display: none;
-	}
-
-	.main-navigation ul {
-		display: flex;
-	}
+  .main-navigation ul {
+    display: flex;
+  }
 }
 
 .site-main .comment-navigation,
 .site-main .posts-navigation,
 .site-main .post-navigation {
-	margin: 0 0 1.5em;
+  margin: 0 0 1.5em;
 }
 
 .comment-navigation .nav-links,
 .posts-navigation .nav-links,
 .post-navigation .nav-links {
-	display: flex;
+  display: flex;
 }
 
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
-	flex: 1 0 50%;
+  flex: 1 0 50%;
 }
 
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
-	text-align: end;
-	flex: 1 0 50%;
+  text-align: end;
+  flex: 1 0 50%;
 }
 
 /* Posts and pages
 --------------------------------------------- */
 .sticky {
-	display: block;
+  display: block;
 }
 
-/* .post,
-.page {
-	margin: 0 0 1.5em;
-} */
-
 .updated:not(.published) {
-	display: none;
+  display: none;
 }
 
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+  margin: 1.5em 0 0;
 }
 
 .page-links {
-	clear: both;
-	margin: 0 0 1.5em;
+  clear: both;
+  margin: 0 0 1.5em;
 }
 
 /* Comments
 --------------------------------------------- */
 .comment-content a {
-	word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .bypostauthor {
-	display: block;
+  display: block;
 }
 
 /* Widgets
 --------------------------------------------- */
 .widget {
-	margin: 0 0 1.5em;
+  margin: 0 0 1.5em;
 }
 
 .widget select {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 /* Media
@@ -806,86 +793,86 @@ textarea {
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
-	border: none;
-	margin-bottom: 0;
-	margin-top: 0;
-	padding: 0;
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
 }
 
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
-	display: inline-block;
+  display: inline-block;
 }
 
 /* Captions
 --------------------------------------------- */
 .wp-caption {
-	margin-bottom: 1.5em;
-	max-width: 100%;
+  margin-bottom: 1.5em;
+  max-width: 100%;
 }
 
 .wp-caption img[class*="wp-image-"] {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
+  margin: 0.8075em 0;
 }
 
 .wp-caption-text {
-	text-align: center;
+  text-align: center;
 }
 
 /* Galleries
 --------------------------------------------- */
 .gallery {
-	margin-bottom: 1.5em;
-	display: grid;
-	grid-gap: 1.5em;
+  margin-bottom: 1.5em;
+  display: grid;
+  grid-gap: 1.5em;
 }
 
 .gallery-item {
-	display: inline-block;
-	text-align: center;
-	width: 100%;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
 }
 
 .gallery-columns-2 {
-	grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .gallery-columns-3 {
-	grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .gallery-columns-4 {
-	grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .gallery-columns-5 {
-	grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .gallery-columns-6 {
-	grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, 1fr);
 }
 
 .gallery-columns-7 {
-	grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, 1fr);
 }
 
 .gallery-columns-8 {
-	grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(8, 1fr);
 }
 
 .gallery-columns-9 {
-	grid-template-columns: repeat(9, 1fr);
+  grid-template-columns: repeat(9, 1fr);
 }
 
 .gallery-caption {
-	display: block;
+  display: block;
 }
 
 /*--------------------------------------------------------------
@@ -898,12 +885,12 @@ textarea {
 /* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
-	display: none;
+  display: none;
 }
 
 /* Re-display the Theme Footer when Infinite Scroll has reached its end. */
 .infinity-end.neverending .site-footer {
-	display: block;
+  display: block;
 }
 
 /*--------------------------------------------------------------
@@ -915,456 +902,461 @@ textarea {
 
 /* Text meant only for screen readers. */
 .screen-reader-text {
-	border: 0;
-	clip: rect(1px, 1px, 1px, 1px);
-	clip-path: inset(50%);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute !important;
-	width: 1px;
-	word-wrap: normal !important;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
 }
 
 .screen-reader-text:focus {
-	background-color: #f1f1f1;
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	clip: auto !important;
-	clip-path: none;
-	color: #21759b;
-	display: block;
-	font-size: 0.875rem;
-	font-weight: 700;
-	height: auto;
-	left: 5px;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	text-decoration: none;
-	top: 5px;
-	width: auto;
-	z-index: 100000;
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  clip-path: none;
+  color: #21759b;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
 }
 
 /* Do not show the outline on the skip link target. */
 #primary[tabindex="-1"]:focus {
-	outline: 0;
+  outline: 0;
 }
 
 /* Alignments
 --------------------------------------------- */
 .alignleft {
+  /*rtl:ignore*/
+  float: left;
 
-	/*rtl:ignore*/
-	float: left;
-
-	/*rtl:ignore*/
-	margin-right: 1.5em;
-	margin-bottom: 1.5em;
+  /*rtl:ignore*/
+  margin-right: 1.5em;
+  margin-bottom: 1.5em;
 }
 
 .alignright {
+  /*rtl:ignore*/
+  float: right;
 
-	/*rtl:ignore*/
-	float: right;
-
-	/*rtl:ignore*/
-	margin-left: 1.5em;
-	margin-bottom: 1.5em;
+  /*rtl:ignore*/
+  margin-left: 1.5em;
+  margin-bottom: 1.5em;
 }
 
 .aligncenter {
-	clear: both;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 1.5em;
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5em;
 }
 
 /* Zouzou Hair Custom */
 
 .container {
-	max-width: 1700px;
-	margin: 0 auto;
+  max-width: 1700px;
+  margin: 0 auto;
 }
 
 .padding {
-	/* utility class for padding inside containers */
-	padding: 1.5rem;
+  /* utility class for padding inside containers */
+  padding: 1.5rem;
 }
 
 .button {
-	/* this is a styling for links (anchor) to look like buttons */
-	background: var(--red) !important;
+  /* this is a styling for links (anchor) to look like buttons */
+  background: var(--red) !important;
 }
 
 .button:hover {
-	/* this is a styling for links (anchor) to look like buttons */
-	background-color: var(--dark-red) !important;
+  /* this is a styling for links (anchor) to look like buttons */
+  background-color: var(--dark-red) !important;
 }
 
 .red-bar {
-	width: 5px;
-	background-color: var(--red);
+  width: 5px;
+  background-color: var(--red);
 }
 
 .intro-text>div:first-of-type {
-	display: flex;
-	gap: 1.5rem;
-	margin-bottom: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .intro-text p span {
-	color: #9B1F1F;
-	font-weight: 700;
+  color: #9b1f1f;
+  font-weight: 700;
+}
+
+.error-404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
 }
 
 .error-404 span {
-	font-size: 10rem;
-	font-family: 'Cinzel';
+  font-size: 10rem;
+  font-family: "Cinzel";
 }
 
 .back span {
-	font-weight: 700;
-	display: flex;
-	align-items: center;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
 }
 
 .back svg {
-	width: 20px;
+  width: 20px;
 }
 
 /* Zouzou Hair Custom - Header */
 
 nav button {
-	background-color: unset;
-	border: unset;
-	padding: 0.5rem;
+  background-color: unset;
+  border: unset;
+  padding: 0.5rem;
 }
 
 header nav>div {
-	display: none;
+  display: none;
 }
 
 .show {
-	display: block;
-	position: absolute;
-	left: 0;
-	background-color: var(--light-beige);
-	width: 100%;
-	top: 100%;
-	z-index: 1;
+  display: block;
+  position: absolute;
+  left: 0;
+  background-color: var(--light-beige);
+  width: 100%;
+  top: 100%;
+  z-index: 2;
 }
 
 .show li {
-	font-weight: 700;
-	padding: 1rem 2rem;
-	border-bottom: 3px solid var(--beige);
+  font-weight: 700;
+  border-bottom: 3px solid var(--beige);
 }
 
 .show li:hover,
 .show a:hover {
-	background-color: var(--beige) !important;
+  background-color: var(--beige) !important;
 }
 
 .show a {
-	display: block;
-	color: var(--black);
+  display: block;
+  padding: 1rem 2rem;
+  color: var(--black);
 }
 
-
 nav button svg {
-	width: 50px;
-	stroke: var(--light-beige);
+  width: 50px;
+  stroke: var(--light-beige);
 }
 
 .site-title {
-	display: none;
-	margin-bottom: 0;
+  display: none;
+  margin-bottom: 0;
 }
 
 .site-logo {
-	max-width: 200px;
+  max-width: 200px;
 }
 
 .sup-header {
-	background-color: var(--beige);
-	color: var(--black);
-	padding: 0.75rem;
-	display: none;
+  background-color: var(--beige);
+  color: var(--black);
+  padding: 0.75rem;
+  display: none;
 }
 
 .sup-header-flex {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .sup-header-flex p {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .main-header {
-	background-color: var(--dark);
-	position: relative;
+  background-color: var(--dark);
+  position: relative;
 }
 
 .main-header a:hover {
-	background-color: var(--dark-red);
+  background-color: var(--dark-red);
 }
 
 .main-header .custom-logo-link:hover {
-	background-color: unset;
+  background-color: unset;
 }
 
 .main-header-flex {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
 }
 
 .default-banner {
-	background-color: var(--dark);
-	color: var(--light-beige);
+  background-color: var(--dark);
+  color: var(--light-beige);
 }
 
 .front-banner {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./assets/images/front-banner.jpg');
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	color: var(--white);
-	height: 75vh;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("./assets/images/front-banner.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--white);
+  height: 75vh;
 }
 
 .about-banner {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/about-banner.jpg');
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	color: var(--white);
-	background-attachment: fixed;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("./assets/images/about-banner.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--white);
+  background-attachment: fixed;
 }
 
 .shop-banner {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/shop-banner.webp');
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	color: var(--white);
-	background-attachment: fixed;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("./assets/images/shop-banner.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--white);
+  background-attachment: fixed;
 }
 
 .services-banner {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url('./assets/images/services-banner.webp');
-	background-position: center -15rem;
-	background-repeat: no-repeat;
-	background-size: cover;
-	color: var(--white);
-	background-attachment: fixed;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),
+    url("./assets/images/services-banner.webp");
+  background-position: center -15rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--white);
+  background-attachment: fixed;
 }
 
 .contact-banner {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/contact-banner.webp');
-	background-position: center -10rem;
-	background-repeat: no-repeat;
-	background-size: cover;
-	color: var(--white);
-	background-attachment: fixed;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("./assets/images/contact-banner.webp");
+  background-position: center -10rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--white);
+  background-attachment: fixed;
 }
 
 .image-padding {
-	padding: 1.5rem;
+  padding: 1.5rem;
 }
 
 .banner-content {
-	padding: 8rem 0;
+  padding: 8rem 0;
 }
 
 .home-header p {
-	color: var(--light-beige);
-	padding: 0rem;
-	margin: 0rem;
+  color: var(--light-beige);
+  padding: 0rem;
+  margin: 0rem;
 }
 
 .home-header a {
-	margin-top: 1rem;
-	margin-right: 0.5rem;
-	font-size: 1.4rem;
-	padding: 0.6rem;
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+  font-size: 1.4rem;
+  padding: 0.6rem;
 }
 
 .zouzou-intro-header {
-	display: none;
+  display: none;
 }
 
 .signature-look {
-	font-family: 'Cinzel';
-	font-size: 2rem;
-	padding: 0rem;
-	margin: 0rem;
+  font-family: "Cinzel";
+  font-size: 2rem;
+  padding: 0rem;
+  margin: 0rem;
 }
 
 .zouzou-intro-home {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
 }
 
-.red-scissors-intro>div:nth-child(2) p {
-	font-weight: bold;
-	font-size: 18px;
-
+.zouzou-intro-home>div:nth-child(2) p {
+  font-weight: bold;
+  font-size: 18px;
 }
 
-.red-scissors-intro{
+.red-scissors-intro {
 	width: calc(85% - 0.5rem);
 }
 
-.red-scissors{
+.red-scissors {
 	margin-top: 7rem;
 	width: calc(15% - 0.5rem);
 }
 
-
 .red-scissors img {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 .zouzou-title {
-	font-family: 'Cinzel';
-	font-size: 2rem;
+  font-family: "Cinzel";
+  font-size: 2rem;
 }
-
 
 /* Services Section */
 
 h2 {
-	padding: 0;
-	margin-bottom: 0;
+  padding: 0;
+  margin-bottom: 0;
 }
 
 .home-services-flex {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 1rem;
-	padding-bottom: 2rem;
-	justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-bottom: 2rem;
+  justify-content: space-between;
 }
 
 .home-services-flex a {
-	width: calc(50% - 0.5rem);
-	aspect-ratio: 1 / 1;
-	text-decoration: none;
-	color: inherit;
-	display: block;
+  width: calc(50% - 0.5rem);
+  aspect-ratio: 1 / 1;
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
-.home-services-flex a div{
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    transition: transform 0.3s, box-shadow 0.3s;
+.home-services-flex a div {
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.home-services-flex a div:hover{
+.home-services-flex a div:hover {
 	transform: scale(1.03);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .services-deal {
-	color: var(--red);
-	margin-top: 0.5rem;
+  color: var(--red);
+  margin-top: 0.5rem;
 }
 
 .womens-cuts {
-	background: url('./assets/images/womenscuts-small.jpg') center center/cover no-repeat;
-	color: var(--white);
-	border: var(--red) 3px solid;
-	position: relative;
-	height: 100%;
+  background: url("./assets/images/womenscuts-small.jpg") center center/cover no-repeat;
+  color: var(--white);
+  border: var(--red) 3px solid;
+  position: relative;
+  height: 100%;
 }
 
 .mens-cuts {
-	background: url('./assets/images/menscuts-small.jpg') center center/cover no-repeat;
-	color: var(--white);
-	border: var(--red) 3px solid;
-	position: relative;
-	height: 100%;
+  background: url("./assets/images/menscuts-small.jpg") center center/cover no-repeat;
+  color: var(--white);
+  border: var(--red) 3px solid;
+  position: relative;
+  height: 100%;
 }
 
 .nonbinary-cuts {
-	background: url('./assets/images/nonbinary.jpg') center center/cover no-repeat;
-	color: var(--white);
-	border: var(--red) 3px solid;
-	position: relative;
-	height: 100%;
+  background: url("./assets/images/nonbinary.jpg") center center/cover no-repeat;
+  color: var(--white);
+  border: var(--red) 3px solid;
+  position: relative;
+  height: 100%;
 }
 
 .coloring {
-	background: url('./assets/images/coloring.jpg') center center/cover no-repeat;
-	color: var(--white);
-	border: var(--red) 3px solid;
-	position: relative;
-	height: 100%;
+  background: url("./assets/images/coloring.jpg") center center/cover no-repeat;
+  color: var(--white);
+  border: var(--red) 3px solid;
+  position: relative;
+  height: 100%;
 }
 
 .styling {
-	background: url('./assets/images/styling.jpg') center center/cover no-repeat;
-	color: var(--white);
-	border: var(--red) 3px solid;
-	position: relative;
-	height: 100%;
+  background: url("./assets/images/styling.jpg") center center/cover no-repeat;
+  color: var(--white);
+  border: var(--red) 3px solid;
+  position: relative;
+  height: 100%;
 }
 
 .hair-botox {
-	background: url('./assets/images/hairbotox.jpg') center center/cover no-repeat;
-	color: var(--white);
-	border: var(--red) 3px solid;
-	position: relative;
-	height: 100%;
+  background: url("./assets/images/hairbotox.jpg") center center/cover no-repeat;
+  color: var(--white);
+  border: var(--red) 3px solid;
+  position: relative;
+  height: 100%;
 }
 
 .services-titles {
-	background-color: var(--light-beige);
-	color: var(--red);
-	border-top: var(--red) 3px solid;
-	font-family: var(--wp--preset--font-family--afacad);
-	font-size: 1.3rem;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: 0;
-	text-align: center;
-	padding: 3px;
+  background-color: var(--light-beige);
+  color: var(--red);
+  border-top: var(--red) 3px solid;
+  font-family: "Afacad";
+  font-size: 1.3rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  text-align: center;
+  padding: 3px;
 }
 
 .home-services-flex a:hover .services-titles {
-	color: var(--light-beige);
-	background-color: var(--red);
+  color: var(--light-beige);
+  background-color: var(--red);
 }
-
 
 /* home intro */
 .home-intro {
-	background: url('./assets/images/home-intro-banner.jpg');
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-attachment: fixed;
-	color: var(--light-beige);
-	height: 80vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  background: url("./assets/images/home-intro-banner.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--light-beige);
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .home-intro-background {
-	background-color: var(--dark);
-	padding: 2rem;
-	margin: 0 1.5rem;
+  background-color: var(--dark);
+  padding: 2rem;
+  margin: 0 1.5rem;
 }
 
 /* reviews on home */
@@ -1377,190 +1369,341 @@ h2 {
 }
 
 .ti-name {
-    font-size: 18px;
-    font-weight: bold;
-    color: var(--light-beige);
+	font-size: 18px;
+	font-weight: bold;
+	color: var(--light-beige);
 }
 
-.ti-footer .source-Google{
+.ti-footer .source-Google {
 	margin-top: 0rem;
 }
 
 /* Zouzou Hair Custom - Services Page */
 
 .service-category-page .services-list {
-	max-width: 650px;
-	margin-top: 3rem;
+  max-width: 650px;
+  margin-top: 3rem;
 }
 
 .service-bar p {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .service-bar {
-	padding: 1rem;
-	display: flex;
-	justify-content: space-between;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .service-bar>div>p:nth-of-type(1) {
-	font-weight: 700;
+  font-weight: 700;
 }
 
 .service-bar:nth-child(even) {
-	background-color: var(--beige);
-	padding: 1rem;
+  background-color: var(--beige);
+  padding: 1rem;
 }
 
 .gallery {
-	margin: 1.5rem 0;
-	display: flex;
-	flex-wrap: wrap;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
+  margin: 1.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .gallery>img {
-	aspect-ratio: 1/1;
-	object-fit: cover;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 
-.services-page .gallery>img:nth-child(n+5) {
-	display: none;
+.services-page .gallery>img:nth-child(n + 5) {
+  display: none;
 }
 
 /* Zouzou Hair Custom - Contact Page */
 .wpcf7 input[type="text"],
 .wpcf7 input[type="email"],
 .wpcf7 textarea {
-	width: 100%;
+  width: 100%;
 }
 
 .wpcf7-submit,
 .search-submit {
-	border: 1px solid var(--red);
+  border: 1px solid var(--red);
 }
 
 .wpcf7-submit:hover,
 .search-submit:hover {
-	border: 1px solid var(--dark-red);
+  border: 1px solid var(--dark-red);
 }
 
 .contact-red {
-	background-color: var(--red);
-	color: var(--light-beige);
+  background-color: var(--red);
+  color: var(--light-beige);
 }
 
 .contact-red h3 {
-	font-family: 'Afacad';
-	margin-bottom: 0.5rem;
+  font-family: "Afacad";
+  margin-bottom: 0.5rem;
 }
 
 /* Zouzou Hair Custom - Shop */
 .search-submit {
-	padding: 0.5rem 1rem !important;
+  padding: 0.5rem 1rem !important;
 }
 
 .woocommerce-loop-product__title {
-	font-family: 'Afacad';
+  font-family: "Afacad";
 }
 
 .woocommerce-Price-amount.amount {
-	color: var(--black);
-	font-size: 18px;
-	display: block;
+  color: var(--black);
+  font-size: 18px;
+  display: block;
 }
 
 .add_to_cart_button {
-	background-color: var(--beige) !important;
-	color: var(--black) !important;
+  background-color: var(--beige) !important;
+  color: var(--black) !important;
 }
 
 .search-form {
-	margin: 1.5rem 0;
+  margin: 1.5rem 0;
 }
 
 .woocommerce-loop-product__title {
-	font-size: 1.25rem;
+  font-size: 1.25rem;
 }
 
 .product-loop,
 .category-loop {
-	display: grid;
-	padding: 1.5rem 0;
-	grid-template-columns: 1fr 1fr;
-	column-gap: 1.5rem;
-	row-gap: 1.5rem;
+  display: grid;
+  padding: 1.5rem 0;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1.5rem;
+  row-gap: 1.5rem;
 }
 
 .category {
-	position: relative;
+  position: relative;
 }
 
 .category-loop img {
-	width: 100%;
+  width: 100%;
 }
 
 .category-loop h2 {
-	background-color: var(--beige);
-	width: 100%;
-	padding: 0.5rem 1rem;
-	margin-top: 0;
-	font-family: 'Afacad';
-	position: absolute;
-	bottom: 0;
-	font-size: 1.5rem;
+  background-color: var(--beige);
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin-top: 0;
+  font-family: "Afacad";
+  position: absolute;
+  bottom: 0;
+  font-size: 1.5rem;
 }
 
 /* Zouzou Hair Custom - Footer */
 footer {
-	background-color: var(--dark);
-	color: var(--light-beige);
-	padding: 5rem 1.5rem;
+  background-color: var(--dark);
+  color: var(--light-beige);
+  padding: 5rem 1.5rem;
 }
 
 .footer-flex {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-}
-
-.connect-with-us h3 {
-	margin-top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 footer .main-navigation ul {
-	flex-direction: column;
-	gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 footer .main-navigation ul a {
-	color: var(--light-beige);
+  color: var(--light-beige);
 }
 
 .footer-flex {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .connect-with-us svg,
 .social-links svg {
-	width: 30px;
+  width: 30px;
 }
 
 .connect-flex {
-	display: flex;
-	align-items: flex-start;
-	gap: 0.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 
 .social-links ul {
-	display: flex;
-	gap: 1rem;
-	padding: 0;
-	margin: 0;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
 }
+
+/* -------------------------------ABOUT US ADDITIONS - NEED TO BE CHECKED FOR REPEATED STYLES */
+/* Container settings for 1150px max width */
+.container {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Team list layout */
+.team-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Team member card styling */
+.team-member {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1150px;
+  box-sizing: border-box;
+}
+
+/* Image container with increased size to match text height */
+.image-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin-right: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Member image with overlay effect */
+.member-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image-container:hover .member-image {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+/* Member info styling */
+.member-info {
+  flex: 1;
+}
+
+.member-name {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.member-position {
+  font-size: 1.2em;
+  color: #666;
+  margin: 5px 0;
+}
+
+.member-intro {
+  font-size: 1em;
+  color: #333;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+
+  /* Stacking cards vertically */
+  .team-member {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+  }
+
+  /* Center image on smaller screens */
+  .image-container {
+    margin: 0 0 15px 0;
+    width: 120px;
+    height: 120px;
+  }
+
+  .member-info {
+    text-align: center;
+  }
+
+  .member-name {
+    font-size: 1.3em;
+  }
+
+  .member-position {
+    font-size: 1em;
+  }
+
+  .member-intro {
+    font-size: 0.9em;
+  }
+}
+
+/* Extra small screens, down to 340px */
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  .team-member {
+    padding: 10px;
+  }
+
+  .image-container {
+    width: 100px;
+    height: 100px;
+  }
+
+  .member-name {
+    font-size: 1.2em;
+  }
+
+  .member-position,
+  .member-intro {
+    font-size: 0.85em;
+  }
+}
+
+/* END OF ABOUT STYLES ADDED - NEED TO BE CONFIRMED WITH OTHER STYLES FOR DUPLICATE ACTIONS */
 
 /* MEDIA QUERIES */
 @media screen and (min-width: 450px) {
@@ -1570,19 +1713,19 @@ footer .main-navigation ul a {
 		justify-content: space-between;
 		gap: 1rem;
 	}
-	
-	.red-scissors-intro{
+
+	.red-scissors-intro {
 		width: calc(70% - 0.5rem);
 	}
-	
-	.red-scissors{
+
+	.red-scissors {
 		margin-top: unset;
 		width: calc(7rem - 0.5rem);
 	}
 }
 
 @media screen and (min-width: 600px) {
-	.services-heading-title{
+  .services-heading-title {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
@@ -1592,253 +1735,249 @@ footer .main-navigation ul a {
 
 	.services-heading-title h2,
 	.services-heading-title p {
-    margin: 0;
-}
+		margin: 0;
+	}
 
 	.home-services-flex {
 		box-sizing: border-box;
 		gap: 0.8rem;
 	}
 
-	.home-services-flex a {
-		width: calc(33% - 0.5rem);
-		aspect-ratio: 1 / 1;
-		box-sizing: border-box;
-	}
+  .home-services-flex a {
+    width: calc(33% - 0.5rem);
+    aspect-ratio: 1 / 1;
+    box-sizing: border-box;
+  }
 
-	.services-titles {
-		padding: 5px 3px;
-	}
+  .services-titles {
+    padding: 5px 3px;
+  }
 
-	.home-intro {
-		justify-content: flex-start;
-		align-items: center;
-		padding-right: 3rem;
-	}
+  .home-intro {
+    justify-content: flex-start;
+    align-items: center;
+    padding-right: 3rem;
+  }
 
-	.home-intro-background {
-		max-width: 500px;
-		text-align: left;
-	}
+  .home-intro-background {
+    max-width: 500px;
+    text-align: left;
+  }
 
-	.product-search {
-		display: flex;
-		justify-content: space-between;
-		margin-bottom: 1.5rem;
-		align-items: center;
-	}
+  .product-search {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    align-items: center;
+  }
 
-	.footer-grid {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		column-gap: 1.5rem;
-		row-gap: 1.5rem;
-	}
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+  }
 
-	footer h3 {
-		margin-top: 0;
-	}
+  footer h3 {
+    margin-top: 0;
+  }
 
-	.back {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-
-
+  .back {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 @media screen and (min-width: 750px) {
-	.toggle-btn {
-		display: none;
-	}
+  .toggle-btn {
+    display: none;
+  }
 
-	header nav>div {
-		display: block;
-	}
+  header nav>div {
+    display: block;
+  }
 
-	.show {
-		all: unset;
-	}
+  .show {
+    all: unset;
+  }
 
-	.main-header a {
-		color: var(--light-beige);
-		padding: 0.25rem 0.75rem;
-		border-radius: 3px;
-	}
+  .show li {
+    all: unset;
+  }
 
-	.main-header a:hover {
-		background-color: var(--dark-red);
-	}
+  .main-header a {
+    color: var(--light-beige);
+    padding: 0.25rem 0.75rem;
+    border-radius: 3px;
+  }
 
-	.main-header .main-navigation ul {
-		display: flex;
-		gap: 1rem;
-	}
+  .main-header a:hover {
+    background-color: var(--dark-red);
+  }
 
+  .main-header .main-navigation ul {
+    display: flex;
+    gap: 1rem;
+  }
 
+  .image-padding {
+    padding: 5rem 1.5rem;
+  }
 
-	.image-padding {
-		padding: 5rem 1.5rem;
-	}
+  .contact-flex {
+    display: flex;
+  }
 
-	.contact-flex {
-		display: flex;
-	}
+  .contact-flex>* {
+    width: 50%;
+  }
 
-	.contact-flex>* {
-		width: 50%;
-	}
-
-	.home-services-flex a {
-		width: calc(33% - 0.5rem);
-		aspect-ratio: 1 / 1;
-	}
-
+  .home-services-flex a {
+    width: calc(33% - 0.5rem);
+    aspect-ratio: 1 / 1;
+  }
 }
 
 @media screen and (min-width: 770px) {
 
-	.product-loop,
-	.category-loop {
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-	}
-}
-
-@media screen and (min-width: 840px) {
-	.services-page .services>div {
-		display: flex;
-		gap: 1.5rem;
-	}
-
-	.services-page .services:nth-of-type(even)>div {
-		flex-direction: row-reverse;
-	}
-
-	.services-page .services>div>div {
-		width: 60%;
-	}
-
-	.service-category-page .gallery {
-		grid-template-columns: repeat(auto-fill, 24rem);
-	}
+  .product-loop,
+  .category-loop {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 
 @media screen and (min-width: 800px) {
-	.home-header {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-	}
+  .home-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 
-	.zouzou-intro-header {
-		display: unset;
-		background-color: var(--dark);
-		width: 50ch;
-		padding: 1rem;
-	}
+  .zouzou-intro-header {
+    display: unset;
+    background-color: var(--dark);
+    width: 50ch;
+    padding: 1rem;
+  }
 
-	.zouzou-intro-home {
-		display: none;
-	}
+  .zouzou-intro-home {
+    display: none;
+  }
 }
 
+@media screen and (min-width: 840px) {
+  .services-page .services>div {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .services-page .services:nth-of-type(even)>div {
+    flex-direction: row-reverse;
+  }
+
+  .services-page .services>div>div {
+    width: 60%;
+  }
+
+  .service-category-page .gallery {
+    grid-template-columns: repeat(auto-fill, 24rem);
+  }
+}
 
 @media screen and (min-width: 1000px) {
+  main .padding {
+    padding: 5rem 1.5rem;
+  }
 
-	main .padding {
-		padding: 5rem 1.5rem;
-	}
+  .sup-header {
+    display: block;
+  }
 
-	.sup-header {
-		display: block;
-	}
+  .intro-text {
+    display: flex;
+    justify-content: space-between;
+  }
 
-	.intro-text {
-		display: flex;
-		justify-content: space-between;
-	}
+  .intro-text>div>p {
+    max-width: 500px;
+  }
 
-	.intro-text>div>p {
-		max-width: 500px;
-	}
+  .wpcf7 input[type="text"],
+  .wpcf7 input[type="email"],
+  .wpcf7 textarea {
+    width: 75%;
+  }
 
-	.wpcf7 input[type="text"],
-	.wpcf7 input[type="email"],
-	.wpcf7 textarea {
-		width: 75%;
-	}
-
-	.home-services-flex {
+  .home-services-flex {
 		box-sizing: border-box;
 		gap: 1rem;
-	}
+  }
 
-	.home-services-flex a:nth-child(1),
-	.home-services-flex a:nth-child(2) {
-		width: calc(50% - 0.8rem);
-		aspect-ratio: 2 / 1;
-		box-sizing: border-box;
-	}
+  .home-services-flex a:nth-child(1),
+  .home-services-flex a:nth-child(2) {
+    width: calc(50% - 1rem);
+    aspect-ratio: 2 / 1;
+    box-sizing: border-box;
+  }
 
-	.home-services-flex a {
+  .home-services-flex a {
 		width: calc(24% - 0.5rem);
 		aspect-ratio: 1 / 1;
 		box-sizing: border-box;
-	}
+  }
 
-	.services-titles {
+  .services-titles {
 		padding: 10px 3px;
 	}
 
 	.womens-cuts {
 		background: url('./assets/images/womenscuts-large.jpg') center center/cover no-repeat;
-
 	}
-	
+
 	.mens-cuts {
 		background: url('./assets/images/menscuts-large.jpg') center center/cover no-repeat;
-
 	}
 
-	.contact-flex {
-		display: flex;
-	}
 
-	.contact-flex> :nth-child(1) {
-		width: 70%;
-	}
+  .contact-flex {
+    display: flex;
+  }
 
-	.contact-flex> :nth-child(2) {
-		width: 30%;
-	}
+  .contact-flex> :nth-child(1) {
+    width: 70%;
+  }
 
-	.footer-grid {
-		grid-template-columns: none;
-		grid-template-columns: 1fr 1fr 400px;
-	}
+  .contact-flex> :nth-child(2) {
+    width: 30%;
+  }
 
-	.grid-1 {
-		grid-column: span 1;
-		grid-row: span 2;
-	}
+  .footer-grid {
+    grid-template-columns: none;
+    grid-template-columns: 1fr 1fr 400px;
+  }
 
-	.grid-3 {
-		grid-column: 2 / span 1;
-		grid-row: 2 / span 1
-	}
+  .grid-1 {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
 
-	.grid-4 {
-		position: relative;
-	}
+  .grid-3 {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+  }
 
-	footer iframe {
-		position: absolute;
-	}
+  .grid-4 {
+    position: relative;
+  }
+
+  footer iframe {
+    position: absolute;
+  }
 }
 
 @media screen and (min-width: 1200px) {
-	.intro-text>div>p {
-		max-width: 700px;
-	}
+  .intro-text>div>p {
+    max-width: 700px;
+  }
 }
