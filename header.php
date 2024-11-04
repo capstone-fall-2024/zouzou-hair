@@ -19,6 +19,8 @@ if (is_front_page()) {
 	$banner_text = 'front-content';
 } elseif (is_page('contact')) {
 	$banner = 'contact-banner';
+} elseif (is_page('careers')) {
+	$banner = 'career-banner';
 } elseif (is_page('about')) {
 	$banner = 'about-banner';
 } elseif (is_page('services')) {
@@ -63,7 +65,7 @@ if (is_front_page()) {
 							echo "<div class=\"site-logo\">";
 							the_custom_logo();
 							echo "</div>";
-							if (is_front_page() && is_home()) :
+							if (is_front_page()) :
 							?>
 								<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
 							<?php
@@ -80,7 +82,7 @@ if (is_front_page()) {
 							<?php endif; ?>
 						</div><!-- .site-branding -->
 						<nav id="site-navigation" class="main-navigation">
-							<button class="toggle-btn" aria-controls="primary-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+							<button class="toggle-btn" aria-label="Toggle to open mobile menu" aria-controls="primary-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
 									<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
 								</svg>
 							</button>
@@ -122,7 +124,7 @@ if (is_front_page()) {
 					<a href="<?php echo esc_url(home_url('/featured-items')); ?>" class="button">Featured Items</a>
 					<a href="<?php echo esc_url(home_url('/shop-by-brand')); ?>" class="button">Shop by Brand</a>
 				</section>
-			<?php elseif ((is_woocommerce() && !is_shop()) || is_cart() || is_checkout()) : ?>
+			<?php elseif ((is_woocommerce() && !is_shop()) || is_cart() || is_checkout() || is_404()) : ?>
 				<!-- hides the header space below the nav; h1 is automatically set by the woocommerce template -->
 			<?php elseif (is_tax() || is_category() || is_tag()) : ?>
 				<section class="container padding">
