@@ -13,7 +13,7 @@ get_header();
 $product_categories = get_terms(array(
     'taxonomy'      => 'product_cat',
     'hide_empty'    => true
-))
+));
 
 ?>
 <main id="primary" class="site-main">
@@ -28,39 +28,41 @@ $product_categories = get_terms(array(
         <?php
         if (!empty($product_categories) && !is_wp_error($product_categories)) { ?>
 
-            <ul class="category-loop">
-                <?php foreach ($product_categories as $product_category) {
-                    echo '<li class="category">';
+            <div>
+                <ul class="category-loop">
+                    <?php foreach ($product_categories as $product_category) {
+                        echo '<li class="category">';
 
-                    $args = array(
-                        'post_type'      => 'product',
-                        'posts_per_page' => 1,
-                        'tax_query'      => array(
-                            array(
-                                'taxonomy' => 'product_cat',
-                                'field'    => 'term_id',
-                                'terms'    => $product_category->term_id,
+                        $args = array(
+                            'post_type'      => 'product',
+                            'posts_per_page' => 1,
+                            'tax_query'      => array(
+                                array(
+                                    'taxonomy' => 'product_cat',
+                                    'field'    => 'term_id',
+                                    'terms'    => $product_category->term_id,
+                                ),
                             ),
-                        ),
-                    );
+                        );
 
-                    $product_image = new WP_Query($args);
+                        $product_image = new WP_Query($args);
 
-                    if ($product_image->have_posts()) {
-                        $product_image->the_post();
-                        if (has_post_thumbnail()) {
-                            echo '<a href="' . esc_url(get_term_link($product_category)) . '">';
-                            the_post_thumbnail('woocommerce_thumbnail');
-                        } else {
-                            echo '<a href="' . esc_url(get_term_link($product_category)) . '">';
-                            woocommerce_subcategory_thumbnail($product_category);
+                        if ($product_image->have_posts()) {
+                            $product_image->the_post();
+                            if (has_post_thumbnail()) {
+                                echo '<a href="' . esc_url(get_term_link($product_category)) . '">';
+                                the_post_thumbnail('woocommerce_thumbnail');
+                            } else {
+                                echo '<a href="' . esc_url(get_term_link($product_category)) . '">';
+                                woocommerce_subcategory_thumbnail($product_category);
+                            }
                         }
-                    }
-                    echo '<h2>' . esc_html($product_category->name) . '</h2>';
-                    echo '</a>';
-                    echo '</li>';
-                } ?>
-            </ul>
+                        echo '<h2>' . esc_html($product_category->name) . '</h2>';
+                        echo '</a>';
+                        echo '</li>';
+                    } ?>
+                </ul>
+            </div>
         <?php
         } else {
             do_action('woocommerce_no_products_found');

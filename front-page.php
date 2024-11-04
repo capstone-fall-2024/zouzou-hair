@@ -18,22 +18,26 @@ get_header();
 	<main id="primary" class="site-main">
 		<div class="container padding">
 		<section class="zouzou-intro-home">
-			<div>
-				<p>At <span class="zouzou-title">Zouzou Hair</span> , </p>
-			</div>
-			<div>
-				<p>We believe that great hair is the foundation of a more confident you.</p>
-			</div>
-			<div>	
-				<p>Our skilled stylists offer everything from fresh cuts to bold colors, all in a friendly and relaxed setting. Let us create a look that’s perfect for you!</p>
+			<div class="red-scissors-intro">
+				<div>
+					<p>At <span class="zouzou-title">Zouzou Hair</span> , </p>
+				</div>
+				<div>
+					<p>We believe that great hair is the foundation of a more confident you.</p>
+				</div>
+				<div>
+					<p>Our skilled stylists offer everything from fresh cuts to bold colors, all in a friendly and relaxed setting. Let us create a look that’s perfect for you!</p>
+				</div>
 			</div>
 			<div class="red-scissors">
 				<img src="https://zouzou-hair.web.dmitcapstone.ca/wordpress-sarah/wp-content/uploads/2024/10/mobile-intro-scissors.png" alt="Red Scissors">
 			</div>
 		</section>
 			<section>
-				<h2>Services</h2>
-				<p class="services-deal">All Students receive a 10% discount on all our services</p>
+				<div class="services-heading-title">
+					<h2>Services</h2>
+					<p class="services-deal">All Students receive a 10% discount on all our services</p>
+				</div>
 				<div class="home-services-flex">
 					<a href="#">
 						<div class="womens-cuts">
