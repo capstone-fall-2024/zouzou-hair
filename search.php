@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying search results pages
  *
@@ -10,13 +11,15 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main container padding">
+<main id="primary" class="site-main container padding">
 
-		<?php if ( have_posts() ) : ?>
+	<section>
+		<h1><?php printf(esc_html__('Search Results for: %s', 'zouzou-hair-theme'), '<span>' . get_search_query() . '</span>'); ?></h1>
+		<?php if (have_posts()) : ?>
 
-			<?php
+		<?php
 			/* Start the Loop */
-			while ( have_posts() ) :
+			while (have_posts()) :
 				the_post();
 
 				/**
@@ -24,7 +27,7 @@ get_header();
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', 'search' );
+				get_template_part('template-parts/content', 'search');
 
 			endwhile;
 
@@ -32,12 +35,13 @@ get_header();
 
 		else :
 
-			get_template_part( 'template-parts/content', 'none' );
+			get_template_part('template-parts/content', 'none');
 
 		endif;
 		?>
+	</section>
 
-	</main><!-- #main -->
+</main><!-- #main -->
 
 <?php
 get_footer();

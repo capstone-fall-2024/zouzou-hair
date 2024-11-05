@@ -92,6 +92,11 @@ a {
   text-decoration: none;
   font-size: var(--base);
   font-family: "Afacad";
+  color: var(--red);
+}
+
+a:hover {
+  color: var(--dark-red);
 }
 
 /* Normalize
@@ -1000,7 +1005,7 @@ textarea {
   margin-bottom: 1.5rem;
 }
 
-.intro-text p span {
+.promo {
   color: #9b1f1f;
   font-weight: 700;
 }
@@ -1275,8 +1280,7 @@ h2 {
 	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.services-deal {
-  color: var(--red);
+.services-heading-title .promo {
   margin-top: 0.5rem;
 }
 
@@ -1433,6 +1437,7 @@ h2 {
 /* Zouzou Hair Custom - Contact Page */
 .wpcf7 input[type="text"],
 .wpcf7 input[type="email"],
+.wpcf7 input[type="tel"],
 .wpcf7 textarea {
   width: 100%;
 }
@@ -1830,11 +1835,11 @@ footer .main-navigation ul a {
     padding: 5rem 1.5rem;
   }
 
-  .contact-flex {
+  .form-flex {
     display: flex;
   }
 
-  .contact-flex>* {
+  .form-flex>* {
     width: 50%;
   }
 
@@ -1891,9 +1896,9 @@ footer .main-navigation ul a {
 }
 
 @media screen and (min-width: 1000px) {
-  main .padding {
+  /* main .padding {
     padding: 5rem 1.5rem;
-  }
+  } */
 
   .sup-header {
     display: block;
@@ -1910,6 +1915,7 @@ footer .main-navigation ul a {
 
   .wpcf7 input[type="text"],
   .wpcf7 input[type="email"],
+  .wpcf7 input[type="tel"],
   .wpcf7 textarea {
     width: 75%;
   }
@@ -1945,15 +1951,15 @@ footer .main-navigation ul a {
 	}
 
 
-  .contact-flex {
+  .form-flex {
     display: flex;
   }
 
-  .contact-flex> :nth-child(1) {
+  .form-flex> :nth-child(1) {
     width: 70%;
   }
 
-  .contact-flex> :nth-child(2) {
+  .form-flex> :nth-child(2) {
     width: 30%;
   }
 
