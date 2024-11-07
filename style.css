@@ -1194,7 +1194,7 @@ nav button svg {
 }
 
 .career-banner {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/career-banner.jpg');
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/career-banner.webp');
 	background-position: center -10rem;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -1302,7 +1302,7 @@ h2 {
 }
 
 .womens-cuts {
-  background: url("./assets/images/womenscuts-small.jpg") center center/cover no-repeat;
+  background: url("./assets/images/womenscuts-small.webp") center center/cover no-repeat;
   color: var(--white);
   border: var(--red) 3px solid;
   position: relative;
@@ -1310,7 +1310,7 @@ h2 {
 }
 
 .mens-cuts {
-  background: url("./assets/images/menscuts-small.jpg") center center/cover no-repeat;
+  background: url("./assets/images/menscuts-small.webp") center center/cover no-repeat;
   color: var(--white);
   border: var(--red) 3px solid;
   position: relative;
@@ -1318,7 +1318,7 @@ h2 {
 }
 
 .nonbinary-cuts {
-  background: url("./assets/images/nonbinary.jpg") center center/cover no-repeat;
+  background: url("./assets/images/nonbinary.webp") center center/cover no-repeat;
   color: var(--white);
   border: var(--red) 3px solid;
   position: relative;
@@ -1326,7 +1326,7 @@ h2 {
 }
 
 .coloring {
-  background: url("./assets/images/coloring.jpg") center center/cover no-repeat;
+  background: url("./assets/images/coloring.webp") center center/cover no-repeat;
   color: var(--white);
   border: var(--red) 3px solid;
   position: relative;
@@ -1334,7 +1334,7 @@ h2 {
 }
 
 .styling {
-  background: url("./assets/images/styling.jpg") center center/cover no-repeat;
+  background: url("./assets/images/styling.webp") center center/cover no-repeat;
   color: var(--white);
   border: var(--red) 3px solid;
   position: relative;
@@ -1342,7 +1342,7 @@ h2 {
 }
 
 .hair-botox {
-  background: url("./assets/images/hairbotox.jpg") center center/cover no-repeat;
+  background: url("./assets/images/hairbotox.webp") center center/cover no-repeat;
   color: var(--white);
   border: var(--red) 3px solid;
   position: relative;
@@ -1371,7 +1371,7 @@ h2 {
 
 /* home intro */
 .home-intro {
-  background: url("./assets/images/home-intro-banner.webp");
+  background: url("./assets/images/home-info-banner.webp");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1966,11 +1966,11 @@ footer .main-navigation ul a {
 	}
 
 	.womens-cuts {
-		background: url('./assets/images/womenscuts-large.jpg') center center/cover no-repeat;
+		background: url('./assets/images/womenscut-large.webp') center center/cover no-repeat;
 	}
 
 	.mens-cuts {
-		background: url('./assets/images/menscuts-large.jpg') center center/cover no-repeat;
+		background: url('./assets/images/menscuts-large.webp') center center/cover no-repeat;
 	}
 
 
