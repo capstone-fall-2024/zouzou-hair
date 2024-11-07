@@ -19,6 +19,7 @@ $store_info = get_store_info();
 			<div class="grid-1">
 				<div class="site-logo"><?php the_custom_logo(); ?></div>
 				<nav class="main-navigation">
+					<h2>Footer Navigation</h2>
 					<?php
 					wp_nav_menu(
 						array(
@@ -30,8 +31,8 @@ $store_info = get_store_info();
 				</nav><!-- #site-navigation -->
 			</div>
 			<div class="grid-2">
-				<section class="connect-with-us">
-					<h3>Connect With Us</h3>
+				<div class="connect-with-us">
+					<p>Connect With Us</p>
 					<div class="connect-flex">
 						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
 							<path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
@@ -83,12 +84,12 @@ $store_info = get_store_info();
 									</svg></a></li>
 						</ul>
 					</div>
-				</section>
+				</div>
 			</div>
-			<section class="grid-3">
-				<h3>Hours</h3>
+			<div class="grid-3">
+				<p>Hours</p>
 				<p><?php echo nl2br(esc_html($store_info['hours'])); ?></p>
-			</section>
+			</div>
 			<div class="grid-4"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2371.934795525066!2d-113.5149118221533!3d53.52322137234099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a02219412fb583%3A0xdb39fd5b67a058b5!2sZouzou%20Hair%20Group!5e0!3m2!1sen!2sca!4v1728003129088!5m2!1sen!2sca" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="map" aria-description="Google map of Zouzou Hair's location"></iframe></div>
 	</div>
 </footer><!-- #colophon -->
