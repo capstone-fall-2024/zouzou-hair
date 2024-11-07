@@ -975,7 +975,7 @@ textarea {
 /* Zouzou Hair Custom */
 
 .container {
-  max-width: 1700px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -1005,6 +1005,10 @@ textarea {
   margin-bottom: 1.5rem;
 }
 
+.intro-text p {
+  margin-bottom: 0;
+}
+
 .promo {
   color: #9b1f1f;
   font-weight: 700;
@@ -1030,6 +1034,14 @@ textarea {
 
 .back svg {
   width: 20px;
+}
+
+.social-links a {
+  display: block;
+}
+
+.social-links a:hover {
+  transform: translateY(-0.25em);
 }
 
 /* Zouzou Hair Custom - Header */
@@ -1099,6 +1111,11 @@ nav button svg {
 
 .sup-header-flex p {
   margin-bottom: 0;
+}
+
+.main-navigation > h2 {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
 }
 
 .main-header {
@@ -1547,6 +1564,12 @@ footer .main-navigation ul a {
   align-items: flex-start;
 }
 
+.connect-with-us > p:first-of-type,
+.grid-3 > p:first-of-type {
+  font-family: 'Cinzel';
+  font-size: var(--large);
+}
+
 .connect-with-us svg,
 .social-links svg {
   width: 30px;
@@ -1990,5 +2013,11 @@ footer .main-navigation ul a {
 @media screen and (min-width: 1200px) {
   .intro-text>div>p {
     max-width: 700px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 1700px;
   }
 }
