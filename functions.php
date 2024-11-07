@@ -78,7 +78,7 @@ function zouzou_hair_theme_setup()
 		apply_filters(
 			'zouzou_hair_theme_custom_background_args',
 			array(
-				'default-color' => 'ffffff',
+				'default-color' => 'f7efe7;',
 				'default-image' => '',
 			)
 		)
@@ -116,27 +116,6 @@ function zouzou_hair_theme_content_width()
 	$GLOBALS['content_width'] = apply_filters('zouzou_hair_theme_content_width', 640);
 }
 add_action('after_setup_theme', 'zouzou_hair_theme_content_width', 0);
-
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function zouzou_hair_theme_widgets_init()
-{
-	register_sidebar(
-		array(
-			'name'          => esc_html__('Sidebar', 'zouzou-hair-theme'),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__('Add widgets here.', 'zouzou-hair-theme'),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-}
-add_action('widgets_init', 'zouzou_hair_theme_widgets_init');
 
 /**
  * Enqueue scripts and styles.
@@ -181,144 +160,137 @@ if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-add_action('after_setup_theme', 'zouzou_hair_theme_block_parts_setup');
-
-function zouzou_hair_theme_block_parts_setup()
-{
-	add_theme_support('block-template-parts');
-}
-
 /**
  * ACF FUNCTIONS
  */
 
 // INITIALIZE SERVICE CATEGORY TAXONOMY
-add_action( 'init', function() {
-	register_taxonomy( 'service-category', array(
-	0 => '',
-), array(
-	'labels' => array(
-		'name' => 'Service Categories',
-		'singular_name' => 'Service Category',
-		'menu_name' => 'Service Categories',
-		'all_items' => 'All Service Categories',
-		'edit_item' => 'Edit Service Category',
-		'view_item' => 'View Service Category',
-		'update_item' => 'Update Service Category',
-		'add_new_item' => 'Add New Service Category',
-		'new_item_name' => 'New Service Category Name',
-		'parent_item' => 'Parent Service Category',
-		'parent_item_colon' => 'Parent Service Category:',
-		'search_items' => 'Search Service Categories',
-		'not_found' => 'No service categories found',
-		'no_terms' => 'No service categories',
-		'filter_by_item' => 'Filter by service category',
-		'items_list_navigation' => 'Service Categories list navigation',
-		'items_list' => 'Service Categories list',
-		'back_to_items' => '← Go to service categories',
-		'item_link' => 'Service Category Link',
-		'item_link_description' => 'A link to a service category',
-	),
-	'public' => true,
-	'hierarchical' => true,
-	'show_in_menu' => true,
-	'show_in_rest' => true,
-) );
-} );
+add_action('init', function () {
+	register_taxonomy('service-category', array(
+		0 => '',
+	), array(
+		'labels' => array(
+			'name' => 'Service Categories',
+			'singular_name' => 'Service Category',
+			'menu_name' => 'Service Categories',
+			'all_items' => 'All Service Categories',
+			'edit_item' => 'Edit Service Category',
+			'view_item' => 'View Service Category',
+			'update_item' => 'Update Service Category',
+			'add_new_item' => 'Add New Service Category',
+			'new_item_name' => 'New Service Category Name',
+			'parent_item' => 'Parent Service Category',
+			'parent_item_colon' => 'Parent Service Category:',
+			'search_items' => 'Search Service Categories',
+			'not_found' => 'No service categories found',
+			'no_terms' => 'No service categories',
+			'filter_by_item' => 'Filter by service category',
+			'items_list_navigation' => 'Service Categories list navigation',
+			'items_list' => 'Service Categories list',
+			'back_to_items' => '← Go to service categories',
+			'item_link' => 'Service Category Link',
+			'item_link_description' => 'A link to a service category',
+		),
+		'public' => true,
+		'hierarchical' => true,
+		'show_in_menu' => true,
+		'show_in_rest' => true,
+	));
+});
 
 // INITIALIZE SERVICES CUSTOM POST TYPE
-add_action( 'init', function() {
-	register_post_type( 'services', array(
-	'labels' => array(
-		'name' => 'Services',
-		'singular_name' => 'Service',
-		'menu_name' => 'Services',
-		'all_items' => 'All Services',
-		'edit_item' => 'Edit Service',
-		'view_item' => 'View Service',
-		'view_items' => 'View Service',
-		'add_new_item' => 'Add New Service',
-		'add_new' => 'Add New Service',
-		'new_item' => 'New Service',
-		'parent_item_colon' => 'Parent Service:',
-		'search_items' => 'Search Services',
-		'not_found' => 'No services found',
-		'not_found_in_trash' => 'No services found in Trash',
-		'archives' => 'Services Archives',
-		'attributes' => 'Services Attributes',
-		'insert_into_item' => 'Insert into service',
-		'uploaded_to_this_item' => 'Uploaded to this service',
-		'filter_items_list' => 'Filter services list',
-		'filter_by_date' => 'Filter services by date',
-		'items_list_navigation' => 'Services list navigation',
-		'items_list' => 'Services list',
-		'item_published' => 'Service published.',
-		'item_published_privately' => 'Service published privately.',
-		'item_reverted_to_draft' => 'Service reverted to draft.',
-		'item_scheduled' => 'Service scheduled.',
-		'item_updated' => 'Service updated.',
-		'item_link' => 'Service Link',
-		'item_link_description' => 'A link to a service.',
-	),
-	'public' => true,
-	'hierarchical' => true,
-	'show_in_rest' => true,
-	'menu_icon' => 'dashicons-admin-post',
-	'supports' => array(
-		0 => 'title',
-		1 => 'custom-fields',
-	),
-	'taxonomies' => array(
-		0 => 'service-category',
-	),
-	'delete_with_user' => false,
-) );
-} );
+add_action('init', function () {
+	register_post_type('services', array(
+		'labels' => array(
+			'name' => 'Services',
+			'singular_name' => 'Service',
+			'menu_name' => 'Services',
+			'all_items' => 'All Services',
+			'edit_item' => 'Edit Service',
+			'view_item' => 'View Service',
+			'view_items' => 'View Service',
+			'add_new_item' => 'Add New Service',
+			'add_new' => 'Add New Service',
+			'new_item' => 'New Service',
+			'parent_item_colon' => 'Parent Service:',
+			'search_items' => 'Search Services',
+			'not_found' => 'No services found',
+			'not_found_in_trash' => 'No services found in Trash',
+			'archives' => 'Services Archives',
+			'attributes' => 'Services Attributes',
+			'insert_into_item' => 'Insert into service',
+			'uploaded_to_this_item' => 'Uploaded to this service',
+			'filter_items_list' => 'Filter services list',
+			'filter_by_date' => 'Filter services by date',
+			'items_list_navigation' => 'Services list navigation',
+			'items_list' => 'Services list',
+			'item_published' => 'Service published.',
+			'item_published_privately' => 'Service published privately.',
+			'item_reverted_to_draft' => 'Service reverted to draft.',
+			'item_scheduled' => 'Service scheduled.',
+			'item_updated' => 'Service updated.',
+			'item_link' => 'Service Link',
+			'item_link_description' => 'A link to a service.',
+		),
+		'public' => true,
+		'hierarchical' => true,
+		'show_in_rest' => true,
+		'menu_icon' => 'dashicons-admin-post',
+		'supports' => array(
+			0 => 'title',
+			1 => 'custom-fields',
+		),
+		'taxonomies' => array(
+			0 => 'service-category',
+		),
+		'delete_with_user' => false,
+	));
+});
 
 // INITIALIZE MEMBERS CUSTOM POST TYPE
-add_action( 'init', function() {
-	register_post_type( 'members', array(
-	'labels' => array(
-		'name' => 'Members',
-		'singular_name' => 'Member',
-		'menu_name' => 'Members',
-		'all_items' => 'All Members',
-		'edit_item' => 'Edit Member',
-		'view_item' => 'View Member',
-		'view_items' => 'View Members',
-		'add_new_item' => 'Add New Member',
-		'add_new' => 'Add New Member',
-		'new_item' => 'New Member',
-		'parent_item_colon' => 'Parent Member:',
-		'search_items' => 'Search Members',
-		'not_found' => 'No members found',
-		'not_found_in_trash' => 'No members found in Trash',
-		'archives' => 'Member Archives',
-		'attributes' => 'Member Attributes',
-		'insert_into_item' => 'Insert into member',
-		'uploaded_to_this_item' => 'Uploaded to this member',
-		'filter_items_list' => 'Filter members list',
-		'filter_by_date' => 'Filter members by date',
-		'items_list_navigation' => 'Members list navigation',
-		'items_list' => 'Members list',
-		'item_published' => 'Member published.',
-		'item_published_privately' => 'Member published privately.',
-		'item_reverted_to_draft' => 'Member reverted to draft.',
-		'item_scheduled' => 'Member scheduled.',
-		'item_updated' => 'Member updated.',
-		'item_link' => 'Member Link',
-		'item_link_description' => 'A link to a member.',
-	),
-	'public' => true,
-	'show_in_rest' => true,
-	'menu_icon' => 'dashicons-admin-post',
-	'supports' => array(
-		0 => 'title',
-		1 => 'custom-fields',
-	),
-	'delete_with_user' => false,
-) );
-} );
+add_action('init', function () {
+	register_post_type('members', array(
+		'labels' => array(
+			'name' => 'Members',
+			'singular_name' => 'Member',
+			'menu_name' => 'Members',
+			'all_items' => 'All Members',
+			'edit_item' => 'Edit Member',
+			'view_item' => 'View Member',
+			'view_items' => 'View Members',
+			'add_new_item' => 'Add New Member',
+			'add_new' => 'Add New Member',
+			'new_item' => 'New Member',
+			'parent_item_colon' => 'Parent Member:',
+			'search_items' => 'Search Members',
+			'not_found' => 'No members found',
+			'not_found_in_trash' => 'No members found in Trash',
+			'archives' => 'Member Archives',
+			'attributes' => 'Member Attributes',
+			'insert_into_item' => 'Insert into member',
+			'uploaded_to_this_item' => 'Uploaded to this member',
+			'filter_items_list' => 'Filter members list',
+			'filter_by_date' => 'Filter members by date',
+			'items_list_navigation' => 'Members list navigation',
+			'items_list' => 'Members list',
+			'item_published' => 'Member published.',
+			'item_published_privately' => 'Member published privately.',
+			'item_reverted_to_draft' => 'Member reverted to draft.',
+			'item_scheduled' => 'Member scheduled.',
+			'item_updated' => 'Member updated.',
+			'item_link' => 'Member Link',
+			'item_link_description' => 'A link to a member.',
+		),
+		'public' => true,
+		'show_in_rest' => true,
+		'menu_icon' => 'dashicons-admin-users',
+		'supports' => array(
+			0 => 'title',
+			1 => 'custom-fields',
+		),
+		'delete_with_user' => false,
+	));
+});
 
 // INITIALIZE ACF FIELDS
 if (function_exists('acf_add_local_field_group')):
@@ -368,7 +340,7 @@ if (function_exists('acf_add_local_field_group')):
 	));
 
 	// CUSTOM FIELDS FOR HOME PAGE INFORMATION SECTION
-	acf_add_local_field_group( array(
+	acf_add_local_field_group(array(
 		'key' => 'homepage_info_section',
 		'title' => 'Home Page Information Section',
 		'fields' => array(
@@ -400,10 +372,10 @@ if (function_exists('acf_add_local_field_group')):
 				),
 			),
 		),
-	) );
+	));
 
 	// CUSTOM FIELDS FOR IMAGES FOR SERVICE CATEGORIES
-	acf_add_local_field_group( array(
+	acf_add_local_field_group(array(
 		'key' => 'service-gallery',
 		'title' => 'Service Gallery',
 		'fields' => array(
@@ -608,7 +580,7 @@ if (function_exists('acf_add_local_field_group')):
 				),
 			),
 		),
-	) );
+	));
 
 	// CUSTOM FIELDS FOR EACH SERVICE
 	acf_add_local_field_group(array(
@@ -644,7 +616,7 @@ if (function_exists('acf_add_local_field_group')):
 	));
 
 	// CUSTOM FIELDS FOR ADDING NEW MEMBERS
-	acf_add_local_field_group( array(
+	acf_add_local_field_group(array(
 		'key' => 'member',
 		'title' => 'Member',
 		'fields' => array(
@@ -694,7 +666,7 @@ if (function_exists('acf_add_local_field_group')):
 		'active' => true,
 		'description' => '',
 		'show_in_rest' => 0,
-	) );
+	));
 
 endif;
 
@@ -728,85 +700,106 @@ function get_store_info()
 add_filter('use_block_editor_for_post_type', 'disable_gutenberg_for_services', 10, 2);
 function disable_gutenberg_for_services($current_status, $post_type)
 {
-    if ($post_type === 'services') return false;
-    return $current_status;
+	if ($post_type === 'services') return false;
+	return $current_status;
 }
 
 // DISABLES BLOCK EDITOR WHEN ADDING A NEW MEMBER
 add_filter('use_block_editor_for_post_type', 'disable_gutenberg_for_members', 10, 2);
 function disable_gutenberg_for_members($current_status, $post_type)
 {
-    if ($post_type === 'members') return false;
-    return $current_status;
+	if ($post_type === 'members') return false;
+	return $current_status;
 }
 
 // CSS HACK TO DISABLE SLUG AND DESCRIPTION WHEN CREATING A NEW SERVICE CATEGORY
-add_action( 'admin_head', 'disable_slug_description_css' );
-function disable_slug_description_css() {
+add_action('admin_head', 'disable_slug_description_css');
+function disable_slug_description_css()
+{
 
-    global $taxonomy;
+	global $taxonomy;
 
-    $modified_taxonomy = array( 'service-category' );
+	$modified_taxonomy = array('service-category');
 
-    if(empty($taxonomy) || !in_array($taxonomy, $modified_taxonomy)) {
-        return;
-    }
+	if (empty($taxonomy) || !in_array($taxonomy, $modified_taxonomy)) {
+		return;
+	}
 
-    ?>
+?>
 
-        <style>
-            .form-field.term-slug-wrap,
-            .form-field.term-parent-wrap,
-            .form-field.term-description-wrap   {display: none;}
-        </style>
+	<style>
+		.form-field.term-slug-wrap,
+		.form-field.term-parent-wrap,
+		.form-field.term-description-wrap {
+			display: none;
+		}
+	</style>
 
-    <?php
+<?php
 
 }
 
 // ADDS SUPPORT FOR CUSTOM WOOCOMMERCE TEMPLATES
-function zouzou_hair_theme_add_woocommerce_support() {
+function zouzou_hair_theme_add_woocommerce_support()
+{
 	add_theme_support('woocommerce');
 }
 
-add_action( 'after_setup_theme', 'zouzou_hair_theme_add_woocommerce_support' );
+add_action('after_setup_theme', 'zouzou_hair_theme_add_woocommerce_support');
 
 // FUNCTION THAT SETS SEARCH TO ONLY SEARCH FOR PRODUCTS
-function search_only_products($query) {
-	
+function search_only_products($query)
+{
+
 	if ($query->is_search) {
-		$query->set('post_type' ,'product');
+		$query->set('post_type', 'product');
 		$query->set('wc_query', 'product_query');
 	}
 
 	return $query;
-
 }
-add_action( 'pre_get_posts', 'search_only_products' );
+add_action('pre_get_posts', 'search_only_products');
 
 // DISABLES WOOCOMMERCE SIDEBAR
-function disable_woocommerce_sidebar() {
-	remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+function disable_woocommerce_sidebar()
+{
+	remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
 }
 add_action('init', 'disable_woocommerce_sidebar');
 
 
 // ADDS A SERVICE CATEGORY COLUMN WHEN VIEWING ALL SERVICES
-add_filter( 'manage_services_posts_columns', 'add_service_category_column' );
-function add_service_category_column( $columns ) {
-    $columns['service_category'] = __( 'Service Category', 'textdomain' );
-    return $columns;
+add_filter('manage_services_posts_columns', 'add_service_category_column');
+function add_service_category_column($columns)
+{
+	$columns['service_category'] = __('Service Category', 'textdomain');
+	return $columns;
 }
 
-add_action( 'manage_services_posts_custom_column', 'fetch_categories_for_column', 10, 2 );
-function fetch_categories_for_column( $column, $post_id ) {
-    if ( 'service_category' === $column ) {
-        $terms = get_the_terms( $post_id, 'service-category' );
-        if ( !empty( $terms ) && ! is_wp_error( $terms ) ) {
-            $term_names = wp_list_pluck( $terms, 'name' );
-            echo implode( ', ', $term_names );
-        } else {
-            echo __( 'No Categories', 'textdomain' );
-        }
-    }
+add_action('manage_services_posts_custom_column', 'fetch_categories_for_column', 10, 2);
+function fetch_categories_for_column($column, $post_id)
+{
+	if ('service_category' === $column) {
+		$terms = get_the_terms($post_id, 'service-category');
+		if (!empty($terms) && ! is_wp_error($terms)) {
+			$term_names = wp_list_pluck($terms, 'name');
+			echo implode(', ', $term_names);
+		} else {
+			echo __('No Categories', 'textdomain');
+		}
+	}
 }
+
+// DISABLE WORDPRESS STYLESHEETS TO REDUCE BLOAT
+function remove_wp_block_library_css()
+{
+	wp_dequeue_style('wp-block-library');
+	wp_dequeue_style('wp-block-library-theme');
+	wp_dequeue_style('wc-block-style'); // REMOVE WOOCOMMERCE BLOCK CSS
+	wp_dequeue_style('global-styles'); // REMOVE THEME.JSON
+}
+
+add_action('wp_enqueue_scripts', 'remove_wp_block_library_css', 100);
+
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
