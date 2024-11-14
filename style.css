@@ -562,7 +562,8 @@ button,
 .button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
+input[type="submit"],
+.wc-block-cart__submit-button {
   border-radius: 3px;
   background: var(--red);
   color: var(--light-beige);
@@ -573,12 +574,17 @@ input[type="submit"] {
   display: inline-block;
 }
 
+.wc-block-checkout__actions_row .wc-block-components-checkout-place-order-button {
+  border: 0;
+}
+
 button:hover,
 .button,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover,
-.add_to_cart_button:hover {
+.add_to_cart_button:hover,
+.wc-block-cart__submit-button:hover {
   background-color: var(--dark-red);
   color: var(--light-beige) !important;
 }
@@ -1055,7 +1061,7 @@ header nav>div {
 
 .show li:hover,
 .show a:hover {
-  background-color: var(--beige) !important;
+  background-color: var(--beige);
 }
 
 .show a {
@@ -1105,10 +1111,6 @@ nav button svg {
   position: relative;
 }
 
-.main-header a:hover {
-  background-color: var(--dark-red);
-}
-
 .main-header .custom-logo-link:hover {
   background-color: unset;
 }
@@ -1118,6 +1120,18 @@ nav button svg {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+}
+
+.cart-icon svg {
+  width: 23px;
+  vertical-align: middle;
+}
+
+.cart-icon span {
+  background-color: var(--red);
+  border-radius: 50%;
+  padding: 0.1rem 0.5rem;
+  color: var(--light-beige);
 }
 
 .default-banner {
@@ -1355,6 +1369,10 @@ h2 {
   color: var(--light-beige) !important;
 }
 
+element.style {
+  margin-top: 0px !important;
+}
+
 
 element.style {
   margin-top: 0px !important;
@@ -1450,6 +1468,17 @@ element.style {
 .add_to_cart_button {
   background-color: var(--beige) !important;
   color: var(--black) !important;
+  padding: .618em 1em;
+  border-radius: 3px;
+  font-weight: 700;
+}
+
+.wc-block-grid__product {
+  text-align: left!important;
+}
+
+.quantity input {
+  padding: .5em 1em;
 }
 
 .search-form {
@@ -1540,6 +1569,27 @@ footer .main-navigation ul a {
   gap: 1rem;
   padding: 0;
   margin: 0;
+}
+
+footer .main-navigation li {
+  width: max-content;
+}
+
+footer .main-navigation a::after {
+  display: block;
+  content: '';
+  position: relative;
+  left: 0;
+  bottom: -10px;
+  width: 0%;
+  top: 2px;
+  height: 5px;
+  background-color: var(--dark-red);
+  transition: all .5s;
+}
+
+footer .main-navigation a:hover::after {
+  width: 100%;
 }
 
 /* -------------------------------ABOUT US ADDITIONS - NEED TO BE CHECKED FOR REPEATED STYLES */
@@ -1787,27 +1837,39 @@ footer .main-navigation ul a {
     display: block;
   }
 
-  .show {
+  .show,
+  .show li,
+  .show a,
+  .show li:hover,
+  .show a:hover  {
     all: unset;
   }
 
-  .show li {
-    all: unset;
-  }
-
-  .main-header a {
+  header .main-navigation a {
     color: var(--light-beige);
     padding: 0.25rem 0.75rem;
     border-radius: 3px;
   }
 
-  .main-header a:hover {
+  header .main-navigation a::after {
+    display: block;
+    content: '';
+    position: relative;
+    left: 0;
+    bottom: -10px;
+    width: 0%;
+    top: 2px;
+    height: 5px;
     background-color: var(--dark-red);
+    transition: all .5s;
+  }
+  
+  header .main-navigation a:hover::after {
+    width: 100%;
   }
 
   .main-header .main-navigation ul {
     display: flex;
-    gap: 1rem;
   }
 
   .image-padding {
@@ -1871,6 +1933,11 @@ footer .main-navigation ul a {
 
   .service-category-page .gallery {
     grid-template-columns: repeat(auto-fill, 24rem);
+  }
+
+  .main-header .main-navigation ul {
+    display: flex;
+    gap: 1rem;
   }
 }
 
