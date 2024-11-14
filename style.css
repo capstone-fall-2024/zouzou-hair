@@ -562,7 +562,8 @@ button,
 .button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
+input[type="submit"],
+.wc-block-cart__submit-button {
   border-radius: 3px;
   background: var(--red);
   color: var(--light-beige);
@@ -573,12 +574,17 @@ input[type="submit"] {
   display: inline-block;
 }
 
+.wc-block-checkout__actions_row .wc-block-components-checkout-place-order-button {
+  border: 0;
+}
+
 button:hover,
 .button,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover,
-.add_to_cart_button:hover {
+.add_to_cart_button:hover,
+.wc-block-cart__submit-button:hover {
   background-color: var(--dark-red);
   color: var(--light-beige) !important;
 }
@@ -1055,7 +1061,7 @@ header nav>div {
 
 .show li:hover,
 .show a:hover {
-  background-color: var(--beige) !important;
+  background-color: var(--beige);
 }
 
 .show a {
@@ -1105,10 +1111,6 @@ nav button svg {
   position: relative;
 }
 
-.main-header a:hover {
-  background-color: var(--dark-red);
-}
-
 .main-header .custom-logo-link:hover {
   background-color: unset;
 }
@@ -1120,68 +1122,61 @@ nav button svg {
   padding: 1rem;
 }
 
+.cart-icon svg {
+  width: 23px;
+  vertical-align: middle;
+}
+
+.cart-icon span {
+  background-color: var(--red);
+  border-radius: 50%;
+  padding: 0.1rem 0.5rem;
+  color: var(--light-beige);
+}
+
 .default-banner {
   background-color: var(--dark);
   color: var(--light-beige);
 }
 
-.front-banner {
+.front-banner,
+.about-banner,
+.shop-banner,
+.services-banner,
+.contact-banner,
+.career-banner {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("./assets/images/front-banner.webp");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   color: var(--white);
+  background-attachment: fixed;
+}
+
+.front-banner {
+  background-image: url("./assets/images/front-banner.webp");
   height: 75vh;
 }
 
 .about-banner {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("./assets/images/about-banner.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: var(--white);
-  background-attachment: fixed;
+  background-image: url("./assets/images/about-banner.jpg");
 }
 
 .shop-banner {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("./assets/images/shop-banner.webp");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: var(--white);
-  background-attachment: fixed;
+  background-image: url("./assets/images/shop-banner.webp");
 }
 
 .services-banner {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),
-    url("./assets/images/services-banner.webp");
-  background-position: center -15rem;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: var(--white);
-  background-attachment: fixed;
+  background-image: url("./assets/images/services-banner.webp");
 }
 
 .contact-banner {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("./assets/images/contact-banner.webp");
-  background-position: center -10rem;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: var(--white);
-  background-attachment: fixed;
+  background-image: url("./assets/images/contact-banner.webp");
 }
 
 .career-banner {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/career-banner.webp');
-  background-position: center -10rem;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: var(--white);
-  background-attachment: fixed;
+  background-image: url('./assets/images/career-banner.webp');
 }
 
 .image-padding {
@@ -1283,52 +1278,40 @@ h2 {
   margin-top: 0.5rem;
 }
 
-.womens-cuts {
-  background: url("./assets/images/womenscuts-small.webp") center center/cover no-repeat;
+.womens-cuts,
+.mens-cuts,
+.nonbinary-cuts,
+.coloring,
+.styling,
+.hair-botox {
   color: var(--white);
   border: var(--red) 3px solid;
   position: relative;
   height: 100%;
+}
+
+.womens-cuts {
+  background: url("./assets/images/womenscuts-small.webp") center center/cover no-repeat;
 }
 
 .mens-cuts {
   background: url("./assets/images/menscuts-small.webp") center center/cover no-repeat;
-  color: var(--white);
-  border: var(--red) 3px solid;
-  position: relative;
-  height: 100%;
 }
 
 .nonbinary-cuts {
   background: url("./assets/images/nonbinary.webp") center center/cover no-repeat;
-  color: var(--white);
-  border: var(--red) 3px solid;
-  position: relative;
-  height: 100%;
 }
 
 .coloring {
   background: url("./assets/images/coloring.webp") center center/cover no-repeat;
-  color: var(--white);
-  border: var(--red) 3px solid;
-  position: relative;
-  height: 100%;
 }
 
 .styling {
   background: url("./assets/images/styling.webp") center center/cover no-repeat;
-  color: var(--white);
-  border: var(--red) 3px solid;
-  position: relative;
-  height: 100%;
 }
 
 .hair-botox {
   background: url("./assets/images/hairbotox.webp") center center/cover no-repeat;
-  color: var(--white);
-  border: var(--red) 3px solid;
-  position: relative;
-  height: 100%;
 }
 
 .services-titles {
@@ -1353,17 +1336,14 @@ h2 {
 
 /* home intro */
 .home-intro {
-  background: url("./assets/images/home-info-banner.webp");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  background: url("./assets/images/home-info-banner.webp") center center / cover no-repeat fixed;
   color: var(--light-beige);
   height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 
 .home-intro-background {
   background-color: var(--dark);
@@ -1378,16 +1358,19 @@ h2 {
 
 .reviews-title {
   color: var(--light-beige);
+  margin-bottom: 30px;
 }
 
-.ti-name {
-  font-size: 18px;
-  font-weight: bold;
-  color: var(--light-beige);
+.ti-reviews-container-wrapper .ti-review-item .ti-name {
+  color: var(--black) !important;
 }
 
-.ti-footer .source-Google {
-  margin-top: 0rem;
+.ti-name, .nowrap strong {
+  color: var(--light-beige) !important;
+}
+
+element.style {
+  margin-top: 0px !important;
 }
 
 /* Zouzou Hair Custom - Services Page */
@@ -1479,6 +1462,17 @@ h2 {
 .add_to_cart_button {
   background-color: var(--beige) !important;
   color: var(--black) !important;
+  padding: .618em 1em;
+  border-radius: 3px;
+  font-weight: 700;
+}
+
+.wc-block-grid__product {
+  text-align: left!important;
+}
+
+.quantity input {
+  padding: .5em 1em;
 }
 
 .search-form {
@@ -1569,6 +1563,27 @@ footer .main-navigation ul a {
   gap: 1rem;
   padding: 0;
   margin: 0;
+}
+
+footer .main-navigation li {
+  width: max-content;
+}
+
+footer .main-navigation a::after {
+  display: block;
+  content: '';
+  position: relative;
+  left: 0;
+  bottom: -10px;
+  width: 0%;
+  top: 2px;
+  height: 5px;
+  background-color: var(--dark-red);
+  transition: all .5s;
+}
+
+footer .main-navigation a:hover::after {
+  width: 100%;
 }
 
 /* -------------------------------ABOUT US ADDITIONS - NEED TO BE CHECKED FOR REPEATED STYLES */
@@ -1816,27 +1831,39 @@ footer .main-navigation ul a {
     display: block;
   }
 
-  .show {
+  .show,
+  .show li,
+  .show a,
+  .show li:hover,
+  .show a:hover  {
     all: unset;
   }
 
-  .show li {
-    all: unset;
-  }
-
-  .main-header a {
+  header .main-navigation a {
     color: var(--light-beige);
     padding: 0.25rem 0.75rem;
     border-radius: 3px;
   }
 
-  .main-header a:hover {
+  header .main-navigation a::after {
+    display: block;
+    content: '';
+    position: relative;
+    left: 0;
+    bottom: -10px;
+    width: 0%;
+    top: 2px;
+    height: 5px;
     background-color: var(--dark-red);
+    transition: all .5s;
+  }
+  
+  header .main-navigation a:hover::after {
+    width: 100%;
   }
 
   .main-header .main-navigation ul {
     display: flex;
-    gap: 1rem;
   }
 
   .image-padding {
@@ -1901,6 +1928,11 @@ footer .main-navigation ul a {
   .service-category-page .gallery {
     grid-template-columns: repeat(auto-fill, 24rem);
   }
+
+  .main-header .main-navigation ul {
+    display: flex;
+    gap: 1rem;
+  }
 }
 
 @media screen and (min-width: 1000px) {
@@ -1927,18 +1959,18 @@ footer .main-navigation ul a {
 
   .home-services-flex {
     box-sizing: border-box;
-    gap: 1rem;
   }
 
   .home-services-flex a:nth-child(1),
   .home-services-flex a:nth-child(2) {
-    width: calc(50% - 1rem);
+    width: calc(50% - 0.7rem);
     aspect-ratio: 2 / 1;
     box-sizing: border-box;
+    margin-bottom: 0.5rem;
   }
 
   .home-services-flex a {
-    width: calc(24% - 0.5rem);
+    width: calc(25% - 1rem);
     aspect-ratio: 1 / 1;
     box-sizing: border-box;
   }
