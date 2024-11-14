@@ -1125,63 +1125,44 @@ nav button svg {
   color: var(--light-beige);
 }
 
-.front-banner {
+.front-banner,
+.about-banner,
+.shop-banner,
+.services-banner,
+.contact-banner,
+.career-banner {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("./assets/images/front-banner.webp");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   color: var(--white);
+  background-attachment: fixed;
+}
+
+.front-banner {
+  background-image: url("./assets/images/front-banner.webp");
   height: 75vh;
 }
 
 .about-banner {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("./assets/images/about-banner.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: var(--white);
-  background-attachment: fixed;
+  background-image: url("./assets/images/about-banner.jpg");
 }
 
 .shop-banner {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("./assets/images/shop-banner.webp");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: var(--white);
-  background-attachment: fixed;
+  background-image: url("./assets/images/shop-banner.webp");
 }
 
 .services-banner {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),
-    url("./assets/images/services-banner.webp");
-  background-position: center -15rem;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: var(--white);
-  background-attachment: fixed;
+  background-image: url("./assets/images/services-banner.webp");
 }
 
 .contact-banner {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("./assets/images/contact-banner.webp");
-  background-position: center -10rem;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: var(--white);
-  background-attachment: fixed;
+  background-image: url("./assets/images/contact-banner.webp");
 }
 
 .career-banner {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/career-banner.webp');
-  background-position: center -10rem;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: var(--white);
-  background-attachment: fixed;
+  background-image: url('./assets/images/career-banner.webp');
 }
 
 .image-padding {
@@ -1283,52 +1264,40 @@ h2 {
   margin-top: 0.5rem;
 }
 
-.womens-cuts {
-  background: url("./assets/images/womenscuts-small.webp") center center/cover no-repeat;
+.womens-cuts,
+.mens-cuts,
+.nonbinary-cuts,
+.coloring,
+.styling,
+.hair-botox {
   color: var(--white);
   border: var(--red) 3px solid;
   position: relative;
   height: 100%;
+}
+
+.womens-cuts {
+  background: url("./assets/images/womenscuts-small.webp") center center/cover no-repeat;
 }
 
 .mens-cuts {
   background: url("./assets/images/menscuts-small.webp") center center/cover no-repeat;
-  color: var(--white);
-  border: var(--red) 3px solid;
-  position: relative;
-  height: 100%;
 }
 
 .nonbinary-cuts {
   background: url("./assets/images/nonbinary.webp") center center/cover no-repeat;
-  color: var(--white);
-  border: var(--red) 3px solid;
-  position: relative;
-  height: 100%;
 }
 
 .coloring {
   background: url("./assets/images/coloring.webp") center center/cover no-repeat;
-  color: var(--white);
-  border: var(--red) 3px solid;
-  position: relative;
-  height: 100%;
 }
 
 .styling {
   background: url("./assets/images/styling.webp") center center/cover no-repeat;
-  color: var(--white);
-  border: var(--red) 3px solid;
-  position: relative;
-  height: 100%;
 }
 
 .hair-botox {
   background: url("./assets/images/hairbotox.webp") center center/cover no-repeat;
-  color: var(--white);
-  border: var(--red) 3px solid;
-  position: relative;
-  height: 100%;
 }
 
 .services-titles {
@@ -1338,10 +1307,7 @@ h2 {
   font-family: "Afacad";
   font-size: 1.3rem;
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: 0;
+  inset: auto 0 0;
   text-align: center;
   padding: 3px;
 }
@@ -1353,17 +1319,14 @@ h2 {
 
 /* home intro */
 .home-intro {
-  background: url("./assets/images/home-info-banner.webp");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  background: url("./assets/images/home-info-banner.webp") center center / cover no-repeat fixed;
   color: var(--light-beige);
   height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 
 .home-intro-background {
   background-color: var(--dark);
