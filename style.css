@@ -48,8 +48,15 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   --base: 1.125rem
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   background-color: var(--light-beige);
+  margin: 0;
+  position: relative;
 }
 
 body,
@@ -125,28 +132,11 @@ html {
 
 /* Sections
 	 ========================================================================== */
-
-/**
- * Remove the margin in all browsers.
- */
-body {
-  margin: 0;
-}
-
 /**
  * Render the `main` element consistently in IE.
  */
 main {
   display: block;
-}
-
-/**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Firefox, and Safari.
- */
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
 }
 
 /* Grouping content
@@ -655,14 +645,6 @@ select {
 textarea {
   width: 100%;
 }
-
-/*--------------------------------------------------------------
-# Layouts
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-# Components
---------------------------------------------------------------*/
 
 /* Navigation
 --------------------------------------------- */
@@ -1714,9 +1696,6 @@ footer .main-navigation ul a {
 
 /* Extra small screens, down to 340px */
 @media (max-width: 480px) {
-  .container {
-    padding: 10px;
-  }
 
   .team-member {
     padding: 10px;
@@ -1925,9 +1904,6 @@ footer .main-navigation ul a {
 }
 
 @media screen and (min-width: 1000px) {
-  /* main .padding {
-    padding: 5rem 1.5rem;
-  } */
 
   .sup-header {
     display: block;
