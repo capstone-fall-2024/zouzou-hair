@@ -22,7 +22,7 @@ $store_info = get_store_info();
         </div>
         <div class="container">
             <div class="form-flex">
-                <section class="padding">
+                <div class="padding">
                     <div class="intro-text">
                         <div>
                             <div class="red-bar"></div>
@@ -30,7 +30,7 @@ $store_info = get_store_info();
                         </div>
                     </div>
                     <?php echo apply_shortcodes('[contact-form-7 title="Careers form"]'); ?>
-                </section>
+                </div>
                 <div class="contact-red">
                     <div class="padding">
                         <p>You can also:</p>

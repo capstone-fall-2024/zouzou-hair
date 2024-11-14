@@ -19,7 +19,7 @@ get_header();
 <main id="primary" class="site-main">
 	<div class="front-banner banner-content">
 		<div class="container padding">
-			<section class="home-header">
+			<div class="home-header">
 				<div>
 					<p>Let us craft your </p>
 					<p class="signature-look">Signature Look.</p>
@@ -33,11 +33,11 @@ get_header();
 					</p>
 					<p>Our skilled stylists offer everything from fresh cuts to bold colors, all in a friendly and relaxed setting. Let us create a look that’s perfect for you!</p>
 				</div>
-			</section>
+			</div>
 		</div>
 	</div>
 	<div class="container padding">
-		<section class="zouzou-intro-home">
+		<div class="zouzou-intro-home">
 			<div class="red-scissors-intro">
 				<div>
 					<p>At <span class="zouzou-title">Zouzou Hair</span> , </p>
@@ -52,7 +52,7 @@ get_header();
 			<div class="red-scissors">
 				<img src="https://zouzou-hair.web.dmitcapstone.ca/wordpress-sarah/wp-content/uploads/2024/10/mobile-intro-scissors.png" alt="Red Scissors">
 			</div>
-		</section>
+		</div>
 		<section>
 			<div class="services-heading-title">
 				<h2>Services</h2>
@@ -94,12 +94,12 @@ get_header();
 		</section>
 
 	</div>
-	<section class="home-intro">
+	<div class="home-intro">
 		<div class=" container padding home-intro-background">
 			<p><?php echo nl2br(esc_html(get_field('paragraph_1'))); ?></p>
 			<p><?php echo nl2br(esc_html(get_field('paragraph_2'))); ?></p>
 		</div>
-	</section>
+	</div>
 	<section class="container padding">
 		<h2>Featured Product</h2>
 		<p>All orders over $50 receive free shipping!</p>
