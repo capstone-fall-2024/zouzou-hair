@@ -1,0 +1,7 @@
+User-agent: Googlebot
+Disallow: /nogooglebot/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://zouzou-hair.web.dmitcapstone.ca/wordpress/wp-content/themes/zouzou-hair-theme-classic/sitemap.xml
