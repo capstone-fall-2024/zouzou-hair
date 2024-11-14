@@ -1113,7 +1113,7 @@ nav button svg {
   margin-bottom: 0;
 }
 
-.main-navigation > h2 {
+.main-navigation>h2 {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
 }
@@ -1194,12 +1194,12 @@ nav button svg {
 }
 
 .career-banner {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/career-banner.webp');
-	background-position: center -10rem;
-	background-repeat: no-repeat;
-	background-size: cover;
-	color: var(--white);
-	background-attachment: fixed;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./assets/images/career-banner.webp');
+  background-position: center -10rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--white);
+  background-attachment: fixed;
 }
 
 .image-padding {
@@ -1247,12 +1247,12 @@ nav button svg {
 }
 
 .red-scissors-intro {
-	width: calc(85% - 0.5rem);
+  width: calc(85% - 0.5rem);
 }
 
 .red-scissors {
-	margin-top: 7rem;
-	width: calc(15% - 0.5rem);
+  margin-top: 7rem;
+  width: calc(15% - 0.5rem);
 }
 
 .red-scissors img {
@@ -1288,13 +1288,13 @@ h2 {
 }
 
 .home-services-flex a div {
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .home-services-flex a div:hover {
-	transform: scale(1.03);
-	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .services-heading-title .promo {
@@ -1391,21 +1391,21 @@ h2 {
 
 /* reviews on home */
 .reviews {
-	background-color: var(--red);
+  background-color: var(--red);
 }
 
 .reviews-title {
-	color: var(--light-beige);
+  color: var(--light-beige);
 }
 
 .ti-name {
-	font-size: 18px;
-	font-weight: bold;
-	color: var(--light-beige);
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--light-beige);
 }
 
 .ti-footer .source-Google {
-	margin-top: 0rem;
+  margin-top: 0rem;
 }
 
 /* Zouzou Hair Custom - Services Page */
@@ -1564,10 +1564,11 @@ footer .main-navigation ul a {
   align-items: flex-start;
 }
 
-.connect-with-us > p:first-of-type,
-.grid-3 > p:first-of-type {
+.connect-with-us>p:first-of-type,
+.grid-3>p:first-of-type {
   font-family: 'Cinzel';
   font-size: var(--large);
+  margin-top: 1.5rem;
 }
 
 .connect-with-us svg,
@@ -1740,41 +1741,41 @@ footer .main-navigation ul a {
 
 /* MEDIA QUERIES */
 @media screen and (min-width: 450px) {
-	.zouzou-intro-home {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		gap: 1rem;
-	}
+  .zouzou-intro-home {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+  }
 
-	.red-scissors-intro {
-		width: calc(70% - 0.5rem);
-	}
+  .red-scissors-intro {
+    width: calc(70% - 0.5rem);
+  }
 
-	.red-scissors {
-		margin-top: unset;
-		width: calc(7rem - 0.5rem);
-	}
+  .red-scissors {
+    margin-top: unset;
+    width: calc(7rem - 0.5rem);
+  }
 }
 
 @media screen and (min-width: 600px) {
   .services-heading-title {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		align-items: end;
-		margin-bottom: 1rem;
-	}
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 1rem;
+  }
 
-	.services-heading-title h2,
-	.services-heading-title p {
-		margin: 0;
-	}
+  .services-heading-title h2,
+  .services-heading-title p {
+    margin: 0;
+  }
 
-	.home-services-flex {
-		box-sizing: border-box;
-		gap: 0.8rem;
-	}
+  .home-services-flex {
+    box-sizing: border-box;
+    gap: 0.8rem;
+  }
 
   .home-services-flex a {
     width: calc(33% - 0.5rem);
@@ -1819,6 +1820,11 @@ footer .main-navigation ul a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .connect-with-us>p:first-of-type,
+  .grid-3>p:first-of-type {
+    margin-top: unset;
   }
 }
 
@@ -1944,8 +1950,8 @@ footer .main-navigation ul a {
   }
 
   .home-services-flex {
-		box-sizing: border-box;
-		gap: 1rem;
+    box-sizing: border-box;
+    gap: 1rem;
   }
 
   .home-services-flex a:nth-child(1),
@@ -1956,22 +1962,22 @@ footer .main-navigation ul a {
   }
 
   .home-services-flex a {
-		width: calc(24% - 0.5rem);
-		aspect-ratio: 1 / 1;
-		box-sizing: border-box;
+    width: calc(24% - 0.5rem);
+    aspect-ratio: 1 / 1;
+    box-sizing: border-box;
   }
 
   .services-titles {
-		padding: 10px 3px;
-	}
+    padding: 10px 3px;
+  }
 
-	.womens-cuts {
-		background: url('./assets/images/womenscut-large.webp') center center/cover no-repeat;
-	}
+  .womens-cuts {
+    background: url('./assets/images/womenscut-large.webp') center center/cover no-repeat;
+  }
 
-	.mens-cuts {
-		background: url('./assets/images/menscuts-large.webp') center center/cover no-repeat;
-	}
+  .mens-cuts {
+    background: url('./assets/images/menscuts-large.webp') center center/cover no-repeat;
+  }
 
 
   .form-flex {
