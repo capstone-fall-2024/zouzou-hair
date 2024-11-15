@@ -574,7 +574,8 @@ input[type="submit"],
   display: inline-block;
 }
 
-.wc-block-checkout__actions_row .wc-block-components-checkout-place-order-button {
+.wc-block-checkout__actions_row .wc-block-components-checkout-place-order-button,
+.wc-block-components-totals-coupon__button {
   border: 0;
 }
 
@@ -584,7 +585,8 @@ input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover,
 .add_to_cart_button:hover,
-.wc-block-cart__submit-button:hover {
+.wc-block-cart__submit-button:hover,
+.wp-element-button.wc-block-components-totals-coupon__button:hover {
   background-color: var(--dark-red);
   color: var(--light-beige) !important;
 }
@@ -963,7 +965,7 @@ textarea {
 /* Zouzou Hair Custom */
 
 .container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -1365,7 +1367,8 @@ h2 {
   color: var(--black) !important;
 }
 
-.ti-name, .nowrap strong {
+.ti-name,
+.nowrap strong {
   color: var(--light-beige) !important;
 }
 
@@ -1386,6 +1389,12 @@ element.style {
   margin-top: 3rem;
 }
 
+.service-bar .title {
+  font-size: var(--base);
+  font-family: 'Afacad';
+  font-weight: 700;
+}
+
 .service-bar p {
   margin-bottom: 0;
 }
@@ -1394,10 +1403,6 @@ element.style {
   padding: 1rem;
   display: flex;
   justify-content: space-between;
-}
-
-.service-bar>div>p:nth-of-type(1) {
-  font-weight: 700;
 }
 
 .service-bar:nth-child(even) {
@@ -1474,7 +1479,7 @@ element.style {
 }
 
 .wc-block-grid__product {
-  text-align: left!important;
+  text-align: left !important;
 }
 
 .quantity input {
@@ -1515,6 +1520,14 @@ element.style {
   position: absolute;
   bottom: 0;
   font-size: 1.5rem;
+}
+
+.wc-block-cart-items {
+  font-size: var(--base)!important;
+}
+
+.wc-block-cart button:hover {
+  color: var(--dark-red) !important;
 }
 
 /* Zouzou Hair Custom - Footer */
@@ -1584,13 +1597,26 @@ footer .main-navigation a::after {
   width: 0%;
   top: 2px;
   height: 5px;
-  background-color: var(--dark-red);
+  background-color: var(--red);
   transition: all .5s;
 }
 
-footer .main-navigation a:hover::after {
-  width: 100%;
+footer .main-navigation a:hover {
+  /* hover style for touch screens */
+  border-bottom: 5px solid var(--red);
 }
+
+@media (hover: hover) {
+  /* this block allows the footer links hover animation for only devices with actual hover (with a mouse) */
+  footer .main-navigation a:hover {
+    border-bottom: unset;
+  }
+
+  footer .main-navigation a:hover::after {
+    width: 100%;
+  }
+}
+
 
 /* -------------------------------ABOUT US ADDITIONS - NEED TO BE CHECKED FOR REPEATED STYLES */
 /* Container settings for 1150px max width */
@@ -1841,14 +1867,13 @@ footer .main-navigation a:hover::after {
   .show li,
   .show a,
   .show li:hover,
-  .show a:hover  {
+  .show a:hover {
     all: unset;
   }
 
-  header .main-navigation a {
+  header .main-navigation a,
+  header .main-navigation a:hover {
     color: var(--light-beige);
-    padding: 0.25rem 0.75rem;
-    border-radius: 3px;
   }
 
   header .main-navigation a::after {
@@ -1860,16 +1885,17 @@ footer .main-navigation a:hover::after {
     width: 0%;
     top: 2px;
     height: 5px;
-    background-color: var(--dark-red);
+    background-color: var(--red);
     transition: all .5s;
   }
-  
+
   header .main-navigation a:hover::after {
     width: 100%;
   }
 
   .main-header .main-navigation ul {
     display: flex;
+    gap: 1rem;
   }
 
   .image-padding {
@@ -1935,9 +1961,8 @@ footer .main-navigation a:hover::after {
     grid-template-columns: repeat(auto-fill, 24rem);
   }
 
-  .main-header .main-navigation ul {
-    display: flex;
-    gap: 1rem;
+  .main-header .main-navigation ul  {
+    gap: 1.5rem;
   }
 }
 
