@@ -59,32 +59,32 @@ get_header();
 				<p class="promo">All Students receive a 10% discount on all our services</p>
 			</div>
 			<div class="home-services-flex">
-				<a href="#">
+				<a href="<?php echo esc_url(home_url('/service-category/womens-cuts')); ?>">
 					<div class="womens-cuts">
 						<h3 class="services-titles">Women's Cuts</h3>
 					</div>
 				</a>
-				<a href="#">
+				<a href="<?php echo esc_url(home_url('/service-category/mens-cuts')); ?>">
 					<div class="mens-cuts">
 						<h3 class="services-titles">Men's Cuts</h3>
 					</div>
 				</a>
-				<a href="#">
+				<a href="<?php echo esc_url(home_url('/service-category/nonbinary')); ?>">
 					<div class="nonbinary-cuts">
 						<h3 class="services-titles">Nonbinary</h3>
 					</div>
 				</a>
-				<a href="#">
+				<a href="<?php echo esc_url(home_url('/service-category/colour')); ?>">
 					<div class="coloring">
 						<h3 class="services-titles">Coloring</h3>
 					</div>
 				</a>
-				<a href="#">
+				<a href="<?php echo esc_url(home_url('/service-category/styling')); ?>">
 					<div class="styling">
 						<h3 class="services-titles">Styling</h3>
 					</div>
 				</a>
-				<a href="#">
+				<a href="<?php echo esc_url(home_url('/service-category/hair-botox')); ?>">
 					<div class="hair-botox">
 						<h3 class="services-titles">Hair Botox</h3>
 					</div>
@@ -104,6 +104,9 @@ get_header();
 		<h2>Featured Product</h2>
 		<p>All orders over $50 receive free shipping!</p>
 		<!-- Featured products here -->
+		 <div>
+		 <?php wc_get_template_part('content', 'product'); ?>
+		 </div>
 		<a href="<?php echo esc_url(home_url('/shop')); ?>" class="button">Shop</a>
 	</section>
 	<section class="reviews">

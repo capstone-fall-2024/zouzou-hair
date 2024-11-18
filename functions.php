@@ -55,12 +55,6 @@ function zouzou_hair_theme_setup()
 		)
 	);
 
-	register_nav_menus(
-		array(
-			'menu-2' => esc_html__('Footer', 'zouzou-hair-theme'),
-		)
-	);
-
 	/*
 		* Switch default core markup for search form, comment form, and comments
 		* to output valid HTML5.
@@ -331,42 +325,6 @@ if (function_exists('acf_add_local_field_group')):
 				'type' => 'text',
 				'value' => '780-758-4242',
 				'instructions' => 'Enter the store phone number',
-				'required' => 1,
-			),
-			array(
-				'key' => 'map_url',
-				'label' => 'Map URL',
-				'name' => 'map_url',
-				'type' => 'url',
-				'value' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2371.934795525066!2d-113.5149118221533!3d53.52322137234099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a02219412fb583%3A0xdb39fd5b67a058b5!2sZouzou%20Hair%20Group!5e0!3m2!1sen!2sca!4v1728003129088!5m2!1sen!2sca',
-				'instructions' => 'Enter the source URL of the map embed from Google.',
-				'required' => 1,
-			),
-			array(
-				'key' => 'facebook_url',
-				'label' => 'Facebook URL',
-				'name' => 'facebook_url',
-				'type' => 'url',
-				'value' => 'https://www.facebook.com/ZouZouHairGroup',
-				'instructions' => 'Enter the Facebook URL.',
-				'required' => 1,
-			),
-			array(
-				'key' => 'instagram_url',
-				'label' => 'Instagram URL',
-				'name' => 'instagram_url',
-				'type' => 'url',
-				'value' => 'https://www.instagram.com/zouzou.hair',
-				'instructions' => 'Enter the Instagram URL.',
-				'required' => 1,
-			),
-			array(
-				'key' => 'tiktok_url',
-				'label' => 'Tiktok URL',
-				'name' => 'tiktok_url',
-				'type' => 'url',
-				'value' => 'https://www.tiktok.com/@zouzou_hair',
-				'instructions' => 'Enter the Tiktok URL.',
 				'required' => 1,
 			)
 		),
@@ -712,7 +670,6 @@ if (function_exists('acf_add_local_field_group')):
 
 endif;
 
-// FETCHES CUSTOM FIELDS FROM CONTACT PAGE FOR USE IN OTHER AREAS
 function get_store_info()
 {
 	$contact_pages = get_posts(array(
@@ -733,10 +690,6 @@ function get_store_info()
 			'phone' => get_field('phone', $contact_page->ID),
 			'location' => get_field('location', $contact_page->ID),
 			'hours' => get_field('hours', $contact_page->ID),
-			'map_url' => get_field('map_url', $contact_page->ID),
-			'facebook_url' => get_field('facebook_url', $contact_page->ID),
-			'instagram_url' => get_field('instagram_url', $contact_page->ID),
-			'tiktok_url' => get_field('tiktok_url', $contact_page->ID),
 		);
 	}
 
@@ -842,8 +795,8 @@ function remove_wp_block_library_css()
 {
 	wp_dequeue_style('wp-block-library');
 	wp_dequeue_style('wp-block-library-theme');
-	wp_dequeue_style('wc-block-style');
-	wp_dequeue_style('global-styles');
+	wp_dequeue_style('wc-block-style'); // REMOVE WOOCOMMERCE BLOCK CSS
+	wp_dequeue_style('global-styles'); // REMOVE THEME.JSON
 	wp_dequeue_style('classic-theme-styles-inline-css');
 }
 
@@ -851,19 +804,3 @@ add_action('wp_enqueue_scripts', 'remove_wp_block_library_css', 100);
 
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
-
-add_filter('wp_nav_menu_items', 'cart_in_menu', 10, 2);
-
-function cart_in_menu($items, $args)
-{
-	if ($args->theme_location == 'menu-1') {
-		if (WC()->cart->get_cart_contents_count() > 0) {
-			$cart_url = wc_get_cart_url();
-			$cart_count = WC()->cart->get_cart_contents_count();
-			$items .= '<li class="menu-item cart-icon"><a href="' . esc_url($cart_url) . '"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-</svg><span>' . $cart_count . '</span></a></li>';
-		}
-	}
-	return $items;
-}
