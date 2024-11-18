@@ -15,47 +15,106 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<main id="primary" class="site-main">
+	<div class="front-banner banner-content">
+		<div class="container padding">
+			<div class="home-header">
+				<div>
+					<p>Let us craft your </p>
+					<p class="signature-look">Signature Look.</p>
+					<p>Edmonton's Finest Salon & Barbershop</p>
+					<a href="<?php echo esc_url(home_url('/shop')); ?>" class="button">Shop</a>
+					<a href="https://www.fresha.com/a/zouzou-hair-edmonton-8718-109-street-northwest-ln6gfkqc/booking?menu=true" class="button">Book an Appointment</a>
+				</div>
+				<div class="zouzou-intro-header">
+					<p>At <span class="zouzou-title">Zouzou Hair</span> , </p>
+					<p>We believe that great hair is the foundation of a more confident you.
+					</p>
+					<p>Our skilled stylists offer everything from fresh cuts to bold colors, all in a friendly and relaxed setting. Let us create a look that’s perfect for you!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container padding">
+		<div class="zouzou-intro-home">
+			<div class="red-scissors-intro">
+				<div>
+					<p>At <span class="zouzou-title">Zouzou Hair</span> , </p>
+				</div>
+				<div>
+					<p>We believe that great hair is the foundation of a more confident you.</p>
+				</div>
+				<div>
+					<p>Our skilled stylists offer everything from fresh cuts to bold colors, all in a friendly and relaxed setting. Let us create a look that’s perfect for you!</p>
+				</div>
+			</div>
+			<div class="red-scissors">
+				<img src="https://zouzou-hair.web.dmitcapstone.ca/wordpress/wp-content/uploads/2024/11/mobile-intro-scissors.webp" alt="Red Scissors">
+			</div>
+		</div>
+		<section>
+			<div class="services-heading-title">
+				<h2>Services</h2>
+				<p class="promo">All Students receive a 10% discount on all our services</p>
+			</div>
+			<div class="home-services-flex">
+				<a href="<?php echo esc_url(home_url('/service-category/womens-cuts')); ?>">
+					<div class="womens-cuts">
+						<h3 class="services-titles">Women's Cuts</h3>
+					</div>
+				</a>
+				<a href="<?php echo esc_url(home_url('/service-category/mens-cuts')); ?>">
+					<div class="mens-cuts">
+						<h3 class="services-titles">Men's Cuts</h3>
+					</div>
+				</a>
+				<a href="<?php echo esc_url(home_url('/service-category/nonbinary')); ?>">
+					<div class="nonbinary-cuts">
+						<h3 class="services-titles">Nonbinary</h3>
+					</div>
+				</a>
+				<a href="<?php echo esc_url(home_url('/service-category/colour')); ?>">
+					<div class="coloring">
+						<h3 class="services-titles">Coloring</h3>
+					</div>
+				</a>
+				<a href="<?php echo esc_url(home_url('/service-category/styling')); ?>">
+					<div class="styling">
+						<h3 class="services-titles">Styling</h3>
+					</div>
+				</a>
+				<a href="<?php echo esc_url(home_url('/service-category/hair-botox')); ?>">
+					<div class="hair-botox">
+						<h3 class="services-titles">Hair Botox</h3>
+					</div>
+				</a>
+			</div>
+			<a href="https://www.fresha.com/a/zouzou-hair-edmonton-8718-109-street-northwest-ln6gfkqc/booking?menu=true" class="button">Book your Appointment!</a>
+		</section>
 
-	<p>This is a test.</p>
-	<p>Hours</p>
-	<p>Location</p>
-
-		<?php
-		if ( have_posts() ) :
-
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
-
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-	</main><!-- #main -->
+	</div>
+	<div class="home-intro">
+		<div class=" container padding home-intro-background">
+			<p><?php echo nl2br(esc_html(get_field('paragraph_1'))); ?></p>
+			<p><?php echo nl2br(esc_html(get_field('paragraph_2'))); ?></p>
+		</div>
+	</div>
+	<section class="container padding">
+		<h2>Featured Product</h2>
+		<p>All orders over $50 receive free shipping!</p>
+		<!-- Featured products here -->
+		 <div>
+		 <?php wc_get_template_part('content', 'product'); ?>
+		 </div>
+		<a href="<?php echo esc_url(home_url('/shop')); ?>" class="button">Shop</a>
+	</section>
+	<section class="reviews">
+		<div class=" container padding">
+			<h2 class="reviews-title">Reviews</h2>
+			<?php echo apply_shortcodes('[trustindex no-registration=google]'); ?>
+		</div>
+	</section>
+</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

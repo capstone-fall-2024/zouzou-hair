@@ -50,7 +50,7 @@ get_header();
 				</div>
 			</div>
 			<div class="red-scissors">
-				<img src="https://zouzou-hair.web.dmitcapstone.ca/wordpress-sarah/wp-content/uploads/2024/10/mobile-intro-scissors.png" alt="Red Scissors">
+				<img src="https://zouzou-hair.web.dmitcapstone.ca/wordpress/wp-content/uploads/2024/11/mobile-intro-scissors.webp" alt="Red Scissors">
 			</div>
 		</div>
 		<section>

@@ -1130,40 +1130,45 @@ nav button svg {
 .shop-banner,
 .services-banner,
 .contact-banner,
-.career-banner {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("./assets/images/front-banner.webp");
+.careers-banner {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+              url("./assets/images/front-banner.webp");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: var(--white);
   background-attachment: fixed;
+  color: var(--white);
 }
 
-.front-banner {
-  background-image: url("./assets/images/front-banner.webp");
-  height: 65vh;
+.front-banner{
+  height: 60vh;
 }
 
 .about-banner {
-  background-image: url("./assets/images/about-banner.jpg");
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+                    url("./assets/images/about-banner.webp");
 }
 
 .shop-banner {
-  background-image: url("./assets/images/shop-banner.webp");
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+                    url("./assets/images/shop-banner.webp");
 }
 
 .services-banner {
-  background-image: url("./assets/images/services-banner.webp");
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+                    url("./assets/images/services-banner.webp");
 }
 
 .contact-banner {
-  background-image: url("./assets/images/contact-banner.webp");
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+                    url("./assets/images/contact-banner.webp");
 }
 
-.career-banner {
-  background-image: url('./assets/images/career-banner.webp');
+.careers-banner {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+                    url("./assets/images/career-banner.webp");
 }
+
 
 .image-padding {
   padding: 1.5rem;
@@ -1344,7 +1349,7 @@ h2 {
 
 .reviews-title {
   color: var(--light-beige);
-  margin-bottom: 30px;
+
 }
 
 .ti-reviews-container-wrapper .ti-review-item .ti-name {
@@ -1545,6 +1550,9 @@ footer .main-navigation ul a {
 /* -------------------------------ABOUT US ADDITIONS - NEED TO BE CHECKED FOR REPEATED STYLES */
 /* Container settings for 1150px max width */
 
+.about-banner h1{
+  color: var(--light-beige);
+}
 
 /* Team list layout */
 .team-list {
@@ -1628,6 +1636,11 @@ footer .main-navigation ul a {
 .member-intro {
   font-size: 1em;
   color: #333;
+}
+
+/* Careers Page */
+.careers-banner h1 {
+  color: var(--light-beige);
 }
 
 /* Mobile Responsiveness */

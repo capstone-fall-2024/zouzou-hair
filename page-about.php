@@ -52,7 +52,7 @@ $image = get_field('images');
                                 <?php endif; ?>
                             </div>
                             <div class="member-info">
-                                <h3 class="member-name"><?php the_title(); ?></h3>
+                                <h2 class="member-name"><?php the_title(); ?></h2>
                                 <p class="member-position"><?php echo esc_html(get_field('position')); ?></p>
                                 <p class="member-intro"><?php echo esc_html(get_field('introduction')); ?></p>
                             </div>
