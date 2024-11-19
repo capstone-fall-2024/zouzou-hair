@@ -795,8 +795,8 @@ function remove_wp_block_library_css()
 {
 	wp_dequeue_style('wp-block-library');
 	wp_dequeue_style('wp-block-library-theme');
-	wp_dequeue_style('wc-block-style'); // REMOVE WOOCOMMERCE BLOCK CSS
-	wp_dequeue_style('global-styles'); // REMOVE THEME.JSON
+	wp_dequeue_style('wc-block-style');
+	wp_dequeue_style('global-styles');
 	wp_dequeue_style('classic-theme-styles-inline-css');
 }
 
@@ -804,3 +804,29 @@ add_action('wp_enqueue_scripts', 'remove_wp_block_library_css', 100);
 
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
+
+// FUNCTION THAT ADDS CART IN NAV ONLY IF THERE'S ITEM IN CART
+add_filter('wp_nav_menu_items', 'cart_in_nav', 10, 2);
+
+function cart_in_nav($items, $args)
+{
+	if ($args->theme_location == 'menu-1') {
+		if (WC()->cart->get_cart_contents_count() > 0) {
+			$cart_url = wc_get_cart_url();
+			$cart_count = WC()->cart->get_cart_contents_count();
+			$items .= '<li class="menu-item cart-icon"><a href="' . esc_url($cart_url) . '"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+</svg><span>' . $cart_count . '</span></a></li>';
+		}
+	}
+	return $items;
+}
+
+// CHANGES THE PRODUCT TITLE TAG FROM H2 TO H3 FOR FEATURED ITEMS SECTION IN FRONT PAGE
+add_filter('do_shortcode_tag', function($output, $tag, $attributes) {
+    if ($tag === 'products' && is_front_page()) {
+        $output = str_replace('<h2 class="woocommerce-loop-product__title">', '<h3 class="woocommerce-loop-product__title">', $output);
+        $output = str_replace('</h2>', '</h3>', $output);
+    }
+    return $output;
+}, 10, 3);

@@ -29,17 +29,15 @@ $image = get_field('images');
                 <h1>About</h1>
             </div>
         </div>
-    </section>
-    <div class="container padding">
-        <section>
+        <div class="container padding">
+        <div>
             <div class="intro-text">
                 <div>
                     <div class="red-bar"></div>
                     <p>We believe that great hair is the foundation of confidence. Our team <br> of expert stylists delivers personalized, high-quality services ensuring you <br> leave feeling your absolute best.</p>
                 </div>
             </div>
-        </section>
-
+        </div>
         <section class="about-content">
             <ul class="team-list">
                 <?php if ($member_posts->have_posts()) : ?>
@@ -62,6 +60,7 @@ $image = get_field('images');
             </ul>
         </section>
     </div>
+    </section>
 </main><!-- #main -->
 
 <?php

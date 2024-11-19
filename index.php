@@ -101,12 +101,14 @@ get_header();
 	</div>
 	<section class="container padding">
 		<h2>Featured Product</h2>
-		<p>All orders over $50 receive free shipping!</p>
-		<!-- Featured products here -->
-		 <div>
-		 <?php wc_get_template_part('content', 'product'); ?>
-		 </div>
-		<a href="<?php echo esc_url(home_url('/shop')); ?>" class="button">Shop</a>
+		<p class="promo">All orders over $50 receive free shipping!</p>
+		<div class="featured-products">
+			<?php echo do_shortcode('[products limit="4" visibility="featured"]'); ?>
+			<div>
+				<a href="<?php echo esc_url(home_url('/featured-items')); ?>" class="button">View more featured products</a>
+				<a href="<?php echo esc_url(home_url('/shop')); ?>" class="button">View all products</a>
+			</div>
+		</div>
 	</section>
 	<section class="reviews">
 		<div class=" container padding">
