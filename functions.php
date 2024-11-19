@@ -852,9 +852,10 @@ add_action('wp_enqueue_scripts', 'remove_wp_block_library_css', 100);
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
 
-add_filter('wp_nav_menu_items', 'cart_in_menu', 10, 2);
+// FUNCTION THAT ADDS CART IN NAV ONLY IF THERE'S ITEM IN CART
+add_filter('wp_nav_menu_items', 'cart_in_nav', 10, 2);
 
-function cart_in_menu($items, $args)
+function cart_in_nav($items, $args)
 {
 	if ($args->theme_location == 'menu-1') {
 		if (WC()->cart->get_cart_contents_count() > 0) {
@@ -867,3 +868,13 @@ function cart_in_menu($items, $args)
 	}
 	return $items;
 }
+
+// CHANGES THE PRODUCT TITLE TAG FROM H2 TO H3 FOR FEATURED ITEMS SECTION IN FRONT PAGE
+add_filter('do_shortcode_tag', function($output, $tag, $attributes) {
+    if ($tag === 'products' && is_front_page()) {
+        $output = str_replace('<h2 class="woocommerce-loop-product__title">', '<h3 class="woocommerce-loop-product__title">', $output);
+        $output = str_replace('</h2>', '</h3>', $output);
+    }
+    return $output;
+}, 10, 3);
+

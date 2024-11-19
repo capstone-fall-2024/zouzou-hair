@@ -50,7 +50,7 @@ get_header();
 				</div>
 			</div>
 			<div class="red-scissors">
-				<img src="https://zouzou-hair.web.dmitcapstone.ca/wordpress-sarah/wp-content/uploads/2024/10/mobile-intro-scissors.png" alt="Red Scissors">
+				<img src="https://zouzou-hair.web.dmitcapstone.ca/wordpress/wp-content/uploads/2024/11/mobile-intro-scissors.webp" alt="Red Scissors">
 			</div>
 		</div>
 		<section>
@@ -59,32 +59,32 @@ get_header();
 				<p class="promo">All Students receive a 10% discount on all our services</p>
 			</div>
 			<div class="home-services-flex">
-				<a href="#">
+				<a href="<?php echo esc_url(home_url('/service-category/womens-cuts')); ?>">
 					<div class="womens-cuts">
 						<h3 class="services-titles">Women's Cuts</h3>
 					</div>
 				</a>
-				<a href="#">
+				<a href="<?php echo esc_url(home_url('/service-category/mens-cuts')); ?>">
 					<div class="mens-cuts">
 						<h3 class="services-titles">Men's Cuts</h3>
 					</div>
 				</a>
-				<a href="#">
+				<a href="<?php echo esc_url(home_url('/service-category/nonbinary')); ?>">
 					<div class="nonbinary-cuts">
 						<h3 class="services-titles">Nonbinary</h3>
 					</div>
 				</a>
-				<a href="#">
+				<a href="<?php echo esc_url(home_url('/service-category/colour')); ?>">
 					<div class="coloring">
 						<h3 class="services-titles">Coloring</h3>
 					</div>
 				</a>
-				<a href="#">
+				<a href="<?php echo esc_url(home_url('/service-category/styling')); ?>">
 					<div class="styling">
 						<h3 class="services-titles">Styling</h3>
 					</div>
 				</a>
-				<a href="#">
+				<a href="<?php echo esc_url(home_url('/service-category/hair-botox')); ?>">
 					<div class="hair-botox">
 						<h3 class="services-titles">Hair Botox</h3>
 					</div>
@@ -102,9 +102,14 @@ get_header();
 	</div>
 	<section class="container padding">
 		<h2>Featured Product</h2>
-		<p>All orders over $50 receive free shipping!</p>
-		<!-- Featured products here -->
-		<a href="<?php echo esc_url(home_url('/shop')); ?>" class="button">Shop</a>
+		<p class="promo">All orders over $50 receive free shipping!</p>
+		<div class="featured-products">
+			<?php echo do_shortcode('[products limit="4" visibility="featured"]'); ?>
+			<div>
+				<a href="<?php echo esc_url(home_url('/featured-items')); ?>" class="button">View more featured products</a>
+				<a href="<?php echo esc_url(home_url('/shop')); ?>" class="button">View all products</a>
+			</div>
+		</div>
 	</section>
 	<section class="reviews">
 		<div class=" container padding">
