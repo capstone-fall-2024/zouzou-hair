@@ -1443,14 +1443,6 @@ h2 {
   padding: 0.5rem 1rem !important;
 }
 
-.wc-block-components-totals-shipping__change-address__link {
-  color: var(--red);
-}
-
-.wc-block-components-totals-shipping__change-address__link:hover {
-  color: var(--dark-red);
-}
-
 .woocommerce-loop-product__title {
   font-family: "Afacad";
 }
