@@ -52,7 +52,7 @@ $featured_items = new WP_Query($args);
             </div>
         <?php } ?>
     </div>
-</main><!-- #main -->
+</main>
 
 <?php
 get_footer();

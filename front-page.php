@@ -79,7 +79,7 @@ get_header();
 		<section class="container padding">
 		<h2>Featured Product</h2>
 		<p>All orders over $50 receive free shipping!</p>
-		<!-- Featured products here -->
+		
 		<a href="<?php echo esc_url(home_url('/shop')); ?>" class="button">Shop</a>
 		</section>
 		<section class="reviews">
@@ -88,7 +88,7 @@ get_header();
 				<?php echo apply_shortcodes( '[trustindex no-registration=google]' ); ?>
 			</div>
 		</section>
-	</main><!-- #main -->
+	</main>
 
 <?php
 get_footer();

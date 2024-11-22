@@ -66,7 +66,7 @@ get_header();
                                         <p><?php echo esc_html(get_field('price')); ?></p>
                                     </div>
                                 <?php endwhile; ?>
-                            </div> <!-- end of service-list div -->
+                            </div>
                         <?php endif;
 
                         ?>
@@ -84,23 +84,23 @@ get_header();
                                 <?php }
                                     }
                                 } ?>
-                            </div> <!-- end of gallery div -->
+                            </div>
 
                             <div class="button-end">
                                 <a href="<?php echo esc_url($service_link); ?>" class="button">View Our Previous Work</a>
                             </div>
-                        </div> <!-- end of gallery and button wrapper -->
-                    </div> <!-- end of list and gallery wrapper -->
-                </section> <!-- end of service div -->
+                        </div>
+                    </div> 
+                </section>
         <?php
                 wp_reset_postdata();
             endforeach;
-        } // end of service if condition
+        }
         ?>
-    </div> <!-- end of container div -->
+    </div>
 
 
-</main><!-- #main -->
+</main>
 
 <?php
 get_footer();

@@ -27,7 +27,7 @@ $store_info = get_store_info();
 						)
 					);
 					?>
-				</nav><!-- #site-navigation -->
+				</nav>
 			</div>
 			<div class="grid-2">
 				<section class="connect-with-us">
@@ -91,8 +91,8 @@ $store_info = get_store_info();
 			</section>
 			<div class="grid-4"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2371.934795525066!2d-113.5149118221533!3d53.52322137234099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a02219412fb583%3A0xdb39fd5b67a058b5!2sZouzou%20Hair%20Group!5e0!3m2!1sen!2sca!4v1728003129088!5m2!1sen!2sca" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="map" aria-description="Google map of Zouzou Hair's location"></iframe></div>
 	</div>
-</footer><!-- #colophon -->
-</div><!-- #page -->
+</footer>
+</div>
 
 <?php wp_footer(); ?>
 

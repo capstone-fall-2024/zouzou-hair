@@ -90,7 +90,7 @@ get_header();
             </div>
         </div>
     </div>
-</main><!-- #main -->
+</main>
 
 <?php
 get_footer();

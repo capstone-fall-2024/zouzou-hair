@@ -67,7 +67,7 @@ $product_categories = get_terms(array(
         }
         ?>
     </div>
-</main><!-- #main -->
+</main>
 
 <?php
 get_footer();

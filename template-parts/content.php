@@ -26,9 +26,9 @@
 					zouzou_hair_theme_posted_on();
 					zouzou_hair_theme_posted_by();
 					?>
-				</div><!-- .entry-meta -->
+				</div>
 			<?php endif; ?>
-		</header><!-- .entry-header -->
+		</header>
 	
 		<?php zouzou_hair_theme_post_thumbnail(); ?>
 	
@@ -56,6 +56,6 @@
 				)
 			);
 			?>
-		</div><!-- .entry-content -->
+		</div>
 	</article><!-- #post-<?php the_ID(); ?> -->
 </div>

@@ -79,7 +79,7 @@ if (is_front_page()) {
 								<p class="site-description"><?php echo $zouzou_hair_theme_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 															?></p>
 							<?php endif; ?>
-						</div><!-- .site-branding -->
+						</div>
 						<nav id="site-navigation" class="main-navigation">
 							<button class="toggle-btn" aria-label="Toggle to open mobile menu" aria-controls="primary-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
 									<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -93,10 +93,10 @@ if (is_front_page()) {
 								)
 							);
 							?>
-						</nav><!-- #site-navigation -->
+						</nav>
 					</div>
 				</div>
-			</header><!-- #masthead -->
+			</header>
 			<?php if ($banner === 'front-banner') : ?>
 				<div class="banner-content">
 					<div class="container padding">
@@ -124,7 +124,7 @@ if (is_front_page()) {
 					<a href="<?php echo esc_url(home_url('/shop-by-brand')); ?>" class="button">Shop by Brand</a>
 				</section>
 			<?php elseif ((is_woocommerce() && !is_shop()) || is_cart() || is_checkout() || is_404()) : ?>
-				<!-- hides the header space below the nav; h1 is automatically set by the woocommerce template -->
+				
 			<?php elseif (is_tax() || is_category() || is_tag()) : ?>
 				<section class="container padding">
 					<h1><?php single_term_title(); ?></h1>

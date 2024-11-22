@@ -56,7 +56,7 @@ $image = get_field('images');
         </ul>
     </section>
 </div>
-</main><!-- #main -->
+</main>
 
 <?php
 get_footer();
