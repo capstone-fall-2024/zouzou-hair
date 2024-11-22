@@ -21,10 +21,10 @@ get_header();
 				<p>Click the button below to head back to the homepage and get back on track.</p>
 				<a href="<?php echo esc_url(home_url('/')); ?>" class="button" rel="home">Back to Home</a>
 			</div>
-		</section><!-- .error-404 -->
+		</section>
 	</div>
 
-</main><!-- #main -->
+</main>
 
 <?php
 get_footer();

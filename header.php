@@ -62,7 +62,7 @@ $store_info = get_store_info();
 							<p class="site-description"><?php echo $zouzou_hair_theme_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 														?></p>
 						<?php endif; ?>
-					</div><!-- .site-branding -->
+					</div>
 					<nav id="site-navigation" class="main-navigation" aria-labelledby="main-navigation">
 						<h2 id="main-navigation">Main Navigation</h2>
 						<button class="toggle-btn" aria-label="Toggle to open mobile menu" aria-controls="primary-menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -76,7 +76,7 @@ $store_info = get_store_info();
 							)
 						);
 						?>
-					</nav><!-- #site-navigation -->
+					</nav>
 				</div>
 			</div>
-		</header><!-- #masthead -->
+		</header>

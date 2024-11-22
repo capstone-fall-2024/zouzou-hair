@@ -41,7 +41,7 @@ get_header();
 		?>
 	</section>
 
-</main><!-- #main -->
+</main>
 
 <?php
 get_footer();

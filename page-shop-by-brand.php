@@ -70,7 +70,7 @@ $product_categories = get_terms(array(
         ?>
     </section>
     </div>
-</main><!-- #main -->
+</main>
 
 <?php
 get_footer();

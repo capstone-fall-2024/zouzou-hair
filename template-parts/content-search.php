@@ -19,14 +19,14 @@
 				zouzou_hair_theme_posted_on();
 				zouzou_hair_theme_posted_by();
 				?>
-			</div><!-- .entry-meta -->
+			</div>
 			<?php endif; ?>
-		</header><!-- .entry-header -->
+		</header>
 	
 		<?php zouzou_hair_theme_post_thumbnail(); ?>
 	
 		<div class="entry-summary">
 			<?php the_excerpt(); ?>
-		</div><!-- .entry-summary -->
+		</div>
 	
 	</article><!-- #post-<?php the_ID(); ?> -->
