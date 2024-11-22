@@ -101,9 +101,13 @@ get_header();
 
 	</div>
 	<div class="home-intro">
-		<div class=" container padding home-intro-background">
-			<p><?php echo nl2br(esc_html(get_field('paragraph_1'))); ?></p>
-			<p><?php echo nl2br(esc_html(get_field('paragraph_2'))); ?></p>
+		<div class="container">
+			<div>
+				<div class="padding home-intro-background">
+					<p><?php echo nl2br(esc_html(get_field('paragraph_1'))); ?></p>
+					<p><?php echo nl2br(esc_html(get_field('paragraph_2'))); ?></p>
+				</div>
+			</div>
 		</div>
 	</div>
 	<section class="container padding" aria-labelledby="featured-products-heading">
@@ -123,7 +127,7 @@ get_header();
 			<?php echo apply_shortcodes('[trustindex no-registration=google]'); ?>
 		</div>
 	</section>
-</main><!-- #main -->
+</main>
 
 <?php
 get_footer();

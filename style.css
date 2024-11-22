@@ -1342,11 +1342,14 @@ h2 {
   background: url("./assets/images/home-info-banner.webp") center center / cover no-repeat fixed;
   color: var(--light-beige);
   height: 80vh;
+}
+
+.home-intro > .container {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
 }
-
 
 .home-intro-background {
   background-color: var(--dark);
@@ -1455,9 +1458,11 @@ h2.title {
   color: var(--light-beige);
 }
 
+.contact-red h2,
 .contact-red h3 {
   font-family: "Afacad";
   margin-bottom: 0.5rem;
+  font-size: var(--large);
 }
 
 /* Zouzou Hair Custom - Shop */
@@ -1746,7 +1751,6 @@ footer .main-navigation a:hover {
   .member-intro {
     font-size: 0.85em;
   }
-  
 }
 
 @media screen and (min-width: 450px) {
@@ -1796,7 +1800,7 @@ footer .main-navigation a:hover {
     padding: 5px 3px;
   }
 
-  .home-intro {
+  .home-intro > .container {
     justify-content: flex-start;
     align-items: center;
     padding-right: 3rem;
