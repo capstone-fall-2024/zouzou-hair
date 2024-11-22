@@ -1035,6 +1035,20 @@ textarea {
   transform: translateY(-0.25em);
 }
 
+/* Aria-Describedby */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* Prevents line break */
+  border: 0;
+}
+
 /* Zouzou Hair Custom - Header */
 
 nav button {
@@ -1733,6 +1747,7 @@ footer .main-navigation a:hover {
   .member-intro {
     font-size: 0.85em;
   }
+  
 }
 
 @media screen and (min-width: 450px) {

@@ -30,11 +30,11 @@ $args = array(
 $featured_items = new WP_Query($args);
 
 ?>
-<main id="primary" class="site-main">
+<main id="primary" class="site-main" aria-labelledby="featured-items-heading">
     <div class="container padding">
         <section>
-            <h1>Featured Items</h1>
-            <div class="back"><a href="<?php echo esc_url(home_url('/shop')); ?>"><span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <h1 id="featured-items-heading">Featured Items</h1>
+            <div class="back"><a href="<?php echo esc_url(home_url('/shop')); ?>" aria-label="Go back to the shop page"><span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
                     </svg>Back to all products</span></a>
             <?php get_search_form(); ?>
@@ -42,7 +42,7 @@ $featured_items = new WP_Query($args);
 
         <?php if ($featured_items->have_posts()) { ?>
             <div>
-                <ul class="product-loop">
+                <ul class="product-loop" aria-label="List of featured products">
                     <?php while ($featured_items->have_posts()) {
                         $featured_items->the_post(); ?>
 

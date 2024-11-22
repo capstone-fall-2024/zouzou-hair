@@ -23,8 +23,8 @@ $image = get_field('images');
 ?>
 
 <main id="primary" class="site-main">
-    <section>
-        <div class="about-banner image-padding">
+    <section aria-labelledby="about-banner">
+        <div class="about-banner image-padding" id="about-banner">
             <div class="container">
                 <h1>About</h1>
             </div>
@@ -38,12 +38,13 @@ $image = get_field('images');
                 </div>
             </div>
         </div>
-        <section class="about-content">
-            <ul class="team-list">
+        <section class="about-content" aria-labelledby="team-heading">
+            <h2 id="team-heading">Our Team</h2>
+            <ul class="team-list" role="list">
                 <?php if ($member_posts->have_posts()) : ?>
                     <?php while ($member_posts->have_posts()) : $member_posts->the_post(); ?>
-                        <li class="team-member">
-                            <div class="image-container">
+                        <li class="team-member" role="listitem">
+                            <div class="image-container" role="presentation">
                                 <?php if (get_field('image')) : ?>
                                     <img class="member-image" src="<?php the_field('image'); ?>" alt="<?php the_title(); ?> - Team Member">
                                     <div class="overlay"></div>
