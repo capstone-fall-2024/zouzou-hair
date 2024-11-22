@@ -11,12 +11,12 @@
 get_header();
 
 ?>
-<main id="primary" class="site-main services-page">
+<main id="primary" class="site-main services-page" aria-labelledby="services-main-heading">
 
     <section>
-        <div class="services-banner image-padding">
+        <div class="services-banner image-padding" aria-label="Services Page Banner">
             <div class="container">
-                <h1>Services</h1>
+                <h1 id="services-main-heading">Services</h1>
             </div>
         </div>
         <div class="container padding">
@@ -25,7 +25,7 @@ get_header();
                     <div class="red-bar"></div>
                     <p>At Zouzou Hair, we offer a variety of services to make sure you get the exact look you want.<br>Browse our services and previous works down below!</p>
                 </div>
-                <p class="promo">All Students receive a 10% discount on our services</p>
+                <p class="promo" aria-label="All students receive a 10% discount on our services">All Students receive a 10% discount on our services</p>
             </div>
 
             <?php
@@ -65,7 +65,7 @@ get_header();
                                         $service_posts->the_post(); ?>
                                         <div class="service-bar">
                                             <div>
-                                                <p><?php the_title(); ?></p>
+                                                <p class="title"><?php the_title(); ?></p>
                                                 <p><?php echo esc_html(get_field('duration')); ?></p>
                                             </div>
                                             <p><?php echo esc_html(get_field('price')); ?></p>
