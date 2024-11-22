@@ -17,7 +17,7 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-	<div class="front-banner banner-content" role="banner" aria-label="Homepage Banner">
+	<div class="front-banner" role="banner" aria-label="Homepage Banner">
 		<div class="container padding">
 			<div class="home-header">
 				<div>
@@ -56,7 +56,7 @@ get_header();
 				</div>
 			</div>
 			<div class="red-scissors">
-				<img height="100" width="50" src="https://zouzou-hair.web.dmitcapstone.ca/wordpress/wp-content/uploads/2024/11/mobile-intro-scissors.webp" alt="Red Scissors">
+				<img height="100" width="50" src="<?php echo get_template_directory_uri(); ?>/assets/images/mobile-intro-scissors.webp" alt="Red Scissors">
 			</div>
 		</div>
 		<section aria-labelledby="services-heading">

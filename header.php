@@ -19,7 +19,8 @@ $store_info = get_store_info();
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="keywords" content="Haircuts, Styling, Color, Balayage, Ombre, Extensions, Highlights, Keratin, Blowout, Salon, Barber, Updos, Curls, Straightening, Fringe, Layers, Bridal, Pixie, Weaves, Toning">
+	<meta name="keywords" content="edmonton, garneau, hair, haircuts, styling, color, balayage, ombre, extensions, highlights, keratin, blowout, salon, barber, updos, curls, straightening, fringe, layers, bridal, pixie, weaves, toning">
+	<meta name="description" content="Zouzou Hair is a hair salon in the heart of Edmonton's Garneau area. We are passionate in the art of hair and we want to ensure you have an unforgettable experience every time you visit.">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
@@ -71,8 +72,7 @@ $store_info = get_store_info();
 						<?php
 						wp_nav_menu(
 							array(
-								'theme_location' => 'menu-1',
-								'menu_id'        => 'primary-menu',
+								'theme_location' => 'primary'
 							)
 						);
 						?>

@@ -65,7 +65,7 @@ get_header();
                                         $service_posts->the_post(); ?>
                                         <div class="service-bar">
                                             <div>
-                                                <p><?php the_title(); ?></p>
+                                                <p class="title"><?php the_title(); ?></p>
                                                 <p><?php echo esc_html(get_field('duration')); ?></p>
                                             </div>
                                             <p><?php echo esc_html(get_field('price')); ?></p>

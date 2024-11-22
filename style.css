@@ -73,6 +73,9 @@ textarea {
 h1 {
   font-size: var(--xx-large);
   font-family: "Cinzel";
+}
+
+.image-padding h1 {
   color: var(--light-beige);
 }
 
@@ -1017,6 +1020,10 @@ textarea {
   font-family: "Cinzel";
 }
 
+.back {
+  margin-bottom: 1.5rem;
+}
+
 .back span {
   font-weight: 700;
   display: flex;
@@ -1143,6 +1150,7 @@ nav button svg {
   width: 23px;
   vertical-align: middle;
 }
+
 .cart-icon span {
   background-color: var(--red);
   border-radius: 50%;
@@ -1150,53 +1158,30 @@ nav button svg {
   color: var(--light-beige);
 }
 
-.default-banner {
-  background-color: var(--dark);
-  color: var(--light-beige);
-}
-
-.front-banner,
-.about-banner,
-.shop-banner,
-.services-banner,
-.contact-banner,
-.careers-banner {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-              url("./assets/images/front-banner.webp");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  color: var(--white);
-}
-
-.front-banner{
+.front-banner {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./assets/images/front-banner-small.webp");
+  padding: 8rem 0;
   height: 60vh;
 }
 
 .about-banner {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
-                    url("./assets/images/about-banner.webp");
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("./assets/images/about-banner-small.webp");
 }
 
 .shop-banner {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
-                    url("./assets/images/shop-banner.webp");
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("./assets/images/shop-banner-small.webp");
 }
 
 .services-banner {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
-                    url("./assets/images/services-banner.webp");
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("./assets/images/services-banner-small.webp");
 }
 
 .contact-banner {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
-                    url("./assets/images/contact-banner.webp");
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("./assets/images/contact-banner-small.webp");
 }
 
 .careers-banner {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
-                    url("./assets/images/career-banner.webp");
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("./assets/images/career-banner-small.webp");
 }
 
 
@@ -1204,9 +1189,6 @@ nav button svg {
   padding: 1.5rem;
 }
 
-.banner-content {
-  padding: 8rem 0;
-}
 
 .home-header p {
   color: var(--light-beige);
@@ -1386,7 +1368,8 @@ h2 {
   color: var(--black) !important;
 }
 
-.ti-name, .nowrap strong {
+.ti-name,
+.nowrap strong {
   color: var(--light-beige) !important;
 }
 
@@ -1395,12 +1378,16 @@ element.style {
   margin-top: 0px !important;
 }
 
-.featured-products > div > a:first-of-type {
+.featured-products>div>a:first-of-type {
   margin-right: 1rem;
 }
 
 
 /* Zouzou Hair Custom - Services Page */
+
+h2.title {
+  margin-top: 0 !important;
+}
 
 .service-category-page .services-list {
   max-width: 650px;
@@ -1500,6 +1487,7 @@ element.style {
 .wc-block-grid__product {
   text-align: left !important;
 }
+
 .quantity input {
   padding: .5em 1em;
 }
@@ -1541,11 +1529,17 @@ element.style {
 }
 
 .wc-block-cart-items {
-  font-size: var(--base)!important;
+  font-size: var(--base) !important;
 }
+
+.wc-block-components-totals-shipping__change-address__link {
+  color: var(--red);
+}
+
 .wc-block-cart button:hover,
 .wc-block-components-order-summary__button-text:hover,
-.wc-block-components-panel__button:hover {
+.wc-block-components-panel__button:hover,
+.wc-block-components-totals-shipping__change-address__link:hover {
   color: var(--dark-red) !important;
 }
 
@@ -1701,6 +1695,7 @@ footer .main-navigation ul a {
 footer .main-navigation li {
   width: max-content;
 }
+
 footer .main-navigation a::after {
   display: block;
   content: '';
@@ -1713,15 +1708,19 @@ footer .main-navigation a::after {
   background-color: var(--red);
   transition: all .5s;
 }
+
 footer .main-navigation a:hover {
   /* hover style for touch screens */
   border-bottom: 5px solid var(--red);
 }
+
 @media (hover: hover) {
+
   /* this block allows the footer links hover animation for only devices with actual hover (with a mouse) */
   footer .main-navigation a:hover {
     border-bottom: unset;
   }
+
   footer .main-navigation a:hover::after {
     width: 100%;
   }
@@ -1882,6 +1881,42 @@ footer .main-navigation a:hover {
     gap: 1rem;
   }
 
+  .front-banner,
+  .about-banner,
+  .shop-banner,
+  .services-banner,
+  .contact-banner,
+  .careers-banner {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url("./assets/images/front-banner.webp");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .about-banner {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("./assets/images/about-banner.webp");
+  }
+
+  .shop-banner {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("./assets/images/shop-banner.webp");
+    background-position: center -10rem;
+  }
+
+  .services-banner {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("./assets/images/services-banner.webp");
+  }
+
+  .contact-banner {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("./assets/images/contact-banner.webp");
+  }
+
+  .careers-banner {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("./assets/images/career-banner.webp");
+    background-position: center -10rem;
+  }
+
   .image-padding {
     padding: 5rem 1.5rem;
   }
@@ -1979,7 +2014,7 @@ footer .main-navigation a:hover {
     grid-template-columns: repeat(auto-fill, 24rem);
   }
 
-  .main-header .main-navigation ul  {
+  .main-header .main-navigation ul {
     gap: 1.5rem;
   }
 }
