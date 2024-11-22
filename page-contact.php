@@ -14,7 +14,7 @@ get_header();
 
 <main id="primary" class="site-main">
     <section>
-        <div class="contact-banner image-padding">
+        <div class="contact-banner image-padding" aria-label="Contact Page Banner">
             <div class="container">
                 <h1>Contact</h1>
             </div>
@@ -35,19 +35,19 @@ get_header();
                     <div class="padding">
                         <p>You can also:</p>
                         <div>
-                            <section>
-                                <h3>Call Us</h3>
+                            <section aria-labelledby="call-us">
+                                <h3 id="call-us">Call Us</h3>
                                 <p><?php echo esc_html(get_field('phone')); ?></p>
                             </section>
-                            <section>
-                                <h3>Find Us At</h3>
+                            <section aria-labelledby="find-us">
+                                <h3 id="find-us">Find Us At</h3>
                                 <p><?php echo nl2br(esc_html(get_field('location'))); ?></p>
                                 <div>
                                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2371.934795525066!2d-113.5149118221533!3d53.52322137234099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a02219412fb583%3A0xdb39fd5b67a058b5!2sZouzou%20Hair%20Group!5e0!3m2!1sen!2sca!4v1728003129088!5m2!1sen!2sca" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="map" aria-description="Google map of Zouzou Hair's location"></iframe>
                                 </div>
                             </section>
-                            <section>
-                                <h3>Hours</h3>
+                            <section aria-labelledby="hours">
+                                <h3 id="hours">Hours</h3>
                                 <p><?php echo nl2br(esc_html(get_field('hours'))); ?>
                             </section>
                             <h3>Connect With Us on Social Media</h3>

@@ -16,12 +16,12 @@ $product_categories = get_terms(array(
 ))
 
 ?>
-<main id="primary" class="site-main">
+<main id="primary" class="site-main" aria-labelledby="shop-by-brand-heading">
     <div class="container padding">
     <section>
-        <h1>Shop by Brand</h1>
+        <h1 id="shop-by-brand-heading">Shop by Brand</h1>
         <div class="back">
-            <a href="<?php echo esc_url(home_url('/shop')); ?>"><span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <a href="<?php echo esc_url(home_url('/shop')); ?>" aria-label="Go back to the shop page"><span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
                     </svg>
                     Back to all products</span></a>
@@ -30,7 +30,7 @@ $product_categories = get_terms(array(
         <?php
         if (!empty($product_categories) && !is_wp_error($product_categories)) { ?>
 
-            <ul class="category-loop">
+            <ul class="category-loop" aria-label="List of product categories by brand">
                 <?php foreach ($product_categories as $product_category) {
                     echo '<li class="category">';
 

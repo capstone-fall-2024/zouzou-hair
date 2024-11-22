@@ -15,7 +15,7 @@ $store_info = get_store_info();
 
 <main id="primary" class="site-main">
     <section>
-        <div class="careers-banner image-padding">
+        <div class="careers-banner image-padding" aria-label="Careers Page Banner">
             <div class="container">
                 <h1>Careers</h1>
             </div>
@@ -35,19 +35,19 @@ $store_info = get_store_info();
                     <div class="padding">
                         <p>You can also:</p>
                         <div>
-                            <section>
-                                <h2>Call Us</h2>
+                            <section aria-labelledby="call-us">
+                                <h2 id="call-us">Call Us</h2>
                                 <p><?php echo esc_html($store_info['phone']); ?></p>
                             </section>
-                            <section>
-                                <h2>Find Us At</h2>
+                            <section aria-labelledby="find-us">
+                                <h2 id="find-us">Find Us At</h2>
                                 <p><?php echo nl2br(esc_html($store_info['location'])); ?></p>
                                 <div>
                                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2371.934795525066!2d-113.5149118221533!3d53.52322137234099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a02219412fb583%3A0xdb39fd5b67a058b5!2sZouzou%20Hair%20Group!5e0!3m2!1sen!2sca!4v1728003129088!5m2!1sen!2sca" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="map" aria-description="Google map of Zouzou Hair's location"></iframe>
                                 </div>
                             </section>
-                            <section>
-                                <h2>Hours</h2>
+                            <section aria-labelledby="hours">
+                                <h2 id="hours">Hours</h2>
                                 <p><?php echo nl2br(esc_html($store_info['hours'])); ?>
                             </section>
                             <h3>Connect With Us on Social Media</h3>
