@@ -1,54 +1,23 @@
 <?php
 
-/**
- * zouzou-hair-theme functions and definitions
- *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package zouzou-hair-theme
- */
-
 if (! defined('_S_VERSION')) {
-	// Replace the version number of the theme on each release.
 	define('_S_VERSION', '1.0.0');
 }
 
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
+
 function zouzou_hair_theme_setup()
 {
-	/*
-		* Make theme available for translation.
-		* Translations can be filed in the /languages/ directory.
-		* If you're building a theme based on zouzou-hair-theme, use a find and replace
-		* to change 'zouzou-hair-theme' to the name of your theme in all the template files.
-		*/
+	
 	load_theme_textdomain('zouzou-hair-theme', get_template_directory() . '/languages');
 
-	// Add default posts and comments RSS feed links to head.
 	add_theme_support('automatic-feed-links');
 
-	/*
-		* Let WordPress manage the document title.
-		* By adding theme support, we declare that this theme does not use a
-		* hard-coded <title> tag in the document head, and expect WordPress to
-		* provide it for us.
-		*/
+	
 	add_theme_support('title-tag');
 
-	/*
-		* Enable support for Post Thumbnails on posts and pages.
-		*
-		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		*/
+	
 	add_theme_support('post-thumbnails');
 
-	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
 			'primary' => esc_html__('Primary', 'zouzou-hair-theme'),
@@ -61,10 +30,7 @@ function zouzou_hair_theme_setup()
 		)
 	);
 
-	/*
-		* Switch default core markup for search form, comment form, and comments
-		* to output valid HTML5.
-		*/
+	
 	add_theme_support(
 		'html5',
 		array(
@@ -78,7 +44,6 @@ function zouzou_hair_theme_setup()
 		)
 	);
 
-	// Set up the WordPress core custom background feature.
 	add_theme_support(
 		'custom-background',
 		apply_filters(
@@ -90,14 +55,9 @@ function zouzou_hair_theme_setup()
 		)
 	);
 
-	// Add theme support for selective refresh for widgets.
 	add_theme_support('customize-selective-refresh-widgets');
 
-	/**
-	 * Add support for core custom logo.
-	 *
-	 * @link https://codex.wordpress.org/Theme_Logo
-	 */
+	
 	add_theme_support(
 		'custom-logo',
 		array(
@@ -110,22 +70,14 @@ function zouzou_hair_theme_setup()
 }
 add_action('after_setup_theme', 'zouzou_hair_theme_setup');
 
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
+
 function zouzou_hair_theme_content_width()
 {
 	$GLOBALS['content_width'] = apply_filters('zouzou_hair_theme_content_width', 640);
 }
 add_action('after_setup_theme', 'zouzou_hair_theme_content_width', 0);
 
-/**
- * Enqueue scripts and styles.
- */
+
 function zouzou_hair_theme_scripts()
 {
 	wp_enqueue_style('zouzou-hair-theme-style', get_stylesheet_uri(), array(), _S_VERSION);
@@ -139,38 +91,25 @@ function zouzou_hair_theme_scripts()
 }
 add_action('wp_enqueue_scripts', 'zouzou_hair_theme_scripts');
 
-/**
- * Implement the Custom Header feature.
- */
+
 require get_template_directory() . '/inc/custom-header.php';
 
-/**
- * Custom template tags for this theme.
- */
+
 require get_template_directory() . '/inc/template-tags.php';
 
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
+
 require get_template_directory() . '/inc/template-functions.php';
 
-/**
- * Customizer additions.
- */
+
 require get_template_directory() . '/inc/customizer.php';
 
-/**
- * Load Jetpack compatibility file.
- */
+
 if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-/**
- * ACF FUNCTIONS
- */
 
-// INITIALIZE SERVICE CATEGORY TAXONOMY
+
 add_action('init', function () {
 	register_taxonomy('service-category', array(
 		0 => '',
@@ -204,7 +143,6 @@ add_action('init', function () {
 	));
 });
 
-// INITIALIZE SERVICES CUSTOM POST TYPE
 add_action('init', function () {
 	register_post_type('services', array(
 		'labels' => array(
@@ -253,7 +191,6 @@ add_action('init', function () {
 	));
 });
 
-// INITIALIZE MEMBERS CUSTOM POST TYPE
 add_action('init', function () {
 	register_post_type('members', array(
 		'labels' => array(
@@ -298,10 +235,8 @@ add_action('init', function () {
 	));
 });
 
-// INITIALIZE ACF FIELDS
 if (function_exists('acf_add_local_field_group')):
 
-	// CUSTOM FIELDS FOR CONTACT PAGE
 	acf_add_local_field_group(array(
 		'key' => 'store_info',
 		'title' => 'Store Information',
@@ -381,7 +316,6 @@ if (function_exists('acf_add_local_field_group')):
 		),
 	));
 
-	// CUSTOM FIELDS FOR HOME PAGE INFORMATION SECTION
 	acf_add_local_field_group(array(
 		'key' => 'homepage_info_section',
 		'title' => 'Home Page Information Section',
@@ -416,7 +350,6 @@ if (function_exists('acf_add_local_field_group')):
 		),
 	));
 
-	// CUSTOM FIELDS FOR IMAGES FOR SERVICE CATEGORIES
 	acf_add_local_field_group(array(
 		'key' => 'service-gallery',
 		'title' => 'Service Gallery',
@@ -657,7 +590,6 @@ if (function_exists('acf_add_local_field_group')):
 		),
 	));
 
-	// CUSTOM FIELDS FOR ADDING NEW MEMBERS
 	acf_add_local_field_group(array(
 		'key' => 'member',
 		'title' => 'Member',
@@ -712,7 +644,6 @@ if (function_exists('acf_add_local_field_group')):
 
 endif;
 
-// FETCHES CUSTOM FIELDS FROM CONTACT PAGE FOR USE IN OTHER AREAS
 function get_store_info()
 {
 	$contact_pages = get_posts(array(
@@ -743,7 +674,6 @@ function get_store_info()
 	return false;
 }
 
-// DISABLES BLOCK EDITOR WHEN ADDING A NEW SERVICE
 add_filter('use_block_editor_for_post_type', 'disable_gutenberg_for_services', 10, 2);
 function disable_gutenberg_for_services($current_status, $post_type)
 {
@@ -751,7 +681,6 @@ function disable_gutenberg_for_services($current_status, $post_type)
 	return $current_status;
 }
 
-// DISABLES BLOCK EDITOR WHEN ADDING A NEW MEMBER
 add_filter('use_block_editor_for_post_type', 'disable_gutenberg_for_members', 10, 2);
 function disable_gutenberg_for_members($current_status, $post_type)
 {
@@ -759,7 +688,6 @@ function disable_gutenberg_for_members($current_status, $post_type)
 	return $current_status;
 }
 
-// CSS HACK TO DISABLE SLUG AND DESCRIPTION WHEN CREATING A NEW SERVICE CATEGORY
 add_action('admin_head', 'disable_slug_description_css');
 function disable_slug_description_css()
 {
@@ -786,7 +714,6 @@ function disable_slug_description_css()
 
 }
 
-// ADDS SUPPORT FOR CUSTOM WOOCOMMERCE TEMPLATES
 function zouzou_hair_theme_add_woocommerce_support()
 {
 	add_theme_support('woocommerce');
@@ -794,7 +721,6 @@ function zouzou_hair_theme_add_woocommerce_support()
 
 add_action('after_setup_theme', 'zouzou_hair_theme_add_woocommerce_support');
 
-// FUNCTION THAT SETS SEARCH TO ONLY SEARCH FOR PRODUCTS
 function search_only_products($query)
 {
 
@@ -807,7 +733,6 @@ function search_only_products($query)
 }
 add_action('pre_get_posts', 'search_only_products');
 
-// DISABLES WOOCOMMERCE SIDEBAR
 function disable_woocommerce_sidebar()
 {
 	remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
@@ -815,7 +740,6 @@ function disable_woocommerce_sidebar()
 add_action('init', 'disable_woocommerce_sidebar');
 
 
-// ADDS A SERVICE CATEGORY COLUMN WHEN VIEWING ALL SERVICES
 add_filter('manage_services_posts_columns', 'add_service_category_column');
 function add_service_category_column($columns)
 {
@@ -837,7 +761,6 @@ function fetch_categories_for_column($column, $post_id)
 	}
 }
 
-// DISABLE WORDPRESS STYLESHEETS TO REDUCE BLOAT
 function remove_wp_block_library_css()
 {
 	wp_dequeue_style('wp-block-library');
@@ -852,7 +775,6 @@ add_action('wp_enqueue_scripts', 'remove_wp_block_library_css', 100);
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
 
-// FUNCTION THAT ADDS CART IN NAV ONLY IF THERE'S ITEM IN CART
 function cart_in_nav($items, $args)
 {
 	if ($args->theme_location == 'primary') {
@@ -869,7 +791,6 @@ function cart_in_nav($items, $args)
 add_filter('wp_nav_menu_items', 'cart_in_nav', 10, 2);
 
 
-// CHANGES THE PRODUCT TITLE TAG FROM H2 TO H3 FOR FEATURED ITEMS SECTION IN FRONT PAGE
 add_filter('do_shortcode_tag', function ($output, $tag, $attributes) {
 	if ($tag === 'products' && is_front_page()) {
 		$output = str_replace('<h2 class="woocommerce-loop-product__title">', '<h3 class="woocommerce-loop-product__title">', $output);

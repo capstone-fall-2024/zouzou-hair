@@ -15,10 +15,6 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
-/*--------------------------------------------------------------
-# Generic
---------------------------------------------------------------*/
-
 @font-face {
   font-family: "Afacad";
   src: url("./assets/fonts/Afacad-VariableFont.woff2") format("woff2");
@@ -45,7 +41,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   --x-large: clamp(1.802rem, 1.6631rem + 0.6947vw, 2.488rem);
   --large: clamp(1.602rem, 1.5064rem + 0.478vw, 2.074rem);
   --medium: clamp(1.424rem, 1.3624rem + 0.3078vw, 1.728rem);
-  --base: 1.125rem
+  --base: 1.125rem;
 }
 
 html,
@@ -110,14 +106,6 @@ a:hover {
   color: var(--dark-red);
 }
 
-/* Normalize
---------------------------------------------- */
-
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-
-/* Document
-	 ========================================================================== */
-
 ul li,
 ul {
   list-style: none;
@@ -125,78 +113,41 @@ ul {
   margin: 0;
 }
 
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
 }
 
-/* Sections
-	 ========================================================================== */
-/**
- * Render the `main` element consistently in IE.
- */
 main {
   display: block;
 }
 
-/* Grouping content
-	 ========================================================================== */
-
-/**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- */
 hr {
   box-sizing: content-box;
   height: 0;
   overflow: visible;
 }
 
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
 pre {
   font-family: monospace, monospace;
   font-size: 1em;
 }
 
-/* Text-level semantics
-	 ========================================================================== */
-
-/**
- * Remove the gray background on active links in IE 10.
- */
 a {
   background-color: transparent;
 }
 
-/**
- * 1. Remove the bottom border in Chrome 57-
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
- */
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
   text-decoration: underline dotted;
 }
 
-/**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
 b,
 strong {
   font-weight: bolder;
 }
 
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
 code,
 kbd,
 samp {
@@ -204,17 +155,10 @@ samp {
   font-size: 1em;
 }
 
-/**
- * Add the correct font size in all browsers.
- */
 small {
   font-size: 80%;
 }
 
-/**
- * Prevent `sub` and `sup` elements from affecting the line height in
- * all browsers.
- */
 sub,
 sup {
   font-size: 75%;
@@ -231,23 +175,10 @@ sup {
   top: -0.5em;
 }
 
-/* Embedded content
-	 ========================================================================== */
-
-/**
- * Remove the border on images inside links in IE 10.
- */
 img {
   border-style: none;
 }
 
-/* Forms
-	 ========================================================================== */
-
-/**
- * 1. Change the font styles in all browsers.
- * 2. Remove the margin in Firefox and Safari.
- */
 button,
 input,
 optgroup,
@@ -259,27 +190,16 @@ textarea {
   margin: 0;
 }
 
-/**
- * Show the overflow in IE.
- * 1. Show the overflow in Edge.
- */
 button,
 input {
   overflow: visible;
 }
 
-/**
- * Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 1. Remove the inheritance of text transform in Firefox.
- */
 button,
 select {
   text-transform: none;
 }
 
-/**
- * Correct the inability to style clickable types in iOS and Safari.
- */
 button,
 [type="button"],
 [type="reset"],
@@ -287,9 +207,6 @@ button,
   -webkit-appearance: button;
 }
 
-/**
- * Remove the inner border and padding in Firefox.
- */
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
@@ -298,9 +215,6 @@ button::-moz-focus-inner,
   padding: 0;
 }
 
-/**
- * Restore the focus styles unset by the previous rule.
- */
 button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
@@ -308,19 +222,10 @@ button:-moz-focusring,
   outline: 1px dotted ButtonText;
 }
 
-/**
- * Correct the padding in Firefox.
- */
 fieldset {
   padding: 0.35em 0.75em 0.625em;
 }
 
-/**
- * 1. Correct the text wrapping in Edge and IE.
- * 2. Correct the color inheritance from `fieldset` elements in IE.
- * 3. Remove the padding so developers are not caught out when they zero out
- *		`fieldset` elements in all browsers.
- */
 legend {
   box-sizing: border-box;
   color: inherit;
@@ -330,102 +235,55 @@ legend {
   white-space: normal;
 }
 
-/**
- * Add the correct vertical alignment in Chrome, Firefox, and Opera.
- */
 progress {
   vertical-align: baseline;
 }
 
-/**
- * Remove the default vertical scrollbar in IE 10+.
- */
 textarea {
   overflow: auto;
 }
 
-/**
- * 1. Add the correct box sizing in IE 10.
- * 2. Remove the padding in IE 10.
- */
 [type="checkbox"],
 [type="radio"] {
   box-sizing: border-box;
   padding: 0;
 }
 
-/**
- * Correct the cursor style of increment and decrement buttons in Chrome.
- */
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
-/**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
 [type="search"] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
 
-/**
- * Remove the inner padding in Chrome and Safari on macOS.
- */
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-/**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
   font: inherit;
 }
 
-/* Interactive
-	 ========================================================================== */
-
-/*
- * Add the correct display in Edge, IE 10+, and Firefox.
- */
 details {
   display: block;
 }
 
-/*
- * Add the correct display in all browsers.
- */
 summary {
   display: list-item;
 }
 
-/* Misc
-	 ========================================================================== */
-
-/**
- * Add the correct display in IE 10+.
- */
 template {
   display: none;
 }
 
-/**
- * Add the correct display in IE 10.
- */
 [hidden] {
   display: none;
 }
 
-/* Box sizing
---------------------------------------------- */
-
-/* Inherit box-sizing to more easily change it's value on a component level.
-@link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 *,
 *::before,
 *::after {
@@ -436,12 +294,6 @@ html {
   box-sizing: border-box;
 }
 
-/*--------------------------------------------------------------
-# Base
---------------------------------------------------------------*/
-
-/* Typography
---------------------------------------------- */
 h1,
 h2,
 h3,
@@ -499,9 +351,6 @@ big {
   font-size: 125%;
 }
 
-/* Elements
---------------------------------------------- */
-
 hr {
   background-color: #ccc;
   border: 0;
@@ -513,8 +362,8 @@ ol {
   list-style: decimal;
 }
 
-li>ul,
-li>ol {
+li > ul,
+li > ol {
   margin-bottom: 0;
   margin-left: 1.5em;
 }
@@ -527,7 +376,6 @@ dd {
   margin: 0 1.5em 1.5em;
 }
 
-/* Make sure embeds and iframes fit their containers. */
 embed,
 iframe,
 object {
@@ -548,9 +396,6 @@ table {
   width: 100%;
 }
 
-/* Links
---------------------------------------------- */
-
 a:focus {
   outline: thin dotted;
 }
@@ -560,8 +405,6 @@ a:active {
   outline: 0;
 }
 
-/* Forms
---------------------------------------------- */
 button,
 .button,
 input[type="button"],
@@ -578,7 +421,8 @@ input[type="submit"],
   display: inline-block;
 }
 
-.wc-block-checkout__actions_row .wc-block-components-checkout-place-order-button,
+.wc-block-checkout__actions_row
+  .wc-block-components-checkout-place-order-button,
 .wc-block-components-totals-coupon__button {
   border: 0;
 }
@@ -658,8 +502,6 @@ textarea {
   width: 100%;
 }
 
-/* Navigation
---------------------------------------------- */
 .main-navigation ul {
   display: none;
   list-style: none;
@@ -681,8 +523,8 @@ textarea {
   top: 0;
 }
 
-.main-navigation ul ul li:hover>ul,
-.main-navigation ul ul li.focus>ul {
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
   display: block;
   left: auto;
 }
@@ -691,8 +533,8 @@ textarea {
   width: 200px;
 }
 
-.main-navigation ul li:hover>ul,
-.main-navigation ul li.focus>ul {
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
   left: auto;
 }
 
@@ -705,7 +547,6 @@ textarea {
   text-decoration: none;
 }
 
-/* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
   display: block;
@@ -746,8 +587,6 @@ textarea {
   flex: 1 0 50%;
 }
 
-/* Posts and pages
---------------------------------------------- */
 .sticky {
   display: block;
 }
@@ -767,8 +606,6 @@ textarea {
   margin: 0 0 1.5em;
 }
 
-/* Comments
---------------------------------------------- */
 .comment-content a {
   word-wrap: break-word;
 }
@@ -777,8 +614,6 @@ textarea {
   display: block;
 }
 
-/* Widgets
---------------------------------------------- */
 .widget {
   margin: 0 0 1.5em;
 }
@@ -787,8 +622,6 @@ textarea {
   max-width: 100%;
 }
 
-/* Media
---------------------------------------------- */
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
@@ -798,13 +631,10 @@ textarea {
   padding: 0;
 }
 
-/* Make sure logo link wraps around logo image. */
 .custom-logo-link {
   display: inline-block;
 }
 
-/* Captions
---------------------------------------------- */
 .wp-caption {
   margin-bottom: 1.5em;
   max-width: 100%;
@@ -824,8 +654,6 @@ textarea {
   text-align: center;
 }
 
-/* Galleries
---------------------------------------------- */
 .gallery {
   margin-bottom: 1.5em;
   display: grid;
@@ -874,32 +702,15 @@ textarea {
   display: block;
 }
 
-/*--------------------------------------------------------------
-# Plugins
---------------------------------------------------------------*/
-
-/* Jetpack infinite scroll
---------------------------------------------- */
-
-/* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
   display: none;
 }
 
-/* Re-display the Theme Footer when Infinite Scroll has reached its end. */
 .infinity-end.neverending .site-footer {
   display: block;
 }
 
-/*--------------------------------------------------------------
-# Utilities
---------------------------------------------------------------*/
-
-/* Accessibility
---------------------------------------------- */
-
-/* Text meant only for screen readers. */
 .screen-reader-text {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
@@ -933,27 +744,20 @@ textarea {
   z-index: 100000;
 }
 
-/* Do not show the outline on the skip link target. */
 #primary[tabindex="-1"]:focus {
   outline: 0;
 }
 
-/* Alignments
---------------------------------------------- */
 .alignleft {
-  /*rtl:ignore*/
   float: left;
 
-  /*rtl:ignore*/
   margin-right: 1.5em;
   margin-bottom: 1.5em;
 }
 
 .alignright {
-  /*rtl:ignore*/
   float: right;
 
-  /*rtl:ignore*/
   margin-left: 1.5em;
   margin-bottom: 1.5em;
 }
@@ -966,25 +770,20 @@ textarea {
   margin-bottom: 1.5em;
 }
 
-/* Zouzou Hair Custom */
-
 .container {
   max-width: 1100px;
   margin: 0 auto;
 }
 
 .padding {
-  /* utility class for padding inside containers */
   padding: 1.5rem;
 }
 
 .button {
-  /* this is a styling for links (anchor) to look like buttons */
   background: var(--red) !important;
 }
 
 .button:hover {
-  /* this is a styling for links (anchor) to look like buttons */
   background-color: var(--dark-red) !important;
 }
 
@@ -993,7 +792,7 @@ textarea {
   background-color: var(--red);
 }
 
-.intro-text>div:first-of-type {
+.intro-text > div:first-of-type {
   display: flex;
   gap: 1.5rem;
   margin-bottom: 1.5rem;
@@ -1042,8 +841,6 @@ textarea {
   transform: translateY(-0.25em);
 }
 
-/* Aria-Describedby */
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -1052,11 +849,9 @@ textarea {
   padding: 0;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
-  white-space: nowrap; /* Prevents line break */
+  white-space: nowrap;
   border: 0;
 }
-
-/* Zouzou Hair Custom - Header */
 
 nav button {
   background-color: unset;
@@ -1064,7 +859,7 @@ nav button {
   padding: 0.5rem;
 }
 
-header nav>div {
+header nav > div {
   display: none;
 }
 
@@ -1125,7 +920,7 @@ nav button svg {
   margin-bottom: 0;
 }
 
-.main-navigation>h2 {
+.main-navigation > h2 {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
 }
@@ -1159,36 +954,64 @@ nav button svg {
 }
 
 .front-banner {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./assets/images/front-banner-small.webp");
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url("./assets/images/front-banner-small.webp");
   padding: 8rem 0;
   height: 60vh;
 }
 
 .about-banner {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("./assets/images/about-banner-small.webp");
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ),
+    url("./assets/images/about-banner-small.webp");
 }
 
 .shop-banner {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("./assets/images/shop-banner-small.webp");
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url("./assets/images/shop-banner-small.webp");
 }
 
 .services-banner {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("./assets/images/services-banner-small.webp");
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ),
+    url("./assets/images/services-banner-small.webp");
 }
 
 .contact-banner {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("./assets/images/contact-banner-small.webp");
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url("./assets/images/contact-banner-small.webp");
 }
 
 .careers-banner {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("./assets/images/career-banner-small.webp");
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url("./assets/images/career-banner-small.webp");
 }
-
 
 .image-padding {
   padding: 1.5rem;
 }
-
 
 .home-header p {
   color: var(--light-beige);
@@ -1221,7 +1044,7 @@ nav button svg {
   gap: 1rem;
 }
 
-.zouzou-intro-home>div:nth-child(2) p {
+.zouzou-intro-home > div:nth-child(2) p {
   font-weight: bold;
   font-size: 18px;
 }
@@ -1243,8 +1066,6 @@ nav button svg {
   font-family: "Cinzel";
   font-size: 2rem;
 }
-
-/* Services Section */
 
 h2 {
   padding: 0;
@@ -1294,15 +1115,18 @@ h2 {
 }
 
 .womens-cuts {
-  background: url("./assets/images/womenscuts-small.webp") center center/cover no-repeat;
+  background: url("./assets/images/womenscuts-small.webp") center center/cover
+    no-repeat;
 }
 
 .mens-cuts {
-  background: url("./assets/images/menscuts-small.webp") center center/cover no-repeat;
+  background: url("./assets/images/menscuts-small.webp") center center/cover
+    no-repeat;
 }
 
 .nonbinary-cuts {
-  background: url("./assets/images/nonbinary.webp") center center/cover no-repeat;
+  background: url("./assets/images/nonbinary.webp") center center/cover
+    no-repeat;
 }
 
 .coloring {
@@ -1314,7 +1138,8 @@ h2 {
 }
 
 .hair-botox {
-  background: url("./assets/images/hairbotox.webp") center center/cover no-repeat;
+  background: url("./assets/images/hairbotox.webp") center center/cover
+    no-repeat;
 }
 
 .services-titles {
@@ -1337,16 +1162,19 @@ h2 {
   background-color: var(--red);
 }
 
-/* home intro */
 .home-intro {
-  background: url("./assets/images/home-info-banner.webp") center center / cover no-repeat fixed;
+  background: url("./assets/images/home-info-banner.webp") center center / cover
+    no-repeat fixed;
   color: var(--light-beige);
   height: 80vh;
+}
+
+.home-intro > .container {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
 }
-
 
 .home-intro-background {
   background-color: var(--dark);
@@ -1354,14 +1182,12 @@ h2 {
   margin: 0 1.5rem;
 }
 
-/* reviews on home */
 .reviews {
   background-color: var(--red);
 }
 
 .reviews-title {
   color: var(--light-beige);
-
 }
 
 .ti-reviews-container-wrapper .ti-review-item .ti-name {
@@ -1373,17 +1199,13 @@ h2 {
   color: var(--light-beige) !important;
 }
 
-
 element.style {
   margin-top: 0px !important;
 }
 
-.featured-products>div>a:first-of-type {
+.featured-products > div > a:first-of-type {
   margin-right: 1rem;
 }
-
-
-/* Zouzou Hair Custom - Services Page */
 
 h2.title {
   margin-top: 0 !important;
@@ -1396,7 +1218,7 @@ h2.title {
 
 .service-bar .title {
   font-size: var(--base);
-  font-family: 'Afacad';
+  font-family: "Afacad";
   font-weight: 700;
 }
 
@@ -1423,16 +1245,15 @@ h2.title {
   grid-template-columns: 1fr 1fr;
 }
 
-.gallery>img {
+.gallery > img {
   aspect-ratio: 1/1;
   object-fit: cover;
 }
 
-.services-page .gallery>img:nth-child(n + 5) {
+.services-page .gallery > img:nth-child(n + 5) {
   display: none;
 }
 
-/* Zouzou Hair Custom - Contact Page */
 .wpcf7 input[type="text"],
 .wpcf7 input[type="email"],
 .wpcf7 input[type="tel"],
@@ -1455,12 +1276,13 @@ h2.title {
   color: var(--light-beige);
 }
 
+.contact-red h2,
 .contact-red h3 {
   font-family: "Afacad";
   margin-bottom: 0.5rem;
+  font-size: var(--large);
 }
 
-/* Zouzou Hair Custom - Shop */
 .search-submit {
   padding: 0.5rem 1rem !important;
 }
@@ -1478,7 +1300,7 @@ h2.title {
 .add_to_cart_button {
   background-color: var(--beige) !important;
   color: var(--black) !important;
-  padding: .618em 1em;
+  padding: 0.618em 1em;
   border-radius: 3px;
   font-weight: 700;
   margin-right: 1rem !important;
@@ -1489,7 +1311,7 @@ h2.title {
 }
 
 .quantity input {
-  padding: .5em 1em;
+  padding: 0.5em 1em;
 }
 
 .search-form {
@@ -1551,9 +1373,6 @@ h1.product_title {
   color: var(--black);
 }
 
-/* Zouzou Hair Custom - About */
-
-/* Team list layout */
 .team-list {
   list-style: none;
   padding: 0;
@@ -1563,7 +1382,6 @@ h1.product_title {
   gap: 20px;
 }
 
-/* Team member card styling */
 .team-member {
   display: flex;
   align-items: center;
@@ -1576,7 +1394,6 @@ h1.product_title {
   box-sizing: border-box;
 }
 
-/* Image container with increased size to match text height */
 .image-container {
   position: relative;
   width: 150px;
@@ -1587,7 +1404,6 @@ h1.product_title {
   flex-shrink: 0;
 }
 
-/* Member image with overlay effect */
 .member-image {
   width: 100%;
   height: 100%;
@@ -1615,7 +1431,6 @@ h1.product_title {
   opacity: 1;
 }
 
-/* Member info styling */
 .member-info {
   flex: 1;
 }
@@ -1637,8 +1452,6 @@ h1.product_title {
   color: #333;
 }
 
-
-/* Zouzou Hair Custom - Footer */
 footer {
   background-color: var(--dark);
   color: var(--light-beige);
@@ -1667,9 +1480,9 @@ footer .main-navigation ul a {
   align-items: flex-start;
 }
 
-.connect-with-us>p:first-of-type,
-.grid-3>p:first-of-type {
-  font-family: 'Cinzel';
+.connect-with-us > p:first-of-type,
+.grid-3 > p:first-of-type {
+  font-family: "Cinzel";
   font-size: var(--large);
   margin-top: 1.5rem;
 }
@@ -1698,7 +1511,7 @@ footer .main-navigation li {
 
 footer .main-navigation a::after {
   display: block;
-  content: '';
+  content: "";
   position: relative;
   left: 0;
   bottom: -10px;
@@ -1706,17 +1519,14 @@ footer .main-navigation a::after {
   top: 2px;
   height: 5px;
   background-color: var(--red);
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 footer .main-navigation a:hover {
-  /* hover style for touch screens */
   border-bottom: 5px solid var(--red);
 }
 
 @media (hover: hover) {
-
-  /* this block allows the footer links hover animation for only devices with actual hover (with a mouse) */
   footer .main-navigation a:hover {
     border-bottom: unset;
   }
@@ -1728,7 +1538,6 @@ footer .main-navigation a:hover {
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 480px) {
-
   .team-member {
     padding: 10px;
   }
@@ -1746,7 +1555,6 @@ footer .main-navigation a:hover {
   .member-intro {
     font-size: 0.85em;
   }
-  
 }
 
 @media screen and (min-width: 450px) {
@@ -1796,7 +1604,7 @@ footer .main-navigation a:hover {
     padding: 5px 3px;
   }
 
-  .home-intro {
+  .home-intro > .container {
     justify-content: flex-start;
     align-items: center;
     padding-right: 3rem;
@@ -1831,8 +1639,8 @@ footer .main-navigation a:hover {
     align-items: center;
   }
 
-  .connect-with-us>p:first-of-type,
-  .grid-3>p:first-of-type {
+  .connect-with-us > p:first-of-type,
+  .grid-3 > p:first-of-type {
     margin-top: unset;
   }
 }
@@ -1842,7 +1650,7 @@ footer .main-navigation a:hover {
     display: none;
   }
 
-  header nav>div {
+  header nav > div {
     display: block;
   }
 
@@ -1861,7 +1669,7 @@ footer .main-navigation a:hover {
 
   header .main-navigation a::after {
     display: block;
-    content: '';
+    content: "";
     position: relative;
     left: 0;
     bottom: -10px;
@@ -1869,7 +1677,7 @@ footer .main-navigation a:hover {
     top: 2px;
     height: 5px;
     background-color: var(--red);
-    transition: all .5s;
+    transition: all 0.5s;
   }
 
   header .main-navigation a:hover::after {
@@ -1896,24 +1704,49 @@ footer .main-navigation a:hover {
   }
 
   .about-banner {
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("./assets/images/about-banner.webp");
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2)
+      ),
+      url("./assets/images/about-banner.webp");
   }
 
   .shop-banner {
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("./assets/images/shop-banner.webp");
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)
+      ),
+      url("./assets/images/shop-banner.webp");
     background-position: center -10rem;
   }
 
   .services-banner {
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("./assets/images/services-banner.webp");
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2)
+      ),
+      url("./assets/images/services-banner.webp");
   }
 
   .contact-banner {
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("./assets/images/contact-banner.webp");
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)
+      ),
+      url("./assets/images/contact-banner.webp");
   }
 
   .careers-banner {
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("./assets/images/career-banner.webp");
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)
+      ),
+      url("./assets/images/career-banner.webp");
     background-position: center -10rem;
   }
 
@@ -1925,7 +1758,7 @@ footer .main-navigation a:hover {
     display: flex;
   }
 
-  .form-flex>* {
+  .form-flex > * {
     width: 50%;
   }
 
@@ -1936,8 +1769,6 @@ footer .main-navigation a:hover {
 }
 
 @media screen and (max-width: 768px) {
-
-  /* Stacking cards vertically */
   .team-member {
     flex-direction: column;
     align-items: center;
@@ -1945,7 +1776,6 @@ footer .main-navigation a:hover {
     padding: 15px;
   }
 
-  /* Center image on smaller screens */
   .image-container {
     margin: 0 0 15px 0;
     width: 120px;
@@ -1970,7 +1800,6 @@ footer .main-navigation a:hover {
 }
 
 @media screen and (min-width: 770px) {
-
   .product-loop,
   .category-loop {
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -1997,16 +1826,16 @@ footer .main-navigation a:hover {
 }
 
 @media screen and (min-width: 840px) {
-  .services-page .services>div {
+  .services-page .services > div {
     display: flex;
     gap: 1.5rem;
   }
 
-  .services-page .services:nth-of-type(even)>div {
+  .services-page .services:nth-of-type(even) > div {
     flex-direction: row-reverse;
   }
 
-  .services-page .services>div>div {
+  .services-page .services > div > div {
     width: 60%;
   }
 
@@ -2020,7 +1849,6 @@ footer .main-navigation a:hover {
 }
 
 @media screen and (min-width: 1000px) {
-
   .sup-header {
     display: block;
   }
@@ -2030,7 +1858,7 @@ footer .main-navigation a:hover {
     justify-content: space-between;
   }
 
-  .intro-text>div>p {
+  .intro-text > div > p {
     max-width: 500px;
   }
 
@@ -2064,22 +1892,24 @@ footer .main-navigation a:hover {
   }
 
   .womens-cuts {
-    background: url('./assets/images/womenscut-large.webp') center center/cover no-repeat;
+    background: url("./assets/images/womenscut-large.webp") center center/cover
+      no-repeat;
   }
 
   .mens-cuts {
-    background: url('./assets/images/menscuts-large.webp') center center/cover no-repeat;
+    background: url("./assets/images/menscuts-large.webp") center center/cover
+      no-repeat;
   }
 
   .form-flex {
     display: flex;
   }
 
-  .form-flex> :nth-child(1) {
+  .form-flex > :nth-child(1) {
     width: 70%;
   }
 
-  .form-flex> :nth-child(2) {
+  .form-flex > :nth-child(2) {
     width: 30%;
   }
 
@@ -2108,7 +1938,7 @@ footer .main-navigation a:hover {
 }
 
 @media screen and (min-width: 1200px) {
-  .intro-text>div>p {
+  .intro-text > div > p {
     max-width: 700px;
   }
 }
