@@ -1205,6 +1205,7 @@ element.style {
 
 .featured-products > div > a:first-of-type {
   margin-right: 1rem;
+  margin-bottom: 1rem;
 }
 
 h2.title {
