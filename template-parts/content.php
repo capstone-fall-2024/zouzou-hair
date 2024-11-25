@@ -19,7 +19,7 @@
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			endif;
 	 ?>
-		</header><!-- .entry-header -->
+		</header>
 	
 		<?php zouzou_hair_theme_post_thumbnail(); ?>
 	
@@ -47,6 +47,6 @@
 				)
 			);
 			?>
-		</div><!-- .entry-content -->
+		</div>
 	</article><!-- #post-<?php the_ID(); ?> -->
 </div>

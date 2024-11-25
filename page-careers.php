@@ -95,7 +95,7 @@ $store_info = get_store_info();
             </div>
         </div>
     </section>
-</main><!-- #main -->
+</main>
 
 <?php
 get_footer();

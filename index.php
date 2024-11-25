@@ -116,7 +116,7 @@ get_header();
 			<?php echo apply_shortcodes('[trustindex no-registration=google]'); ?>
 		</div>
 	</section>
-</main><!-- #main -->
+</main>
 
 <?php
 get_footer();
