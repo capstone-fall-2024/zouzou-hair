@@ -421,6 +421,15 @@ input[type="submit"],
   display: inline-block;
 }
 
+.comment-form p.form-submit input#submit.submit {
+  background: var(--red)!important;
+  color: var(--light-beige)!important;
+}
+
+.comment-form p.form-submit input#submit.submit:hover {
+  background-color: var(--dark-red)!important;
+}
+
 .wc-block-checkout__actions_row
   .wc-block-components-checkout-place-order-button,
 .wc-block-components-totals-coupon__button {
@@ -1194,6 +1203,18 @@ h2 {
   color: var(--black) !important;
 }
 
+.ti-header-write-btn-container a.ti-header-write-btn {
+  background-color: var(--beige)!important;
+  border-color: var(--beige)!important;
+  color: var(--black)!important;
+}
+
+.ti-header-write-btn-container a.ti-header-write-btn:hover {
+  background-color: var(--dark-red)!important;
+  border-color: var(--dark-red)!important;
+  color: var(--light-beige)!important;
+}
+
 .ti-name,
 .nowrap strong {
   color: var(--light-beige) !important;
@@ -1372,6 +1393,13 @@ h2.title {
 
 h1.product_title {
   color: var(--black);
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li,
+.woocommerce div.product .woocommerce-tabs ul.tabs::before,
+.woocommerce div.product .woocommerce-tabs ul.tabs li::before,
+.woocommerce div.product .woocommerce-tabs ul.tabs li::after {
+  border-color: var(--red);
 }
 
 .team-list {
