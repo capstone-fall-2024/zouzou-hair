@@ -422,12 +422,12 @@ input[type="submit"],
 }
 
 .comment-form p.form-submit input#submit.submit {
-  background: var(--red)!important;
-  color: var(--light-beige)!important;
+  background: var(--red) !important;
+  color: var(--light-beige) !important;
 }
 
 .comment-form p.form-submit input#submit.submit:hover {
-  background-color: var(--dark-red)!important;
+  background-color: var(--dark-red) !important;
 }
 
 .wc-block-checkout__actions_row
@@ -1204,15 +1204,15 @@ h2 {
 }
 
 .ti-header-write-btn-container a.ti-header-write-btn {
-  background-color: var(--beige)!important;
-  border-color: var(--beige)!important;
-  color: var(--black)!important;
+  background-color: var(--beige) !important;
+  border-color: var(--beige) !important;
+  color: var(--black) !important;
 }
 
 .ti-header-write-btn-container a.ti-header-write-btn:hover {
-  background-color: var(--dark-red)!important;
-  border-color: var(--dark-red)!important;
-  color: var(--light-beige)!important;
+  background-color: var(--dark-red) !important;
+  border-color: var(--dark-red) !important;
+  color: var(--light-beige) !important;
 }
 
 .ti-name,
