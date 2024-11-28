@@ -58,6 +58,9 @@ $product_categories = get_terms(array(
                             woocommerce_subcategory_thumbnail($product_category);
                         }
                     }
+
+                    wp_reset_postdata();
+
                     echo '<h2>' . esc_html($product_category->name) . '</h2>';
                     echo '</a>';
                     echo '</li>';
