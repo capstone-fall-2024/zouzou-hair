@@ -1402,6 +1402,21 @@ h1.product_title {
   border-color: var(--red);
 }
 
+.woocommerce nav.woocommerce-pagination ul {
+  border-color: var(--dark-red)
+}
+
+.woocommerce nav.woocommerce-pagination ul li {
+  border-right: 1px solid var(--dark-red);
+}
+
+.woocommerce nav.woocommerce-pagination ul li a:focus, 
+.woocommerce nav.woocommerce-pagination ul li a:hover, 
+.woocommerce nav.woocommerce-pagination ul li span.current {
+  background: var(--red);
+  color: var(--light-beige);
+}
+
 .team-list {
   list-style: none;
   padding: 0;
