@@ -23,6 +23,7 @@ $args = array(
     'post_type'           => 'product',
     'post_status'         => 'publish',
     'ignore_sticky_posts' => 1,
+    'posts_per_page'      => -1,
     'meta_query'          => $meta_query,
     'tax_query'           => $tax_query,
 );
