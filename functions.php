@@ -822,6 +822,7 @@ function search_only_products($query)
 	if ($query->is_search) {
 		$query->set('post_type', 'product');
 		$query->set('wc_query', 'product_query');
+		$query->set('posts_per_page', 16);
 	}
 
 	return $query;
@@ -898,3 +899,13 @@ add_filter('do_shortcode_tag', function ($output, $tag, $attributes) {
 	}
 	return $output;
 }, 10, 3);
+
+
+add_filter('body_class', 'add_woocommerce_class_to_search_page');
+function add_woocommerce_class_to_search_page($classes) {
+    if (is_search()) {
+        $classes[] = 'woocommerce-page';
+		$classes[] = 'woocommerce';
+    }
+    return $classes;
+}
